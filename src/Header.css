@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+
+.ul {
+	list-style-type: none;
+	margin: auto 0;
+	justify-content: center;
+	align-items: center;
+	background-color: none;
+	z-index: 1;
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 500;
+}
+.ul li:hover {
+	cursor: pointer;
+	opacity: 0.5;
+}	
+
+.ul li {
+	margin: auto 5px;
+	padding: 5px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+a:link {
+	color: black;
+	text-decoration: none;
+}
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+a:hover {
+	color: black;
+	text-decoration: none;
+}
+a:active{
+	color: black;
+	text-decoration: none;
+}
+
+/*
+.ul li:nth-child(4) {
+	border-right: none;
+}
+.ul li:nth-child(5) {
+	border-right: none;
+}
+.ul li:nth-child(6) {
+	border-right: none;
+}
+*/
+
+

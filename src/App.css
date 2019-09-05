@@ -18,6 +18,20 @@
   color: white;
 }
 
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	background-color: white;
+	overflow: hidden;
+}
+
+
+a a:visited {
+	color: black;
+	text-decoration: none;
+}
+
 .App-link {
   color: #61dafb;
 }

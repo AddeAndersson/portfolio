@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+p {
+	font-family: 'Titillium Web', sans-serif;
+}
+
+h1 {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 900;
+}
+
+div {
+	font-family: 'Titillium Web', sans-serif;
+}
+
+/*Needs work*/
+.turn:hover {
+	-webkit-transition: -webkit-transform .8s ease-in-out;
+    -ms-transition: -ms-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+	transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
+}
