@@ -130,7 +130,7 @@ class Header extends Component {
               </ul>
             <div style={styles.carContainer}>
               <MyCarousel item={this.state.chosenItem}/>
-              <Particles height={this.state.height} width={this.state.width} style={styles.particleWrapper} params={parParam}/>
+              <Particles className="particlesFade" height={this.state.height} width={this.state.width} style={styles.particleWrapper} params={parParam}/>
               <div style={styles.footer}>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
             </div>
         	</div>

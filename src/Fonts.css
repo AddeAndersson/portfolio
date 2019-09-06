@@ -12,12 +12,49 @@ div {
 	font-family: 'Titillium Web', sans-serif;
 }
 
-/*Needs work*/
-.turn:hover {
-	-webkit-transition: -webkit-transform .8s ease-in-out;
-    -ms-transition: -ms-transform .8s ease-in-out;
-    transition: transform .8s ease-in-out;
-	transform:rotateY(180deg);
-    -ms-transform:rotateY(180deg);
-    -webkit-transform:rotateY(180deg);
+.page:hover {
+	transform: perspective(800px) rotateY(-20deg);
+	-moz-transition: all 1s ease; /* Firefox */
+	-webkit-transition: all 1s ease; /* WebKit */
+	-o-transition: all 1s ease; /* Opera */
+	transition: all 1s ease;
+}
+
+.carouselFade {
+	animation: fadein 5s;
+    -moz-animation: fadein 5s; /* Firefox */
+    -webkit-animation: fadein 5s; /* Safari and Chrome */
+    -o-animation: fadein 5s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
 }

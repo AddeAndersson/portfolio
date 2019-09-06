@@ -57,7 +57,7 @@ class MyCarousel extends Component {
     };
 
     return(
-      <div style={styles.carousel}>
+      <div className="carouselFade" style={styles.carousel}>
         <Carousel autoPlay={false} useKeyboardArrows={true} showThumbs={false} infiniteLoop={true} axis={'vertical'}
         interval={5000} transitionTime={800} selectedItem={this.props.item} showArrows={false} showStatus={false}
         showIndicators={false}>
@@ -80,14 +80,16 @@ class MyCarousel extends Component {
           {/*3*/}
           <div style={autoHeight} onClick={this.changePage}>
             <Document file={CV} onLoadSuccess={this.onDocumentLoadSuccess} onLoadError={console.error}>
-              <Page height={0.8*this.state.height} pageNumber={this.state.pageNumber}/>
-              {/*Array.from(new Array(this.state.numPages), (el, index) => 
+              <Page className="page" height={0.85*this.state.height} pageNumber={this.state.pageNumber}/>
+              {
+              //Display both pages
+              /*Array.from(new Array(this.state.numPages), (el, index) => 
                 (<Page
                 key={`page_${index + 1}`}
                 pageNumber={index + 1}
                 />),
                 )
-              **/}
+               */}
 
             </Document>
             <p style={styles.text}>Page {this.state.pageNumber}/2</p>
