@@ -47,13 +47,26 @@ class MyCarousel extends Component {
 
     const autoHeight = {
       height: Math.round(0.92*this.state.height) - 20, //Header is 4% vw, footer is 20px
+      width: this.state.width,
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center',
       webkitAlignItems: 'center',
+      justyfyContent: 'center',
       alignItems: 'center',
       flex: 1,
-      overflow: 'hidden',
+      overflow: "hidden",
+    };
+
+    const scrollable = {
+      height: Math.round(0.92*this.state.height) - 20, //Header is 4% vw, footer is 20px
+      width: this.state.width,
+      display: 'flex',
+      flexDirection: 'column',
+      webkitAlignItems: 'center',
+      justyfyContent: 'flex-start',
+      alignItems: 'center',
+      flex: 1,
+      overflowY: 'auto',
     };
 
     return(
@@ -78,21 +91,20 @@ class MyCarousel extends Component {
           </div>
 
           {/*3*/}
-          <div style={autoHeight} onClick={this.changePage}>
+          <div id="scrollstyle" style={scrollable} onClick={this.changePage}>
             <Document file={CV} onLoadSuccess={this.onDocumentLoadSuccess} onLoadError={console.error}>
-              <Page className="page" height={0.85*this.state.height} pageNumber={this.state.pageNumber}/>
+              {/*<Page className="page" height={0.85*this.state.height} pageNumber={this.state.pageNumber}/>*/}
               {
               //Display both pages
-              /*Array.from(new Array(this.state.numPages), (el, index) => 
-                (<Page
+              Array.from(new Array(this.state.numPages), (el, index) => 
+                (<Page className="row"
                 key={`page_${index + 1}`}
                 pageNumber={index + 1}
                 />),
                 )
-               */}
+               }
 
             </Document>
-            <p style={styles.text}>Page {this.state.pageNumber}/2</p>
           </div>
         </Carousel>
       </div>
@@ -112,6 +124,7 @@ const styles = {
       flex: 1,
       flexDirection: 'column',
       backgroundColor: 'none',
+      overflow: 'hidden',
     },
     text: {
       color: 'black',
