@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/react-particles-js
+/react-pdf
+/react-responsive-carousel
 
 # testing
 /coverage
