@@ -50,10 +50,10 @@ class MyCarousel extends Component {
       width: this.state.width,
       display: 'flex',
       flexDirection: 'column',
-      webkitAlignItems: 'center',
-      justyfyContent: 'center',
-      alignItems: 'center',
-      flex: 1,
+      //webkitAlignItems: 'center',
+      //justifyContent: 'center',
+      //alignItems: 'center',
+      //flex: 1,
       overflow: "hidden",
     };
 
@@ -63,7 +63,7 @@ class MyCarousel extends Component {
       display: 'flex',
       flexDirection: 'column',
       webkitAlignItems: 'center',
-      justyfyContent: 'flex-start',
+      justifyContent: 'flex-start',
       alignItems: 'center',
       flex: 1,
       overflowY: 'auto',
@@ -77,7 +77,11 @@ class MyCarousel extends Component {
       
           {/*0*/}
           <div style={autoHeight}>
-            <p style={styles.text}>Home</p>
+            <h1 style={styles.homescreenTitle}>Hi there,</h1> 
+            <h1 style={styles.homescreenTitle}>I'm Adrian</h1>
+            <p color="grey" style={styles.homescreenPara}>
+              This is my online portfolio. I am a M.Sc. Student in Media Technology and Engineering at Linköpings University.
+            </p>
           </div>
           
           {/*1*/}
@@ -126,8 +130,21 @@ const styles = {
       backgroundColor: 'none',
       overflow: 'hidden',
     },
-    text: {
+    homescreenTitle: {
       color: 'black',
+      fontSize: '15vh',
+      textAlign: 'left',
+      justifyContent: 'start',
+      float: 'left',
+      width: '75%',
+    },
+    homescreenPara: {
+      color: 'black',
+      opacity: 0.5,
+      fontSize: '7vh',
+      textAlign: 'left',
+      float: 'left',
+      width: '75%',
     },
     opaque: {
       opacity: '0',

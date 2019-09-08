@@ -64,16 +64,16 @@ class Header extends Component {
                         "value": Math.round(this.state.height*this.state.width*0.00005)
                   },
                   "size": {
-                        "value": 3
+                        "value": 4
                   },
                   "color": {
                         "value": ["#68D5E1", "#3795CA"]
                   },
                   "opacity": {
-                        "value": 0.75,
+                        "value": 0.9,
                         "random": false,
                         "anim": {
-                            "opacity_min": 0.4,
+                            "opacity_min": 0.6,
                         }, 
                   },
                   "shape": {
@@ -84,7 +84,7 @@ class Header extends Component {
                   },
                   "line_linked": {
                         "color": "#000000",
-                        "opacity": 0.5,
+                        "opacity": 0.8,
                   },
                   "move": {
                         "speed": 2,
