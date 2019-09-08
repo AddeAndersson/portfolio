@@ -50,10 +50,7 @@ class MyCarousel extends Component {
       width: this.state.width,
       display: 'flex',
       flexDirection: 'column',
-      //webkitAlignItems: 'center',
-      //justifyContent: 'center',
-      //alignItems: 'center',
-      //flex: 1,
+      justifyContent: 'center',
       overflow: "hidden",
     };
 
@@ -78,7 +75,7 @@ class MyCarousel extends Component {
           {/*0*/}
           <div style={autoHeight}>
             <h1 style={styles.homescreenTitle}>Hi there,</h1> 
-            <h1 style={styles.homescreenTitle}>I'm Adrian</h1>
+            <h1 style={styles.homescreenTitle}>I'm Adrian.</h1>
             <p color="grey" style={styles.homescreenPara}>
               This is my online portfolio. I am a M.Sc. Student in Media Technology and Engineering at Linköpings University.
             </p>
@@ -132,7 +129,7 @@ const styles = {
     },
     homescreenTitle: {
       color: 'black',
-      fontSize: '15vh',
+      fontSize: 'calc((12vh + 12vw)/2)',
       textAlign: 'left',
       justifyContent: 'start',
       float: 'left',
@@ -141,7 +138,7 @@ const styles = {
     homescreenPara: {
       color: 'black',
       opacity: 0.5,
-      fontSize: '7vh',
+      fontSize: 'calc((3vh + 3vw)/2)',
       textAlign: 'left',
       float: 'left',
       width: '75%',
