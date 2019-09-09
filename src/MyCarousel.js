@@ -3,6 +3,8 @@ import { Carousel } from "react-responsive-carousel";
 import './Fonts.css';
 import { Document, Page, pdfjs } from "react-pdf";
 import CV from './Documents/adrianandersson.pdf';
+import Home from './Home.js';
+import About from './About.js';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 class MyCarousel extends Component {
@@ -74,21 +76,17 @@ class MyCarousel extends Component {
       
           {/*0*/}
           <div style={autoHeight}>
-            <h1 style={styles.homescreenTitle}>Hi there,</h1> 
-            <h1 style={styles.homescreenTitle}>I'm Adrian.</h1>
-            <p color="grey" style={styles.homescreenPara}>
-              This is my online portfolio. I am a M.Sc. Student in Media Technology and Engineering at Linköpings University.
-            </p>
+            <Home/>
           </div>
           
           {/*1*/}
           <div style={autoHeight}>
-            <p style={styles.text}>About</p>
+            <About/>
           </div>
 
           {/*2*/}
           <div style={autoHeight}>
-            <p style={styles.text}>Projects {this.state.height} {this.state.width}</p>
+            <p>Projects {this.state.height} {this.state.width}</p>
           </div>
 
           {/*3*/}
@@ -142,8 +140,5 @@ const styles = {
       textAlign: 'left',
       float: 'left',
       width: '75%',
-    },
-    opaque: {
-      opacity: '0',
     },
 };
