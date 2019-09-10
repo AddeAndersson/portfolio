@@ -5,8 +5,10 @@ class Home extends Component {
   render() {
     return(
    	  <div>
-      	<h1 style={styles.homescreenTitle}>Hi there,</h1> 
-        <h1 style={styles.homescreenTitle}>I'm Adrian.</h1>
+      	<h1 style={styles.homescreenTitle}>
+      		Hi there,<br/> 
+        	I'm Adrian.
+        </h1>
         <p style={styles.homescreenPara}>
               Welcome to my online portfolio. I am a M.Sc. <br/>
               Student  in Media Technology and Engineering <br/>
@@ -27,6 +29,7 @@ const styles = {
       justifyContent: 'start',
       float: 'left',
       width: '75%',
+      lineHeight: 1.2,
     },
     homescreenPara: {
       color: 'black',
