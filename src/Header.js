@@ -162,11 +162,11 @@ const styles = {
   },
 
   particleWrapper: {
-    zIndex: -10,
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    backgroundColor: 'none',
+      zIndex: -10,
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      backgroundColor: 'none',
   },
 
   footer: {

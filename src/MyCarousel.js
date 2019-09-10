@@ -5,6 +5,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 import CV from './Documents/adrianandersson.pdf';
 import Home from './Home.js';
 import About from './About.js';
+import Projects from './Projects.js';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 class MyCarousel extends Component {
@@ -61,7 +62,7 @@ class MyCarousel extends Component {
       width: this.state.width,
       display: 'flex',
       flexDirection: 'column',
-      webkitAlignItems: 'center',
+      WebkitAlignItems: 'center',
       justifyContent: 'flex-start',
       alignItems: 'center',
       flex: 1,
@@ -86,23 +87,20 @@ class MyCarousel extends Component {
 
           {/*2*/}
           <div style={autoHeight}>
-            <p>Projects {this.state.height} {this.state.width}</p>
+            <Projects/>
           </div>
 
           {/*3*/}
           <div id="scrollstyle" style={scrollable} onClick={this.changePage}>
             <Document file={CV} onLoadSuccess={this.onDocumentLoadSuccess} onLoadError={console.error}>
-              {/*<Page className="page" height={0.85*this.state.height} pageNumber={this.state.pageNumber}/>*/}
-              {
-              //Display both pages
-              Array.from(new Array(this.state.numPages), (el, index) => 
+              
+              {Array.from(new Array(this.state.numPages), (el, index) => 
                 (<Page className="row"
                 key={`page_${index + 1}`}
                 pageNumber={index + 1}
                 />),
                 )
-               }
-
+              }
             </Document>
           </div>
         </Carousel>
