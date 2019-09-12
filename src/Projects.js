@@ -32,7 +32,7 @@ class Home extends Component {
           
           <li style={styles.item}>
               <h1>Online Portfolio</h1>
-              <p>You are looking at it!</p>
+              <p>You are looking at it.</p>
               <p>
                 <a href='https://github.com/AddeAndersson'>
                     {code}
