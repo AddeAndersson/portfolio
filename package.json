@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AddeAndersson.github.io/portfolio",
+  "homepage": "https://AddeAndersson.github.io/portfolio/public",
   "dependencies": {
     "particles.js": "^2.0.0",
     "react": "^16.5.2",
