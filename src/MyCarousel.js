@@ -73,7 +73,7 @@ class MyCarousel extends Component {
       <div className="carouselFade" style={styles.carousel}>
         <Carousel autoPlay={false} useKeyboardArrows={true} showThumbs={false} infiniteLoop={true} axis={'vertical'}
         interval={5000} transitionTime={800} selectedItem={this.props.item} showArrows={false} showStatus={false}
-        showIndicators={false}>
+        showIndicators={false} swipeable={false}>
       
           {/*0*/}
           <div style={autoHeight}>
