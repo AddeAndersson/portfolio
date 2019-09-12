@@ -42,6 +42,7 @@ const styles = {
       textAlign: 'left',
       float: 'left',
       width: '60%',
+      marginLeft: '30px',
     },
 
   highlight: {

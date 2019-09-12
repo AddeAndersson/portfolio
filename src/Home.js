@@ -30,6 +30,8 @@ const styles = {
       float: 'left',
       width: '75%',
       lineHeight: 1.2,
+      marginLeft: '30px',
+      padding: 0,
     },
     homescreenPara: {
       color: 'black',
@@ -38,5 +40,6 @@ const styles = {
       textAlign: 'left',
       float: 'left',
       width: '75%',
+      marginLeft: '30px',
     },
 };
