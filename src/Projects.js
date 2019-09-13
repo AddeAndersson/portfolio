@@ -18,12 +18,12 @@ class Home extends Component {
                 place in a 3D model of Täppan in campus Norrköping.
               </p>
               <p>
-                
+                <a>
                     {code}
-                
-                
+                </a>
+                <a>
                     {preview}
-                
+                </a>
               </p>
           </li>
           
@@ -33,12 +33,12 @@ class Home extends Component {
                 A RTS-styled VR game made in Unity.
               </p>
               <p>
-                
+                <a>
                     {code}
-                
-                
+                </a>
+                <a>
                     {preview}
-                
+                </a>
               </p>
           </li>
           
@@ -50,12 +50,12 @@ class Home extends Component {
                 addition to transparent and perfectly reflecting objects.
               </p>
               <p>
-                
+                <a>
                     {code}
-                
-                
+                </a>
+                <a>
                     {preview}
-                
+                </a>
               </p>
           </li>
           
@@ -69,9 +69,9 @@ class Home extends Component {
                 <a href='https://github.com/AddeAndersson/NumberIdentification'>
                     {code}
                 </a>
-                
+                <a>
                     {preview}
-                
+                </a>
               </p>
           </li>
           
@@ -85,9 +85,9 @@ class Home extends Component {
                 <a href='https://github.com/AddeAndersson/LegoSearcher'>
                     {code}
                 </a>
-                
+                <a>
                     {preview}
-                
+                </a>
               </p>
           </li>
 
@@ -101,9 +101,9 @@ class Home extends Component {
                 <a href='https://github.com/AddeAndersson/TNM085'>
                     {code}
                 </a>
-                
+                <a>
                     {preview}
-                
+                </a>
               </p>
           </li>
 
@@ -114,12 +114,12 @@ class Home extends Component {
                 integers in an Ulam spiral. Prime numbers act as obstacles.
               </p>
               <p>
-                <a href='https://github.com/AddeAndersson/TNM085'>
+                <a href='https://github.com/AddeAndersson/UlamBFS'>
                     {code}
                 </a>
-                
+                <a>
                     {preview}
-                
+                </a>
               </p>
           </li>
           
@@ -130,9 +130,9 @@ class Home extends Component {
                 <a href='https://github.com/AddeAndersson/portfolio'>
                     {code}
                 </a>
-                
+                <a>
                     {preview}
-                
+                </a>
               </p>
           </li>
        </ul>
