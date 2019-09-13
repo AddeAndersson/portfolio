@@ -95,7 +95,7 @@ class MyCarousel extends Component {
             <Document file={CV} onLoadSuccess={this.onDocumentLoadSuccess} onLoadError={console.error}>
               
               {Array.from(new Array(this.state.numPages), (el, index) => 
-                (<Page className="row"
+                (<Page className="row" height="800"
                 key={`page_${index + 1}`}
                 pageNumber={index + 1}
                 />),

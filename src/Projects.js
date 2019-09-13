@@ -106,6 +106,22 @@ class Home extends Component {
                 
               </p>
           </li>
+
+          <li style={styles.item}>
+              <h1>Shortest Path Through Ulam Spiral</h1>
+              <p>
+                A breadth-first search algorithm to find the shortest path between to
+                integers in an Ulam spiral. Prime numbers act as obstacles.
+              </p>
+              <p>
+                <a href='https://github.com/AddeAndersson/TNM085'>
+                    {code}
+                </a>
+                
+                    {preview}
+                
+              </p>
+          </li>
           
           <li style={styles.item}>
               <h1>Online Portfolio</h1>
@@ -133,17 +149,18 @@ const styles = {
       flexWrap: 'wrap',
       justifyContent: 'center',
       alignContent: 'flex-start',
-      alignItems: 'flex-start',
+      alignItems: 'stretch',
       listStyle: 'none',
       padding: 0,
       overflowY: 'scroll',
     },
   item: {
-      flex: '0 0 25%',
+      flex: '0 0 auto',
       boxShadow: '0 0 10px rgba(0, 149, 255, 0.6)',
       WebKitBoxShadow: '0 0 10px rgba(0, 149, 255, 0.6)',
       margin: '10px',
-      height: '25vh',
+      height: '40vh',
+      width: '40vh',
       padding: '5px',
 
       display: 'flex',
