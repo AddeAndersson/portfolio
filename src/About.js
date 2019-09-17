@@ -26,7 +26,7 @@ class About extends Component {
             I also created this portfolio to showcase different projects.
             <br/>
             <br/>
-            Special thanks to my wonderful and inspiring girlfriend for always 
+            Special thanks to my wonderful and inspiring Jennifer for always 
             supporting me <Emph word="<3"/>.
         </p>
       </div>

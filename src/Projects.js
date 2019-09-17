@@ -28,7 +28,7 @@ class Home extends Component {
           </li>
           
           <li style={styles.item}>
-              <h1>Evari</h1>
+              <h1>Evaari</h1>
               <p>
                 A RTS-styled VR game made in Unity.
               </p>
@@ -36,7 +36,7 @@ class Home extends Component {
                 <a>
                     {code}
                 </a>
-                <a>
+                <a href='https://www.youtube.com/watch?v=h8h2IKuRL4c'>
                     {preview}
                 </a>
               </p>
@@ -101,7 +101,7 @@ class Home extends Component {
                 <a href='https://github.com/AddeAndersson/TNM085'>
                     {code}
                 </a>
-                <a>
+                <a href='https://www.youtube.com/watch?v=iTWdN_GpJhw'>
                     {preview}
                 </a>
               </p>
@@ -162,7 +162,7 @@ const styles = {
       height: '40vh',
       width: '40vh',
       padding: '5px',
-
+      alignItems: 'center',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
