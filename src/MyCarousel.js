@@ -16,6 +16,7 @@ class MyCarousel extends Component {
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.onDocumentLoadSuccess = this.onDocumentLoadSuccess.bind(this);
     this.changePage = this.changePage.bind(this);
+    this.getPDFsize = this.getPDFsize.bind(this);
   }
 
   componentDidMount() {
@@ -45,9 +46,17 @@ class MyCarousel extends Component {
    
   }
 
+  getPDFsize(num) {
+    if(num > 900) {
+      return 900;
+    }
+    else {
+      return num;
+    }
+  }
+
   render() {
     
-
     const autoHeight = {
       height: Math.round(0.92*this.state.height) - 20, //Header is 4% vw, footer is 20px
       width: this.state.width,
@@ -95,7 +104,7 @@ class MyCarousel extends Component {
             <Document file={CV} onLoadSuccess={this.onDocumentLoadSuccess} onLoadError={console.error}>
               
               {Array.from(new Array(this.state.numPages), (el, index) => 
-                (<Page className="row" height="900"
+                (<Page className="row" height={this.getPDFsize(this.state.width)}
                 key={`page_${index + 1}`}
                 pageNumber={index + 1}
                 />),

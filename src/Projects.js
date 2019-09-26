@@ -85,7 +85,7 @@ class Home extends Component {
                 <a href='https://github.com/AddeAndersson/LegoSearcher'>
                     {code}
                 </a>
-                <a>
+                <a href='http://www.student.itn.liu.se/~adran117/tnmk30/LegoProject/startpage.php'>
                     {preview}
                 </a>
               </p>
@@ -166,5 +166,6 @@ const styles = {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
+      fontSize: 'calc((3vh + 0.5vw)/2)',
     },
 };
