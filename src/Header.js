@@ -29,15 +29,13 @@ class Header extends Component {
 
   isActive(item) {
     const active = {
-          color: 'black',
-          opacity: 0.5,
+          color: '#00CCFF',
           float: 'left',
           cursor: 'default',
           fontSize: Math.round(0.03*this.state.height),
     };
     const inactive = {
-          color: 'black',
-          opacity: 1,
+          color: "black",
           float: 'left',
           cursor: 'pointer',
           fontSize: Math.round(0.03*this.state.height),
@@ -67,7 +65,7 @@ class Header extends Component {
                         "value": 4
                   },
                   "color": {
-                        "value": ["#68D5E1", "#3795CA"]
+                        "value": ['#00CCFF']
                   },
                   "opacity": {
                         "value": 0.9,
@@ -77,7 +75,10 @@ class Header extends Component {
                         }, 
                   },
                   "shape": {
-                        "type": "circle",
+                        "type": "polygon",
+                        "polygon": {
+                            "nb_slides": 5
+                        },
                         "stroke": {
                             "width": 0,
                         }

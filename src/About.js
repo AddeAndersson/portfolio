@@ -46,7 +46,7 @@ const styles = {
     },
 
   highlight: {
-      color: '#0095ff',
+      color: '#00CCFF',
       fontWeight: '900',
   }
 };

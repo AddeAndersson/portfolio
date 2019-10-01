@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Header from './Header.js';
+import background from './Images/wallhaven-4yjxkg.jpg';
 
 class App extends Component {
 
@@ -24,6 +25,7 @@ const styles = {
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'stretch',
+		backgroundImage: 'radial-gradient(white, grey)',
 		
 	},
 

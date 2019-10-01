@@ -11,7 +11,7 @@ class Home extends Component {
     return(
     	 <ul id="scrollstyle" style={styles.container}>
           <li style={styles.item}>
-              <h1>Vacuum Hero</h1>
+              <h1 style={{color: '#00ccff'}}>Vacuum Hero</h1>
               <p>
                 A racing game where the player controls a vacuum machine
                 to collect exams in order to get points. The game takes
@@ -28,7 +28,7 @@ class Home extends Component {
           </li>
           
           <li style={styles.item}>
-              <h1>Evaari</h1>
+              <h1 style={{color: '#00ccff'}}>Evaari</h1>
               <p>
                 A RTS-styled VR game made in Unity.
               </p>
@@ -43,14 +43,14 @@ class Home extends Component {
           </li>
           
           <li style={styles.item}>
-              <h1>Monte-Carlo Ray tracer</h1>
+              <h1 style={{color: '#00ccff'}}>Monte-Carlo Ray tracer</h1>
               <p>
                 An ongoing project to render a simple scene
                 containing Lambertian and Oren-Nayar reflectors in
                 addition to transparent and perfectly reflecting objects.
               </p>
               <p>
-                <a>
+                <a href='https://github.com/AddeAndersson/MonteCarlo'>
                     {code}
                 </a>
                 <a>
@@ -60,7 +60,7 @@ class Home extends Component {
           </li>
           
           <li style={styles.item}> 
-              <h1>Handwritten Number Identification</h1>
+              <h1 style={{color: '#00ccff'}}>Handwritten Number Identification</h1>
               <p>
                 A MatLab program made to identify handwritten
                 numbers using different algorithms.
@@ -76,7 +76,7 @@ class Home extends Component {
           </li>
           
           <li style={styles.item}>
-              <h1>Lego Searcher</h1>
+              <h1 style={{color: '#00ccff'}}>Lego Searcher</h1>
               <p>
                 A website to browse through a database of lego pieces
                 in order to see which set contains that piece.
@@ -92,7 +92,7 @@ class Home extends Component {
           </li>
 
           <li style={styles.item}>
-              <h1>Biljard Simulation</h1>
+              <h1 style={{color: '#00ccff'}}>Biljard Simulation</h1>
               <p>
                 A short video as a result of simulating the initial
                 hit in a game of biljard.
@@ -108,7 +108,7 @@ class Home extends Component {
           </li>
 
           <li style={styles.item}>
-              <h1>Shortest Path Through Ulam Spiral</h1>
+              <h1 style={{color: '#00ccff'}}>Shortest Path Through Ulam Spiral</h1>
               <p>
                 A breadth-first search algorithm to find the shortest path between to
                 integers in an Ulam spiral. Prime numbers act as obstacles.
@@ -124,10 +124,10 @@ class Home extends Component {
           </li>
           
           <li style={styles.item}>
-              <h1>Online Portfolio</h1>
-              <p>You are looking at it.</p>
+              <h1 style={{color: '#00ccff'}}>Online Portfolio</h1>
+              <p>You are looking at it!</p>
               <p>
-                <a href='https://github.com/AddeAndersson/portfolio'>
+                <a>
                     {code}
                 </a>
                 <a>
@@ -156,8 +156,8 @@ const styles = {
     },
   item: {
       flex: '0 0 auto',
-      boxShadow: '0 0 10px rgba(0, 149, 255, 0.6)',
-      WebKitBoxShadow: '0 0 10px rgba(0, 149, 255, 0.6)',
+      //boxShadow: '0 0 10px rgba(0, 164, 213, 0.6)',
+      //WebKitBoxShadow: '0 0 10px rgba(0, 164, 213, 0.6)',
       margin: '10px',
       height: '40vh',
       width: '40vh',
@@ -167,5 +167,7 @@ const styles = {
       flexDirection: 'column',
       justifyContent: 'space-between',
       fontSize: 'calc((3vh + 0.5vw)/2)',
+      backgroundColor: 'white',
+      borderRadius: '50px 20px',
     },
 };
