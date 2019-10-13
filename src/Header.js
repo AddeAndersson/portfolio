@@ -29,13 +29,13 @@ class Header extends Component {
 
   isActive(item) {
     const active = {
-          color: '#00CCFF',
+          color: '#3399FF',
           float: 'left',
           cursor: 'default',
           fontSize: Math.round(0.03*this.state.height),
     };
     const inactive = {
-          color: "black",
+          color: "white",
           float: 'left',
           cursor: 'pointer',
           fontSize: Math.round(0.03*this.state.height),
@@ -62,10 +62,10 @@ class Header extends Component {
                         "value": Math.round(this.state.height*this.state.width*0.00005)
                   },
                   "size": {
-                        "value": 4
+                        "value": 2
                   },
                   "color": {
-                        "value": ['#00CCFF']
+                        "value": ['#3399FF']
                   },
                   "opacity": {
                         "value": 0.9,
@@ -80,7 +80,8 @@ class Header extends Component {
                             "nb_slides": 5
                         },
                         "stroke": {
-                            "width": 0,
+                            "width": 2,
+                            "color": '#66B2FF', 
                         }
                   },
                   "line_linked": {

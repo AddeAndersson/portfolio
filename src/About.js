@@ -43,10 +43,11 @@ const styles = {
       float: 'left',
       width: '60%',
       marginLeft: '30px',
+      color: 'white',
     },
 
   highlight: {
-      color: '#00CCFF',
+      color: '#3399FF',
       fontWeight: '900',
   }
 };

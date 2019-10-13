@@ -23,7 +23,7 @@ export default Home;
 
 const styles = {
 	homescreenTitle: {
-      color: 'black',
+      color: 'white',
       fontSize: 'calc((7vh + 15vw)/2)',
       textAlign: 'left',
       justifyContent: 'start',
@@ -34,7 +34,7 @@ const styles = {
       padding: 0,
     },
     homescreenPara: {
-      color: 'black',
+      color: 'white',
       opacity: 0.5,
       fontSize: 'calc((3vh + 3vw)/2)',
       textAlign: 'left',
