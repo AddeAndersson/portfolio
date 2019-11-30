@@ -29,15 +29,13 @@ class Header extends Component {
 
   isActive(item) {
     const active = {
-          color: 'black',
-          opacity: 0.5,
+          color: '#3399FF',
           float: 'left',
           cursor: 'default',
           fontSize: Math.round(0.03*this.state.height),
     };
     const inactive = {
-          color: 'black',
-          opacity: 1,
+          color: "white",
           float: 'left',
           cursor: 'pointer',
           fontSize: Math.round(0.03*this.state.height),
@@ -64,10 +62,10 @@ class Header extends Component {
                         "value": Math.round(this.state.height*this.state.width*0.00005)
                   },
                   "size": {
-                        "value": 4
+                        "value": 2
                   },
                   "color": {
-                        "value": ["#68D5E1", "#3795CA"]
+                        "value": ['#3399FF']
                   },
                   "opacity": {
                         "value": 0.9,
@@ -77,9 +75,13 @@ class Header extends Component {
                         }, 
                   },
                   "shape": {
-                        "type": "circle",
+                        "type": "polygon",
+                        "polygon": {
+                            "nb_slides": 5
+                        },
                         "stroke": {
-                            "width": 0,
+                            "width": 2,
+                            "color": '#66B2FF', 
                         }
                   },
                   "line_linked": {
@@ -162,11 +164,11 @@ const styles = {
   },
 
   particleWrapper: {
-    zIndex: -10,
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    backgroundColor: 'none',
+      zIndex: -10,
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      backgroundColor: 'none',
   },
 
   footer: {

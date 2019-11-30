@@ -24,7 +24,7 @@ class About extends Component {
             I created this portfolio to showcase different projects.
             <br/>
             <br/>
-            Special thanks to my wonderful and inspiring girlfriend for always 
+            Special thanks to my wonderful and inspiring Jennifer for always 
             supporting me <Emph word="<3"/>.
         </p>
       </div>
@@ -40,10 +40,12 @@ const styles = {
       textAlign: 'left',
       float: 'left',
       width: '60%',
+      marginLeft: '30px',
+      color: 'white',
     },
 
   highlight: {
-      color: '#0095ff',
+      color: '#3399FF',
       fontWeight: '900',
   }
 };

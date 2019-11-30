@@ -5,6 +5,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 import CV from './Documents/adrianandersson.pdf';
 import Home from './Home.js';
 import About from './About.js';
+import Projects from './Projects.js';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 class MyCarousel extends Component {
@@ -15,6 +16,7 @@ class MyCarousel extends Component {
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.onDocumentLoadSuccess = this.onDocumentLoadSuccess.bind(this);
     this.changePage = this.changePage.bind(this);
+    this.getPDFsize = this.getPDFsize.bind(this);
   }
 
   componentDidMount() {
@@ -44,9 +46,17 @@ class MyCarousel extends Component {
    
   }
 
+  getPDFsize(num) {
+    if(num > 900) {
+      return 900;
+    }
+    else {
+      return num;
+    }
+  }
+
   render() {
     
-
     const autoHeight = {
       height: Math.round(0.92*this.state.height) - 20, //Header is 4% vw, footer is 20px
       width: this.state.width,
@@ -61,7 +71,7 @@ class MyCarousel extends Component {
       width: this.state.width,
       display: 'flex',
       flexDirection: 'column',
-      webkitAlignItems: 'center',
+      WebkitAlignItems: 'center',
       justifyContent: 'flex-start',
       alignItems: 'center',
       flex: 1,
@@ -72,7 +82,7 @@ class MyCarousel extends Component {
       <div className="carouselFade" style={styles.carousel}>
         <Carousel autoPlay={false} useKeyboardArrows={true} showThumbs={false} infiniteLoop={true} axis={'vertical'}
         interval={5000} transitionTime={800} selectedItem={this.props.item} showArrows={false} showStatus={false}
-        showIndicators={false}>
+        showIndicators={false} swipeable={false} swipeScrollTolerance={100000}>
       
           {/*0*/}
           <div style={autoHeight}>
@@ -86,23 +96,20 @@ class MyCarousel extends Component {
 
           {/*2*/}
           <div style={autoHeight}>
-            <p>Projects {this.state.height} {this.state.width}</p>
+            <Projects/>
           </div>
 
           {/*3*/}
           <div id="scrollstyle" style={scrollable} onClick={this.changePage}>
             <Document file={CV} onLoadSuccess={this.onDocumentLoadSuccess} onLoadError={console.error}>
-              {/*<Page className="page" height={0.85*this.state.height} pageNumber={this.state.pageNumber}/>*/}
-              {
-              //Display both pages
-              Array.from(new Array(this.state.numPages), (el, index) => 
-                (<Page className="row"
+              
+              {Array.from(new Array(this.state.numPages), (el, index) => 
+                (<Page className="row" height={this.getPDFsize(this.state.width)}
                 key={`page_${index + 1}`}
                 pageNumber={index + 1}
                 />),
                 )
-               }
-
+              }
             </Document>
           </div>
         </Carousel>
