@@ -4,6 +4,8 @@ import './Header.css';
 import "react-responsive-carousel/lib/styles/carousel.css";
 import SVG from 'react-inlinesvg';
 import Particles from 'react-particles-js';
+import LinkedIn from './Icons/linkedin.svg';
+import GitHub from './Icons/github.svg';
 
 class Header extends Component {
 
@@ -49,11 +51,8 @@ class Header extends Component {
   render() {
 
       const liSocials = {
-            color: 'white',
             cursor: 'pointer',
             float: 'right',
-            height: this.state.height*0.03,
-            width: this.state.height*0.03,
       };
 
       const parParam = {
@@ -121,19 +120,19 @@ class Header extends Component {
                 </li>
                 <li style={liSocials}>
                   <a href='https://www.linkedin.com/in/adrian-andersson-410345149/'>
-                    <SVG src='https://image.flaticon.com/icons/svg/733/733617.svg'/> {/*LinkedIn svg*/}
+                    <SVG height={Math.round(0.03*this.state.height)} src={LinkedIn}/> {/*LinkedIn svg*/}
                   </a>
                 </li>
                 <li style={liSocials}>
                   <a href='https://github.com/AddeAndersson'>
-                    <SVG src='https://image.flaticon.com/icons/svg/733/733609.svg'/> {/*GitHub svg*/}
+                    <SVG height={Math.round(0.03*this.state.height)} src={GitHub}/> {/*GitHub svg*/}
                   </a>
                 </li>
               </ul>
             <div style={styles.carContainer}>
               <MyCarousel item={this.state.chosenItem}/>
               <Particles className="particlesFade" height={this.state.height} width={this.state.width} style={styles.particleWrapper} params={parParam}/>
-              <div style={styles.footer}>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+              {/*<div style={styles.footer}>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>*/}
             </div>
         	</div>
       );	
