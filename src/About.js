@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 
 class About extends Component {
 
-
-
   render() {
     const Emph = ({word}) => <span style={styles.highlight}>{word}</span>;
 
@@ -23,7 +21,7 @@ class About extends Component {
             I have always been a fast learner and is <Emph word="eager to learn"/> new things, because 
             of this I have been successful in school and have achieved high grades in most 
             of my courses. Grades only matter that much when applying for a job which is why 
-            I also created this portfolio to showcase different projects.
+            I created this portfolio to showcase different projects.
             <br/>
             <br/>
             Special thanks to my wonderful and inspiring Jennifer for always 

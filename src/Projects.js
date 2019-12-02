@@ -156,8 +156,9 @@ const styles = {
     },
   item: {
       flex: '0 0 auto',
-      //boxShadow: '0 0 10px rgba(0, 164, 213, 0.6)',
-      //WebKitBoxShadow: '0 0 10px rgba(0, 164, 213, 0.6)',
+      boxShadow: '3px 3px 5px 6px rgba(255, 255, 255, 0.3)',
+      WebKitBoxShadow: '3px 3px 5px 6px rgba(255, 255, 255, 0.3)',
+      MozBoxShadow: '3px 3px 5px 6px rgba(255, 255, 255, 0.3)',
       margin: '10px',
       height: '40vh',
       width: '40vh',
@@ -168,7 +169,7 @@ const styles = {
       justifyContent: 'space-between',
       fontSize: 'calc((3vh + 0.5vw)/2)',
       backgroundColor: '#292726',
-      borderRadius: '50px 20px',
+      //borderRadius: '50px 20px',
       color: 'white',
     },
     inactiveLink: {
