@@ -3,9 +3,9 @@ import MyCarousel from './MyCarousel.js';
 import './Header.css';
 import "react-responsive-carousel/lib/styles/carousel.css";
 import SVG from 'react-inlinesvg';
-import Particles from 'react-particles-js';
 import LinkedIn from './Icons/linkedin.svg';
 import GitHub from './Icons/github.svg';
+import * as THREE from 'three';
 
 class Header extends Component {
 
@@ -19,6 +19,32 @@ class Header extends Component {
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
+
+    //THREE
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+    var renderer = new THREE.WebGLRenderer({alpha: true});
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    this.mount.appendChild(renderer.domElement);
+
+    var geometry = new THREE.TorusGeometry(10, 4, 16, 100);
+    var material = new THREE.PointsMaterial({ color: 0xffffff }); material.size = 0.1;
+    var torus = new THREE.Points(geometry, material);
+    torus.position.x += 7;
+    torus.rotation.y -= Math.PI/4;
+    scene.add(torus);
+
+    camera.position.z = 30;
+
+    var animate = function() {
+      requestAnimationFrame(animate);
+      torus.rotation.z += 0.005;
+
+      renderer.render(scene, camera);
+    };
+
+    animate();
   }
 
   componentWillUnmount() {
@@ -46,62 +72,12 @@ class Header extends Component {
     else return inactive;
 }
 
-
-
   render() {
 
       const liSocials = {
             cursor: 'pointer',
             float: 'right',
       };
-
-      const parParam = {
-        "particles": {
-                  "number": {
-                        "value": Math.round(this.state.height*this.state.width*0.00005)
-                  },
-                  "size": {
-                        "value": 2
-                  },
-                  "color": {
-                        "value": ['#3399FF']
-                  },
-                  "opacity": {
-                        "value": 0.9,
-                        "random": false,
-                        "anim": {
-                            "opacity_min": 0.6,
-                        }, 
-                  },
-                  "shape": {
-                        "type": "polygon",
-                        "polygon": {
-                            "nb_slides": 5
-                        },
-                        "stroke": {
-                            "width": 2,
-                            "color": '#66B2FF', 
-                        }
-                  },
-                  "line_linked": {
-                        "color": "#000000",
-                        "opacity": 0.8,
-                  },
-                  "move": {
-                        "speed": 2,
-                  },
-        },
-
-
-        "interactivity": {
-                  "events": {
-                        "onhover": {
-                            "enable": false,
-                            "mode": "repulse"
-                        },
-                    }
-        }
-      }
 
       return(
         	<div style={styles.container}>
@@ -131,8 +107,7 @@ class Header extends Component {
               </ul>
             <div style={styles.carContainer}>
               <MyCarousel item={this.state.chosenItem}/>
-              <Particles className="particlesFade" height={this.state.height} width={this.state.width} style={styles.particleWrapper} params={parParam}/>
-              {/*<div style={styles.footer}>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>*/}
+              <div style={styles.particleWrapper} ref={ref => (this.mount = ref)}/>
             </div>
         	</div>
       );	
