@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://AddeAndersson.github.io/portfolio",
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "particles.js": "^2.0.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
