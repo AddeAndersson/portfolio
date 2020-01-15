@@ -1,7 +1,67 @@
 import React, {Component} from 'react';
 import './Fonts.css';
 
+function scrollToTop() {
+    /*window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });*/
+    window.scrollTo(0, 0);
+}
+
 class Home extends Component {
+
+  constructor(props) {
+    super(props);
+    this.isActive = this.isActive.bind(this);
+    this.state = {chosenItem: 9999999, intervalId: 0};
+  }
+
+  isActive(item) {
+      const active = {
+            flex: '0 0 auto',
+            boxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+            WebKitBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+            MozBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+            margin: '10px',
+            height: '80vh',
+            width: 'calc(160vh + 60px)',
+            padding: '5px',
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            fontSize: 'calc((3vh + 0.5vw)/2)',
+            backgroundColor: '#292726',
+            //borderRadius: '50px 20px',
+            color: 'white',
+            order: '-1',
+            cursor: 'default',
+      };
+      const inactive = {
+            flex: '0 0 auto',
+            boxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+            WebKitBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+            MozBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+            margin: '10px',
+            height: '40vh',
+            width: '40vh',
+            padding: '5px',
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            fontSize: 'calc((3vh + 0.5vw)/2)',
+            backgroundColor: '#292726',
+            //borderRadius: '50px 20px',
+            color: 'white',
+            cursor: 'pointer',
+      };
+      if(this.state.chosenItem === item) return active;
+      else return inactive;
+  }
+
+
 
   render() {
 
@@ -10,7 +70,7 @@ class Home extends Component {
 
     return(
     	 <ul id="scrollstyle" style={styles.container}>
-          <li style={styles.item}>
+          <li style={this.isActive(0)} onClick={() => {this.setState({chosenItem: 0}); scrollToTop();}}>
               <h1 style={{color: '#3399FF'}}>Vacuum Hero</h1>
               <p>
                 A racing game where the player controls a vacuum machine
@@ -27,7 +87,7 @@ class Home extends Component {
               </p>
           </li>
           
-          <li style={styles.item}>
+          <li style={this.isActive(1)} onClick={() => {this.setState({chosenItem: 1}); scrollToTop();}}>
               <h1 style={{color: '#3399FF'}}>Evaari</h1>
               <p>
                 A RTS-styled VR game made in Unity.
@@ -42,10 +102,10 @@ class Home extends Component {
               </p>
           </li>
           
-          <li style={styles.item}>
+          <li style={this.isActive(2)} onClick={() => {this.setState({chosenItem: 2}); scrollToTop();}}>
               <h1 style={{color: '#3399FF'}}>Monte-Carlo Ray tracer</h1>
               <p>
-                An ongoing project to render a simple scene
+                A project to render a simple scene
                 containing Lambertian and Oren-Nayar reflectors in
                 addition to transparent and perfectly reflecting objects.
               </p>
@@ -59,7 +119,7 @@ class Home extends Component {
               </p>
           </li>
           
-          <li style={styles.item}> 
+          <li style={this.isActive(3)} onClick={() => {this.setState({chosenItem: 3}); scrollToTop();}}> 
               <h1 style={{color: '#3399FF'}}>Handwritten Number Identification</h1>
               <p>
                 A MatLab program made to identify handwritten
@@ -75,7 +135,7 @@ class Home extends Component {
               </p>
           </li>
           
-          <li style={styles.item}>
+          <li style={this.isActive(4)} onClick={() => {this.setState({chosenItem: 4}); scrollToTop();}}>
               <h1 style={{color: '#3399FF'}}>Lego Searcher</h1>
               <p>
                 A website to browse through a database of lego pieces
@@ -91,7 +151,7 @@ class Home extends Component {
               </p>
           </li>
 
-          <li style={styles.item}>
+          <li style={this.isActive(5)} onClick={() => {this.setState({chosenItem: 5}); scrollToTop();}}>
               <h1 style={{color: '#3399FF'}}>Biljard Simulation</h1>
               <p>
                 A short video as a result of simulating the initial
@@ -107,7 +167,7 @@ class Home extends Component {
               </p>
           </li>
 
-          <li style={styles.item}>
+          <li style={this.isActive(6)} onClick={() => {this.setState({chosenItem: 6}); scrollToTop();}}>
               <h1 style={{color: '#3399FF'}}>Shortest Path Through Ulam Spiral</h1>
               <p>
                 A breadth-first search algorithm to find the shortest path between to
@@ -152,13 +212,13 @@ const styles = {
       alignItems: 'stretch',
       listStyle: 'none',
       padding: 0,
-      overflowY: 'scroll',
+      overflow: 'auto',
     },
   item: {
       flex: '0 0 auto',
-      boxShadow: '3px 3px 5px 6px rgba(255, 255, 255, 0.3)',
-      WebKitBoxShadow: '3px 3px 5px 6px rgba(255, 255, 255, 0.3)',
-      MozBoxShadow: '3px 3px 5px 6px rgba(255, 255, 255, 0.3)',
+      boxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+      WebKitBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+      MozBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
       margin: '10px',
       height: '40vh',
       width: '40vh',

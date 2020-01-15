@@ -63,7 +63,7 @@ class MyCarousel extends Component {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      overflow: "hidden",
+      //overflow: "hidden",
     };
 
     const scrollable = {
@@ -130,7 +130,7 @@ const styles = {
       flex: 1,
       flexDirection: 'column',
       backgroundColor: 'none',
-      overflow: 'hidden',
+      //overflow: 'hidden',
     },
     homescreenTitle: {
       color: 'black',
