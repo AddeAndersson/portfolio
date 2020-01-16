@@ -24,7 +24,8 @@ const styles = {
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'stretch',
-		backgroundImage: 'radial-gradient(grey, black)',
+		//backgroundImage: 'radial-gradient(grey, black)',
+		backgroundColor: '#292726',
 		
 	},
 

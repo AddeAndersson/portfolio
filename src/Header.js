@@ -29,7 +29,7 @@ class Header extends Component {
     this.mount.appendChild(renderer.domElement);
 
     var geometry = new THREE.TorusGeometry(10, 4, 16, 100);
-    var material = new THREE.PointsMaterial({ color: 0xffffff }); material.size = 0.1;
+    var material = new THREE.PointsMaterial({ color: 0x3399FF }); material.size = 0.1;
     var torus = new THREE.Points(geometry, material);
     torus.position.x += 7;
     torus.rotation.y -= Math.PI/4;

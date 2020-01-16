@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Fonts.css';
+import TNCG15 from './Images/TNCG15.jpg';
 
 function scrollToTop() {
     /*window.scrollTo({
@@ -15,11 +16,22 @@ function ShowVid(props){
   const vidSrc = props.vidSrc;
   if(thisItem === thatItem) {
     return <iframe 
-      height="100%" width="100%" 
+      height="60%" width="60%" 
       src={vidSrc} 
       frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
       allowfullscreen>
       </iframe>;
+  }
+
+  return null;
+}
+
+function ShowPic(props){
+  const thisItem = props.thisItem;
+  const thatItem = props.thatItem;
+  const picSrc = props.picSrc;
+  if(thisItem === thatItem) {
+    return <img style={{width: "60%", height: "60%"}} src={picSrc}/>
   }
 
   return null;
@@ -30,7 +42,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.isActive = this.isActive.bind(this);
-    this.state = {chosenItem: 9999999, intervalId: 0};
+    this.state = {chosenItem: -1, intervalId: 0};
   }
 
 
@@ -38,7 +50,8 @@ class Home extends Component {
   isActive(item) {
       const active = {
             flex: '0 0 auto',
-            boxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+            //boxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+            boxShadow: '4px 4px 8px rgb(0,0,0,0.7), -4px -4px 8px rgba(255,255,255, 0.2)',
             WebKitBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
             MozBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
             margin: '10px',
@@ -52,13 +65,15 @@ class Home extends Component {
             fontSize: 'calc((3vh + 0.5vw)/2)',
             backgroundColor: '#292726',
             //borderRadius: '50px 20px',
+            borderRadius: '20px',
             color: 'white',
             order: '-1',
             cursor: 'default',
       };
       const inactive = {
             flex: '0 0 auto',
-            boxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+            //boxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+            boxShadow: '4px 4px 8px rgb(0,0,0,0.5), -4px -4px 8px rgba(255,255,255, 0.1)',
             WebKitBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
             MozBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
             margin: '10px',
@@ -71,7 +86,7 @@ class Home extends Component {
             justifyContent: 'space-between',
             fontSize: 'calc((3vh + 0.5vw)/2)',
             backgroundColor: '#292726',
-            //borderRadius: '50px 20px',
+            borderRadius: '20px',
             color: 'white',
             cursor: 'pointer',
       };
@@ -107,8 +122,9 @@ class Home extends Component {
               <h1 style={{color: '#3399FF'}}>Evaari</h1>
               <p>
                 A RTS-styled VR game made in Unity. <br/>
-                <ShowVid vidSrc="https://www.youtube.com/embed/h8h2IKuRL4c" thisItem={1} thatItem={this.state.chosenItem}/>
+                
               </p>
+              <ShowVid vidSrc="https://www.youtube.com/embed/h8h2IKuRL4c" thisItem={1} thatItem={this.state.chosenItem}/>
               <p>
                 <a style={styles.inactiveLink}>
                     {code}
@@ -123,12 +139,10 @@ class Home extends Component {
                 containing Lambertian and Oren-Nayar reflectors in
                 addition to transparent and perfectly reflecting objects.
               </p>
+              <ShowPic picSrc={TNCG15} thisItem={2} thatItem={this.state.chosenItem}/>
               <p>
                 <a style={styles.activeLink} href='https://github.com/AddeAndersson/MonteCarlo'>
                     {code}
-                </a>
-                <a style={styles.inactiveLink}>
-                    {preview}
                 </a>
               </p>
           </li>
@@ -170,8 +184,8 @@ class Home extends Component {
               <p>
                 A short video as a result of simulating the initial
                 hit in a game of biljard. <br/>
-                <ShowVid vidSrc="https://www.youtube.com/embed/iTWdN_GpJhw" thisItem={5} thatItem={this.state.chosenItem}/>
               </p>
+              <ShowVid vidSrc="https://www.youtube.com/embed/iTWdN_GpJhw" thisItem={5} thatItem={this.state.chosenItem}/>
               <p>
                 <a style={styles.activeLink} href='https://github.com/AddeAndersson/TNM085'>
                     {code}
@@ -187,6 +201,38 @@ class Home extends Component {
               </p>
               <p>
                 <a style={styles.activeLink} href='https://github.com/AddeAndersson/UlamBFS'>
+                    {code}
+                </a>
+                <a style={styles.inactiveLink}>
+                    {preview}
+                </a>
+              </p>
+          </li>
+
+          <li style={this.isActive(7)} onClick={() => {this.setState({chosenItem: 7}); scrollToTop();}}>
+              <h1 style={{color: '#3399FF'}}>Procedural Terrain</h1>
+              <p>
+                A terrain created with procedural methods and Poisson disk sampled instances of grass.
+                There is also a thunderstorm going in. Created with Three.js.
+              </p>
+              <p>
+                <a style={styles.activeLink} href='https://github.com/AddeAndersson/ProceduralTerrain'>
+                    {code}
+                </a>
+                <a style={styles.activeLink} href='https://addeandersson.github.io/ProceduralTerrain/'>
+                    {preview}
+                </a>
+              </p>
+          </li>
+
+          <li style={this.isActive(8)} onClick={() => {this.setState({chosenItem: 8}); scrollToTop();}}>
+              <h1 style={{color: '#3399FF'}}>Text Mining</h1>
+              <p>
+                A project created to implement and compare LGK-Bidiagonalization and K-Means clustering to search
+                in a collection of medical abstracts from a set of search phrases. Uses the Medline dataset.
+              </p>
+              <p>
+                <a style={styles.activeLink} href='https://github.com/AddeAndersson/TNA009DataMining'>
                     {code}
                 </a>
                 <a style={styles.inactiveLink}>
@@ -228,21 +274,23 @@ const styles = {
     },
   item: {
       flex: '0 0 auto',
-      boxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
-      WebKitBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
-      MozBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
-      margin: '10px',
-      height: '40vh',
-      width: '40vh',
-      padding: '5px',
-      alignItems: 'center',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between',
-      fontSize: 'calc((3vh + 0.5vw)/2)',
-      backgroundColor: '#292726',
-      //borderRadius: '50px 20px',
-      color: 'white',
+            //boxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+            boxShadow: '4px 4px 8px rgb(0,0,0,0.7), -4px -4px 8px rgba(255,255,255, 0.2)',
+            WebKitBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+            MozBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
+            margin: '10px',
+            height: 'min(40vw, 40vh)',
+            width: 'min(40vw, 40vh)',
+            padding: '5px',
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            fontSize: 'calc((3vh + 0.5vw)/2)',
+            backgroundColor: '#292726',
+            borderRadius: '20px',
+            color: 'white',
+            cursor: 'default',
     },
     inactiveLink: {
         color: 'white',
