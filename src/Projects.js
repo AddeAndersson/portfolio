@@ -9,6 +9,22 @@ function scrollToTop() {
     window.scrollTo(0, 0);
 }
 
+function ShowVid(props){
+  const thisItem = props.thisItem;
+  const thatItem = props.thatItem;
+  const vidSrc = props.vidSrc;
+  if(thisItem === thatItem) {
+    return <iframe 
+      height="100%" width="100%" 
+      src={vidSrc} 
+      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+      </iframe>;
+  }
+
+  return null;
+}
+
 class Home extends Component {
 
   constructor(props) {
@@ -17,6 +33,8 @@ class Home extends Component {
     this.state = {chosenItem: 9999999, intervalId: 0};
   }
 
+
+
   isActive(item) {
       const active = {
             flex: '0 0 auto',
@@ -24,8 +42,8 @@ class Home extends Component {
             WebKitBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
             MozBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
             margin: '10px',
-            height: '80vh',
-            width: 'calc(160vh + 60px)',
+            height: 'min(calc(80vw + 20px), calc(80vh + 20px))',
+            width: 'min(calc(80vw + 20px), calc(80vh + 20px))',
             padding: '5px',
             alignItems: 'center',
             display: 'flex',
@@ -44,8 +62,8 @@ class Home extends Component {
             WebKitBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
             MozBoxShadow: 'inset 0px 0px 6px rgba(255, 255, 255, 0.3)',
             margin: '10px',
-            height: '40vh',
-            width: '40vh',
+            height: 'min(40vw, 40vh)',
+            width: 'min(40vw, 40vh)',
             padding: '5px',
             alignItems: 'center',
             display: 'flex',
@@ -60,8 +78,6 @@ class Home extends Component {
       if(this.state.chosenItem === item) return active;
       else return inactive;
   }
-
-
 
   render() {
 
@@ -90,14 +106,12 @@ class Home extends Component {
           <li style={this.isActive(1)} onClick={() => {this.setState({chosenItem: 1}); scrollToTop();}}>
               <h1 style={{color: '#3399FF'}}>Evaari</h1>
               <p>
-                A RTS-styled VR game made in Unity.
+                A RTS-styled VR game made in Unity. <br/>
+                <ShowVid vidSrc="https://www.youtube.com/embed/h8h2IKuRL4c" thisItem={1} thatItem={this.state.chosenItem}/>
               </p>
               <p>
                 <a style={styles.inactiveLink}>
                     {code}
-                </a>
-                <a style={styles.activeLink} href='https://www.youtube.com/watch?v=h8h2IKuRL4c'>
-                    {preview}
                 </a>
               </p>
           </li>
@@ -155,14 +169,12 @@ class Home extends Component {
               <h1 style={{color: '#3399FF'}}>Biljard Simulation</h1>
               <p>
                 A short video as a result of simulating the initial
-                hit in a game of biljard.
+                hit in a game of biljard. <br/>
+                <ShowVid vidSrc="https://www.youtube.com/embed/iTWdN_GpJhw" thisItem={5} thatItem={this.state.chosenItem}/>
               </p>
               <p>
                 <a style={styles.activeLink} href='https://github.com/AddeAndersson/TNM085'>
                     {code}
-                </a>
-                <a style={styles.activeLink} href='https://www.youtube.com/watch?v=iTWdN_GpJhw'>
-                    {preview}
                 </a>
               </p>
           </li>
