@@ -9,10 +9,6 @@
 	z-index: 1;
 	font-family: 'Titillium Web', sans-serif;
 	font-weight: 500;
-	animation: fadein 5s;
-    -moz-animation: fadein 5s; /* Firefox */
-    -webkit-animation: fadein 5s; /* Safari and Chrome */
-    -o-animation: fadein 5s; /* Opera */
 }
 
 .particlesFade {

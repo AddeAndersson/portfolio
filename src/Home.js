@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
+import './Home.css';
 
 class Home extends Component {
 
   render() {
     return(
    	  <div>
-      	<h1 style={styles.homescreenTitle}>
-      		Hi there,<br/> 
-        	I'm Adrian.
+      	<h1 class='css-typing' style={styles.homescreenTitle}>
+      		<p>Hi there,</p> 
+        	<p>I'm Adrian.</p>
         </h1>
-        <p style={styles.homescreenPara}>
+        <p class='fadein' style={styles.homescreenPara}>
               Welcome to my online portfolio. I am a M.Sc.
               Student  in Media Technology and Engineering
               at Linköping University.
@@ -34,8 +35,7 @@ const styles = {
       padding: 0,
     },
     homescreenPara: {
-      color: 'white',
-      opacity: 0.5,
+      color: 'grey',
       fontSize: 'calc((3vh + 3vw)/2)',
       textAlign: 'left',
       float: 'left',
