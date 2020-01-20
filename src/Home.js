@@ -6,11 +6,11 @@ class Home extends Component {
   render() {
     return(
    	  <div>
-      	<h1 class='css-typing' style={styles.homescreenTitle}>
+      	<h1 className='css-typing' style={styles.homescreenTitle}>
       		<p>Hi there,</p> 
         	<p>I'm Adrian.</p>
         </h1>
-        <p class='fadein' style={styles.homescreenPara}>
+        <p className='fadein' style={styles.homescreenPara}>
               Welcome to my online portfolio. I am a M.Sc.
               Student  in Media Technology and Engineering
               at Linköping University.

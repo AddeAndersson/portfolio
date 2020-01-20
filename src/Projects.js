@@ -229,10 +229,26 @@ class Home extends Component {
               <h1 style={{color: '#3399FF'}}>Text Mining</h1>
               <p>
                 A project created to implement and compare LGK-Bidiagonalization and K-Means clustering to search
-                in a collection of medical abstracts from a set of search phrases. Uses the Medline dataset.
+                in a collection of medical abstracts from a set of search phrases.
               </p>
               <p>
                 <a style={styles.activeLink} href='https://github.com/AddeAndersson/TNA009DataMining'>
+                    {code}
+                </a>
+                <a style={styles.inactiveLink}>
+                    {preview}
+                </a>
+              </p>
+          </li>
+
+          <li style={this.isActive(9)} onClick={() => {this.setState({chosenItem: 9}); scrollToTop();}}>
+              <h1 style={{color: '#3399FF'}}>Movie Recommender System</h1>
+              <p>
+                A machine learning project to implement a collaborative based recommendation system based
+                on Jaccard similarity.
+              </p>
+              <p>
+                <a style={styles.inactiveLink}>
                     {code}
                 </a>
                 <a style={styles.inactiveLink}>

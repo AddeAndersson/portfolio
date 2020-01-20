@@ -3,9 +3,14 @@
   white-space: nowrap;
   overflow: hidden;
   width: 4.6em;
-  -webkit-animation: type 2s steps(40, end);
-  animation: type 2s steps(40, end);
+  -webkit-animation: type 2s steps(40, end), blink .5s step-end infinite alternate;
+  -o-animation: type 2s steps(40, end), blink .5s step-end infinite alternate;
+  -moz-animation: type 2s steps(40, end), blink .5s step-end infinite alternate;
+  animation: type 2s steps(40, end), blink .5s step-end infinite alternate;
+  
   -webkit-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
@@ -15,11 +20,20 @@
   overflow: hidden;
   width: 4.8em;
   opacity: 0;
+  
   -webkit-animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
+  -o-animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
+  -moz-animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
   animation: type2 2s steps(40, end), blink .5s step-end infinite alternate;
+  
   -webkit-animation-delay: 2s;
   animation-delay: 2s;
+  -o-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  
   -webkit-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
