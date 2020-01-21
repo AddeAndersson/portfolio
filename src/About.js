@@ -101,8 +101,8 @@ class About extends Component {
 		      size={Math.max(window.innerWidth / 3, window.innerHeight / 3)}
 		    />
 		    <p style={styles.para}>
-		    	A representation of my current grades cathegorized. <br/> 
-		    	The grading is a 3-5 scale, 5 being the highest.
+		    	A representation of my current average grades cathegorized. <br/> 
+		    	The grading is on a 3-5 scale, 5 being the highest.
 		    </p>
 		</div>
 	  </div>
@@ -124,14 +124,12 @@ const styles = {
     radar: {
     	flex: '0 0 auto',
         alignItems: 'center',
-        marginTop: '20px',
+        marginTop: '20px, 20px',
     },
 
     radarText: {
     	flexDirection: 'column',
-    	display: 'flex',
-    	height: 'auto',
-
+    	display: 'flex',    
     },
 
     divStyle: {

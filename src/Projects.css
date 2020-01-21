@@ -1,0 +1,33 @@
+#scrollstyle li {
+	flex: 0 0 auto;
+    box-shadow: 4px 4px 8px rgb(0,0,0,0.7), -4px -4px 8px rgba(255,255,255, 0.2);
+    -webkit-box-shadow: 4px 4px 8px rgb(0,0,0,0.7), -4px -4px 8px rgba(255,255,255, 0.2);
+    -moz-box-shadow: 4px 4px 8px rgb(0,0,0,0.7), -4px -4px 8px rgba(255,255,255, 0.2);
+    margin: 10px;
+    padding: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: calc((3vh + 0.5vw)/2);
+    background-color: #292726;
+    border-radius: 20px;
+    color: white;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-transition: width 0.5s ease 0s, height 0.5s ease 0.5s, transform 0.5s; /* Safari */
+    transition: width 0.5s ease 0s, height 0.5s ease 0.5s, transform 0.5s;
+}
+
+.fades {
+	
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
