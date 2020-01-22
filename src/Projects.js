@@ -273,7 +273,7 @@ class Home extends Component {
               </p>
           </li>
           
-          <li style={styles.item}>
+          <li style={this.isActive(10)} onClick={() => {this.changeState(10)}}>
               <h1 style={{color: '#3399FF'}}>Online Portfolio</h1>
               <p className="fades">You are looking at it!</p>
               <p>
@@ -301,13 +301,8 @@ const styles = {
       alignContent: 'flex-start',
       alignItems: 'stretch',
       listStyle: 'none',
-      //padding: '0% 9%',
+      padding: '0%',
       overflow: 'auto',
-    },
-  item: {
-        height: 'min(40vw, 40vh)',
-        width: 'min(40vw, 40vh)',
-        cursor: 'default',
     },
     inactiveLink: {
         color: 'white',
