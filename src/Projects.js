@@ -62,7 +62,7 @@ class Home extends Component {
   }
 
   isActive(item) {
-    if(this.state.width < 600){
+    if(this.state.width < 700){
       const active = {
             height: 'calc(80vw + 20px)',
             width: 'calc(80vw + 20px)',
@@ -118,9 +118,9 @@ class Home extends Component {
 
     return(
     	 <ul id="scrollstyle" style={styles.container}>
-          <li ref={ref} style={this.isActive(0)} onClick={() => {this.changeState(0)}}>
+          <li style={this.isActive(0)} /*onClick={() => {this.changeState(0)}}*/>
               <h1 style={{color: '#3399FF'}}>Vacuum Hero</h1>
-              <p className="fades">
+              <p>
                 A racing game where the player controls a vacuum machine
                 to collect exams in order to get points. The game takes
                 place in a 3D model of Täppan in campus Norrköping.
@@ -135,9 +135,10 @@ class Home extends Component {
               </p>
           </li>
           
-          <li ref={ref} style={this.isActive(1)} onClick={() => {this.changeState(1)}}>
+          <li style={this.isActive(1)} className='clickable' onClick={() => {this.changeState(1)}}>
+              <div style={styles.ribbon} className="corner-ribbon top-right sticky blue">Click me!</div>
               <h1 style={{color: '#3399FF'}}>Evaari</h1>
-              <p className="fades">
+              <p>
                 A RTS-styled VR game made in Unity. <br/>
               </p>
               <ShowVid className="fades" vidSrc="https://www.youtube.com/embed/h8h2IKuRL4c" thisItem={1} thatItem={this.state.chosenItem}/>
@@ -148,9 +149,10 @@ class Home extends Component {
               </p>
           </li>
           
-          <li ref={ref} style={this.isActive(2)} onClick={() => {this.changeState(2)}}>
+          <li style={this.isActive(2)} className='clickable' onClick={() => {this.changeState(2)}}>
+              <div style={styles.ribbon} className="corner-ribbon top-right sticky blue">Click me!</div>
               <h1 style={{color: '#3399FF'}}>Monte-Carlo Ray tracer</h1>
-              <p className="fades">
+              <p>
                 A project to render a simple scene
                 containing Lambertian and Oren-Nayar reflectors in
                 addition to transparent and perfectly reflecting objects.
@@ -163,9 +165,9 @@ class Home extends Component {
               </p>
           </li>
           
-          <li ref={ref} style={this.isActive(3)} onClick={() => {this.changeState(3)}}> 
+          <li style={this.isActive(3)} /*onClick={() => {this.changeState(3)}}*/> 
               <h1 style={{color: '#3399FF'}}>Digit Identification</h1>
-              <p className="fades">
+              <p>
                 A MatLab program made to identify handwritten
                 digits using different algorithms.
               </p>
@@ -179,9 +181,9 @@ class Home extends Component {
               </p>
           </li>
           
-          <li ref={ref} style={this.isActive(4)} onClick={() => {this.changeState(4)}}>
+          <li style={this.isActive(4)} /*onClick={() => {this.changeState(4)}}*/>
               <h1 style={{color: '#3399FF'}}>Lego Searcher</h1>
-              <p className="fades">
+              <p>
                 A website to browse through a database of lego pieces
                 in order to see which set contains that piece.
               </p>
@@ -195,9 +197,10 @@ class Home extends Component {
               </p>
           </li>
 
-          <li ref={ref} style={this.isActive(5)} onClick={() => {this.changeState(5)}}>
+          <li style={this.isActive(5)} className='clickable' onClick={() => {this.changeState(5)}}>
+              <div style={styles.ribbon} className="corner-ribbon top-right sticky blue">Click me!</div>
               <h1 style={{color: '#3399FF'}}>Biljard Simulation</h1>
-              <p className="fades">
+              <p>
                 A short video as a result of simulating the initial
                 hit in a game of biljard. <br/>
               </p>
@@ -209,9 +212,9 @@ class Home extends Component {
               </p>
           </li>
 
-          <li ref={ref} style={this.isActive(6)} onClick={() => {this.changeState(6)}}>
+          <li style={this.isActive(6)} /*onClick={() => {this.changeState(6)}}*/>
               <h1 style={{color: '#3399FF'}}>Shortest Path Through Ulam Spiral</h1>
-              <p className="fades">
+              <p>
                 A breadth-first search algorithm to find the shortest path between to
                 integers in an Ulam spiral. Prime numbers act as obstacles.
               </p>
@@ -225,9 +228,9 @@ class Home extends Component {
               </p>
           </li>
 
-          <li ref={ref} style={this.isActive(7)} onClick={() => {this.changeState(7)}}>
+          <li style={this.isActive(7)} /*onClick={() => {this.changeState(7)}}*/>
               <h1 style={{color: '#3399FF'}}>Procedural Terrain</h1>
-              <p className="fades">
+              <p>
                 A terrain created with procedural methods and Poisson disk sampled instances of grass.
                 There is also a thunderstorm going in. Created with Three.js.
               </p>
@@ -241,9 +244,9 @@ class Home extends Component {
               </p>
           </li>
 
-          <li ref={ref} style={this.isActive(8)} onClick={() => {this.changeState(8)}}>
+          <li style={this.isActive(8)} /*onClick={() => {this.changeState(8)}}*/>
               <h1 style={{color: '#3399FF'}}>Text Mining</h1>
-              <p className="fades">
+              <p>
                 A project created to implement and compare LGK-Bidiagonalization and K-Means clustering to search
                 in a collection of medical abstracts from a set of search phrases.
               </p>
@@ -257,9 +260,9 @@ class Home extends Component {
               </p>
           </li>
 
-          <li ref={ref} style={this.isActive(9)} onClick={() => {this.changeState(9)}}>
+          <li style={this.isActive(9)} /*onClick={() => {this.changeState(9)}}*/>
               <h1 style={{color: '#3399FF'}}>Movie Recommender System</h1>
-              <p className="fades">
+              <p>
                 A machine learning project to implement a collaborative based recommendation system based
                 on Jaccard similarity.
               </p>
@@ -273,9 +276,9 @@ class Home extends Component {
               </p>
           </li>
           
-          <li style={this.isActive(10)} onClick={() => {this.changeState(10)}}>
+          <li style={this.isActive(10)} /*onClick={() => {this.changeState(10)}}*/>
               <h1 style={{color: '#3399FF'}}>Online Portfolio</h1>
-              <p className="fades">You are looking at it!</p>
+              <p>You are looking at it!</p>
               <p>
                 <a style={styles.inactiveLink}>
                     {code}
@@ -307,6 +310,14 @@ const styles = {
     inactiveLink: {
         color: 'white',
         textDecoration: 'line-through',
+    },
+    ribbon: {
+        position: 'absolute',
+        textAlign: 'center',
+        //width: 'calc(25vw/2)',
+        //right: '-50px',
+        //top: '20px',
+        overflow: 'hidden',
     },
     activeLink: {
         color: 'white',
