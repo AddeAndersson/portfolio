@@ -18,7 +18,8 @@ function ShowVid(props){
   if(thisItem === thatItem) {
     return <iframe 
       width="60%" height='60%'
-      src={vidSrc} 
+      src={vidSrc}
+      title={thisItem} 
       frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
       allowfullscreen>
       </iframe>;
@@ -32,7 +33,7 @@ function ShowPic(props){
   const thatItem = props.thatItem;
   const picSrc = props.picSrc;
   if(thisItem === thatItem) {
-    return <img style={{width: "60%"}} src={picSrc}/>
+    return <img alt='' style={{width: "60%"}} src={picSrc}/>
   }
 
   return null;
@@ -49,7 +50,7 @@ class Home extends Component {
   }
 
   changeState(item){
-    if(item != this.state.chosenItem) this.setState({chosenItem: item});
+    if(item !== this.state.chosenItem) this.setState({chosenItem: item});
     else this.setState({chosenItem: -1});
   }
 
@@ -62,41 +63,41 @@ class Home extends Component {
   }
 
   isActive(item) {
-    if(this.state.width < 700){
+    if(this.state.width < 479){ //Phone
       const active = {
-            height: 'calc(80vw + 20px)',
-            width: 'calc(80vw + 20px)',
+            height: '80vw',
+            width: '80vw',
       };
 
       const inactive = {
-            height: 'calc(55vw + 20px)',
-            width: 'calc(55vw + 20px)',
+            height: '55vw',
+            width: '55vw',
       };
       if(this.state.chosenItem === item) return active;
       else return inactive;
     }
-    else if(this.state.width < 900){
+    else if(this.state.width < 991){ //Tablet
       const active = {
-            height: 'calc(50vw + 20px)',
-            width: 'calc(50vw + 20px)',
+            height: '50vw',
+            width: '50vw',
       };
 
       const inactive = {
-            height: 'calc(30vw + 20px)',
-            width: 'calc(30vw + 20px)',
+            height: '35vw',
+            width: '35vw',
       };
       if(this.state.chosenItem === item) return active;
       else return inactive;
     }
-    else {
+    else { //Desktop
       const active = {
-            height: 'calc(40vw + 20px)',
-            width: 'calc(40vw + 20px)',
+            height: '40vw',
+            width: '40vw',
       };
 
       const inactive = {
-            height: 'calc(25vw + 20px)',
-            width: 'calc(25vw + 20px)',
+            height: '25vw',
+            width: '25vw',
       };
       if(this.state.chosenItem === item) return active;
       else return inactive;
@@ -109,13 +110,6 @@ class Home extends Component {
     const code = '<code/>';
     const preview = '<preview/>';
 
-    const ref = React.createRef();
-    const scrollToTop = () =>
-        ref.current.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-    });
-
     return(
     	 <ul id="scrollstyle" style={styles.container}>
           <li style={this.isActive(0)} /*onClick={() => {this.changeState(0)}}*/>
@@ -126,10 +120,10 @@ class Home extends Component {
                 place in a 3D model of Täppan in campus Norrköping.
               </p>
               <p>
-                <a style={styles.inactiveLink}>
+                <a style={styles.inactiveLink} href="#0">
                     {code}
                 </a>
-                <a style={styles.inactiveLink}>
+                <a style={styles.inactiveLink} href="#0">
                     {preview}
                 </a>
               </p>
@@ -143,7 +137,7 @@ class Home extends Component {
               </p>
               <ShowVid className="fades" vidSrc="https://www.youtube.com/embed/h8h2IKuRL4c" thisItem={1} thatItem={this.state.chosenItem}/>
               <p>
-                <a style={styles.inactiveLink}>
+                <a style={styles.inactiveLink} href="#0">
                     {code}
                 </a>
               </p>
@@ -175,7 +169,7 @@ class Home extends Component {
                 <a style={styles.activeLink} href='https://github.com/AddeAndersson/NumberIdentification'>
                     {code}
                 </a>
-                <a style={styles.inactiveLink}>
+                <a style={styles.inactiveLink} href="#0">
                     {preview}
                 </a>
               </p>
@@ -222,7 +216,7 @@ class Home extends Component {
                 <a style={styles.activeLink} href='https://github.com/AddeAndersson/UlamBFS'>
                     {code}
                 </a>
-                <a style={styles.inactiveLink}>
+                <a style={styles.inactiveLink} href="#0">
                     {preview}
                 </a>
               </p>
@@ -254,7 +248,7 @@ class Home extends Component {
                 <a style={styles.activeLink} href='https://github.com/AddeAndersson/TNA009DataMining'>
                     {code}
                 </a>
-                <a style={styles.inactiveLink}>
+                <a style={styles.inactiveLink} href="#0">
                     {preview}
                 </a>
               </p>
@@ -267,10 +261,10 @@ class Home extends Component {
                 on Jaccard similarity.
               </p>
               <p>
-                <a style={styles.inactiveLink}>
+                <a style={styles.inactiveLink} href="#0">
                     {code}
                 </a>
-                <a style={styles.inactiveLink}>
+                <a style={styles.inactiveLink} href="#0">
                     {preview}
                 </a>
               </p>
@@ -280,10 +274,10 @@ class Home extends Component {
               <h1 style={{color: '#3399FF'}}>Online Portfolio</h1>
               <p>You are looking at it!</p>
               <p>
-                <a style={styles.inactiveLink}>
+                <a style={styles.inactiveLink} href="#0">
                     {code}
                 </a>
-                <a style={styles.inactiveLink}>
+                <a style={styles.inactiveLink} href="#0">
                     {preview}
                 </a>
               </p>
