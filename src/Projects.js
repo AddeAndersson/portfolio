@@ -44,7 +44,8 @@ class Home extends Component {
     super(props);
     this.changeState = this.changeState.bind(this);
     this.isActive = this.isActive.bind(this);
-    this.state = {chosenItem: -1};
+    this.state = {chosenItem: -1, width: window.innerWidth, height: window.innerHeight};
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   changeState(item){
@@ -52,18 +53,55 @@ class Home extends Component {
     else this.setState({chosenItem: -1});
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
 
   isActive(item) {
+    if(this.state.width < 600){
       const active = {
-            height: 'min(calc(80vw) + 20px, calc(80vh) + 20px)',
-            width: 'min(calc(80vw) + 20px, calc(80vh) + 20px)',
+            height: 'calc(80vw + 20px)',
+            width: 'calc(80vw + 20px)',
       };
+
       const inactive = {
-            height: 'min(40vw, 40vh)',
-            width: 'min(40vw, 40vh)',
+            height: 'calc(55vw + 20px)',
+            width: 'calc(55vw + 20px)',
       };
       if(this.state.chosenItem === item) return active;
       else return inactive;
+    }
+    else if(this.state.width < 900){
+      const active = {
+            height: 'calc(50vw + 20px)',
+            width: 'calc(50vw + 20px)',
+      };
+
+      const inactive = {
+            height: 'calc(30vw + 20px)',
+            width: 'calc(30vw + 20px)',
+      };
+      if(this.state.chosenItem === item) return active;
+      else return inactive;
+    }
+    else {
+      const active = {
+            height: 'calc(40vw + 20px)',
+            width: 'calc(40vw + 20px)',
+      };
+
+      const inactive = {
+            height: 'calc(25vw + 20px)',
+            width: 'calc(25vw + 20px)',
+      };
+      if(this.state.chosenItem === item) return active;
+      else return inactive;
+    }
+      
   }
 
   render() {

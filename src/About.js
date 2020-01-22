@@ -31,8 +31,9 @@ class About extends Component {
       	textAlign: 'left',
       	float: 'left',
       	color: 'white',
-        height: 0.4 * this.state.height,
+        height: 0.5 * this.state.height,
         width: '90%',
+        padding: '20px',
     };
     const row = {
     	fontSize: 'calc((2vh + 2vw)/2)',
@@ -41,7 +42,8 @@ class About extends Component {
         float: 'left',
         color: 'white',
         height: '90%',
-        width: 0.4 * this.state.width,
+        width: 0.5 * this.state.width,
+        padding: '20px',
     };
     if(this.state.width > this.state.height) return row;
     else return col;
@@ -98,7 +100,7 @@ class About extends Component {
 	        <RadarChart style={styles.radar}
 		      captions={captions}
 		      data={data}
-		      size={Math.max(window.innerWidth / 3, window.innerHeight / 3)}
+		      size={this.state.width / 3}
 		    />
 		    <p style={styles.para}>
 		    	A representation of my current average grades cathegorized. <br/> 
@@ -124,12 +126,14 @@ const styles = {
     radar: {
     	flex: '0 0 auto',
         alignItems: 'center',
-        marginTop: '20px, 20px',
+        padding: '20px',
     },
 
     radarText: {
     	flexDirection: 'column',
-    	display: 'flex',    
+    	display: 'flex',
+    	alignItems: 'center',
+    	flex: '0 0 auto',   
     },
 
     divStyle: {
@@ -137,8 +141,9 @@ const styles = {
       	flexDirection: 'row',
       	flexWrap: 'wrap',
       	justifyContent: 'space-evenly',
-      	alignContent: 'flex-start',
+      	alignContent: 'space-evenly',
       	alignItems: 'center',
+      	height: '100%',
     },
 
 	highlight: {

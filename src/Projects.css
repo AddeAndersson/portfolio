@@ -18,16 +18,3 @@
     -webkit-transition: width 0.5s ease 0s, height 0.5s ease 0.5s, transform 0.5s; /* Safari */
     transition: width 0.5s ease 0s, height 0.5s ease 0.5s, transform 0.5s;
 }
-
-.fades {
-	
-}
-
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
