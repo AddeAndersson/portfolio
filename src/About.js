@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import RadarChart from 'react-svg-radar-chart';
-import 'react-svg-radar-chart/build/css/index.css';
+//import RadarChart from 'react-svg-radar-chart';
+//import 'react-svg-radar-chart/build/css/index.css';
+import headshot from './Images/headshot.JPG';
 
 class About extends Component {
 
@@ -31,7 +32,7 @@ class About extends Component {
       	textAlign: 'left',
       	float: 'left',
       	color: 'white',
-        height: 0.5 * this.state.height,
+        height: 'auto',//0.5 * this.state.height,
         width: '90%',
         padding: '20px',
     };
@@ -50,7 +51,7 @@ class About extends Component {
   }
 
   render() {
-  	const data = [
+  	/*const data = [
 		{
 	    data: {
 	      maths: 4.9/5,
@@ -70,7 +71,7 @@ class About extends Component {
       graphics: 'Graphics: 4.5',
       programming: 'Programming: 4.2',
       physics: 'Physics: 5.0'
-    };
+    };*/
 
     const Emph = ({word}) => <span style={styles.highlight}>{word}</span>;
 
@@ -95,9 +96,12 @@ class About extends Component {
             <br/>
             Special thanks to my wonderful and inspiring Jennifer for always 
             supporting me <Emph word="<3"/>.
+            <br/>
+            <br/>
+            / / Adrian
         </p>
-      	<div style={styles.radarText}>
-	        <RadarChart style={styles.radar}
+      	<div style={styles.rightContainer}>
+	        {/*<RadarChart style={styles.radar}
 		      captions={captions}
 		      data={data}
 		      size={this.state.width / 3}
@@ -105,7 +109,8 @@ class About extends Component {
 		    <p style={styles.para}>
 		    	A representation of my current average grades cathegorized. <br/> 
 		    	The grading is on a 3-5 scale, 5 being the highest.
-		    </p>
+		    </p>*/}
+		    <img alt='profile' style={styles.rightChild} src={headshot}/>
 		</div>
 	  </div>
     );
@@ -123,17 +128,20 @@ const styles = {
       color: 'white',
     },
 
-    radar: {
+    rightChild: {
     	flex: '0 0 auto',
         alignItems: 'center',
-        padding: '20px',
+        width: '100%',
+        border: '10px solid white',
     },
 
-    radarText: {
+    rightContainer: {
     	flexDirection: 'column',
     	display: 'flex',
     	alignItems: 'center',
-    	flex: '0 0 auto',   
+    	flex: '0 0 auto',
+    	width: '40vw',
+    	maxWidth: '500px',
     },
 
     divStyle: {
