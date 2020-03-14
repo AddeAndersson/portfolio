@@ -226,7 +226,7 @@ class Home extends Component {
               <h1 style={{color: '#3399FF'}}>Procedural Terrain</h1>
               <p>
                 A terrain created with procedural methods and Poisson disk sampled instances of grass.
-                There is also a thunderstorm going in. Created with Three.js.
+                There is also a thunderstorm going on. Created with Three.js.
               </p>
               <p>
                 <a style={styles.activeLink} href='https://github.com/AddeAndersson/ProceduralTerrain'>
