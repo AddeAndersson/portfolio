@@ -3,6 +3,16 @@ import React, {Component} from 'react';
 //import 'react-svg-radar-chart/build/css/index.css';
 import headshot from './Images/headshot.JPG';
 
+function Pic(props) {
+  if(props.layout.height === "90%"){ //column
+    return (<div style={styles.rightContainer}>
+      <img alt='profile' style={styles.rightChild} src={headshot}/>
+    </div>);
+  }
+
+  return null;
+};
+
 class About extends Component {
 
  constructor(props) {
@@ -46,6 +56,7 @@ class About extends Component {
         width: 0.5 * this.state.width,
         padding: '20px',
     };
+
     if(this.state.width > this.state.height) return row;
     else return col;
   }
@@ -54,11 +65,11 @@ class About extends Component {
   	/*const data = [
 		{
 	    data: {
-	      maths: 4.9/5,
-	      other: 5.0/5,
-	      graphics: 4.5/5,
-	      programming: 4.2/5,
-	      physics: 5.0/5
+	      javascript: 4/5,
+	      cplusplus: 5.0/5,
+	      matlab: 4.5/5,
+	      python: 3/5,
+	      java: 3.5/5
 		},
         meta: { color: '#3399FF' }
     	},
@@ -66,18 +77,20 @@ class About extends Component {
  
 	const captions = {
       // columns
-      maths: 'Mathematics: 4.9',
-      other: 'Other: 5.0',
-      graphics: 'Graphics: 4.5',
-      programming: 'Programming: 4.2',
-      physics: 'Physics: 5.0'
+      javascript: 'Javascript: 4.0',
+      cplusplus: 'C++: 5.0',
+      matlab: 'MatLab: 4.5',
+      python: 'Python: 3.0',
+      java: 'Java: 3.5'
     };*/
 
     const Emph = ({word}) => <span style={styles.highlight}>{word}</span>;
 
+    var opt = this.getLayout();
+
     return(
    	  <div style={styles.divStyle}>
-      	<p style={this.getLayout()}>
+      	<p style={opt}>
             I'm <Emph word="Adrian Andersson"/>, a M.Sc. Student in Media Technology and Engineering
             at the university of Linköping. Originally from <Emph word="Nässjö"/>, Småland,
             my interest for tech took me to Norrköping to study and become an engineer.
@@ -100,18 +113,7 @@ class About extends Component {
             <br/>
             / / Adrian
         </p>
-      	<div style={styles.rightContainer}>
-	        {/*<RadarChart style={styles.radar}
-		      captions={captions}
-		      data={data}
-		      size={this.state.width / 3}
-		    />
-		    <p style={styles.para}>
-		    	A representation of my current average grades cathegorized. <br/> 
-		    	The grading is on a 3-5 scale, 5 being the highest.
-		    </p>*/}
-		    <img alt='profile' style={styles.rightChild} src={headshot}/>
-		</div>
+        <Pic layout={opt}/>
 	  </div>
     );
   }
@@ -152,6 +154,7 @@ const styles = {
       	alignContent: 'space-evenly',
       	alignItems: 'center',
       	height: '100%',
+        overflow: 'auto',
     },
 
 	highlight: {

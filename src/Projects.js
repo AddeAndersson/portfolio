@@ -1,7 +1,25 @@
 import React, {Component} from 'react';
 import './Fonts.css';
 import './Projects.css';
+import SVG from 'react-inlinesvg';
 import TNCG15 from './Images/TNCG15.jpg';
+//import c_icon from './Icons/c.svg';
+import cplusplus_icon from './Icons/cplusplus.svg';
+import csharp_icon from './Icons/csharp.svg';
+//import github_icon from './Icons/github.svg';
+import html5_icon from './Icons/html5.svg';
+import javascript_icon from './Icons/javascript.svg';
+//import linkedin_icon from './Icons/linkedin.svg';
+import mysql_icon from './Icons/mysql.svg';
+import node_icon from './Icons/node-dot-js.svg';
+import php_icon from './Icons/php.svg';
+import python_icon from './Icons/python.svg';
+import react_icon from './Icons/react.svg';
+import unity_icon from './Icons/unity.svg';
+import unrealengine_icon from './Icons/unrealengine.svg';
+import css3_icon from './Icons/css3.svg';
+//import solo_icon from './Icons/individual.svg';
+//import group_icon from './Icons/group.svg';
 
 /*function scrollToTop() {
     window.scrollTo({
@@ -20,8 +38,8 @@ function ShowVid(props){
       width="60%" height='60%'
       src={vidSrc}
       title={thisItem} 
-      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
+      frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+      allowFullScreen>
       </iframe>;
   }
 
@@ -107,9 +125,6 @@ class Home extends Component {
 
   render() {
 
-    const code = '<code/>';
-    const preview = '<preview/>';
-
     return(
     	 <ul id="scrollstyle" style={styles.container}>
           <li style={this.isActive(0)} /*onClick={() => {this.changeState(0)}}*/>
@@ -119,14 +134,9 @@ class Home extends Component {
                 to collect exams in order to get points. The game takes
                 place in a 3D model of Täppan in campus Norrköping.
               </p>
-              <p>
-                <a style={styles.inactiveLink} href="#0">
-                    {code}
-                </a>
-                <a style={styles.inactiveLink} href="#0">
-                    {preview}
-                </a>
-              </p>
+              <div className='icons'>
+                <SVG src={unrealengine_icon}/>
+              </div>
           </li>
           
           <li style={this.isActive(1)} className='clickable' onClick={() => {this.changeState(1)}}>
@@ -136,11 +146,10 @@ class Home extends Component {
                 A RTS-styled VR game made in Unity. <br/>
               </p>
               <ShowVid className="fades" vidSrc="https://www.youtube.com/embed/h8h2IKuRL4c" thisItem={1} thatItem={this.state.chosenItem}/>
-              <p>
-                <a style={styles.inactiveLink} href="#0">
-                    {code}
-                </a>
-              </p>
+              <div className='icons'>
+                <SVG src={unity_icon}/>
+                <SVG src={csharp_icon}/>
+              </div>
           </li>
           
           <li style={this.isActive(2)} className='clickable' onClick={() => {this.changeState(2)}}>
@@ -152,11 +161,9 @@ class Home extends Component {
                 addition to transparent and perfectly reflecting objects.
               </p>
               <ShowPic className="fades" picSrc={TNCG15} thisItem={2} thatItem={this.state.chosenItem}/>
-              <p>
-                <a style={styles.activeLink} href='https://github.com/AddeAndersson/MonteCarlo'>
-                    {code}
-                </a>
-              </p>
+              <div className='icons'>
+                <SVG src={cplusplus_icon}/>
+              </div>
           </li>
           
           <li style={this.isActive(3)} /*onClick={() => {this.changeState(3)}}*/> 
@@ -165,14 +172,9 @@ class Home extends Component {
                 A MatLab program made to identify handwritten
                 digits using different algorithms.
               </p>
-              <p>
-                <a style={styles.activeLink} href='https://github.com/AddeAndersson/NumberIdentification'>
-                    {code}
-                </a>
-                <a style={styles.inactiveLink} href="#0">
-                    {preview}
-                </a>
-              </p>
+              <div className='icons'>
+                <p>MatLab</p>
+              </div>
           </li>
           
           <li style={this.isActive(4)} /*onClick={() => {this.changeState(4)}}*/>
@@ -181,14 +183,13 @@ class Home extends Component {
                 A website to browse through a database of lego pieces
                 in order to see which set contains that piece.
               </p>
-              <p>
-                <a style={styles.activeLink} href='https://github.com/AddeAndersson/LegoSearcher'>
-                    {code}
-                </a>
-                <a style={styles.activeLink} href='http://www.student.itn.liu.se/~adran117/tnmk30/LegoProject/startpage.php'>
-                    {preview}
-                </a>
-              </p>
+              <div className='icons'>
+                <SVG src={javascript_icon}/>
+                <SVG src={html5_icon}/>
+                <SVG src={php_icon}/>
+                <SVG src={mysql_icon}/>
+                <SVG src={css3_icon}/>
+              </div>
           </li>
 
           <li style={this.isActive(5)} className='clickable' onClick={() => {this.changeState(5)}}>
@@ -199,11 +200,9 @@ class Home extends Component {
                 hit in a game of biljard. <br/>
               </p>
               <ShowVid className="fades" vidSrc="https://www.youtube.com/embed/iTWdN_GpJhw" thisItem={5} thatItem={this.state.chosenItem}/>
-              <p>
-                <a style={styles.activeLink} href='https://github.com/AddeAndersson/TNM085'>
-                    {code}
-                </a>
-              </p>
+              <div className='icons'>
+                <SVG src={cplusplus_icon}/>
+              </div>
           </li>
 
           <li style={this.isActive(6)} /*onClick={() => {this.changeState(6)}}*/>
@@ -212,14 +211,10 @@ class Home extends Component {
                 A breadth-first search algorithm to find the shortest path between to
                 integers in an Ulam spiral. Prime numbers act as obstacles.
               </p>
-              <p>
-                <a style={styles.activeLink} href='https://github.com/AddeAndersson/UlamBFS'>
-                    {code}
-                </a>
-                <a style={styles.inactiveLink} href="#0">
-                    {preview}
-                </a>
-              </p>
+              <div className='icons'>
+                <SVG src={javascript_icon}/>
+                <SVG src={node_icon}/>
+              </div>
           </li>
 
           <li style={this.isActive(7)} /*onClick={() => {this.changeState(7)}}*/>
@@ -228,14 +223,9 @@ class Home extends Component {
                 A terrain created with procedural methods and Poisson disk sampled instances of grass.
                 There is also a thunderstorm going in. Created with Three.js.
               </p>
-              <p>
-                <a style={styles.activeLink} href='https://github.com/AddeAndersson/ProceduralTerrain'>
-                    {code}
-                </a>
-                <a style={styles.activeLink} href='https://addeandersson.github.io/ProceduralTerrain/'>
-                    {preview}
-                </a>
-              </p>
+              <div className='icons'>
+                <SVG src={javascript_icon}/>
+              </div>
           </li>
 
           <li style={this.isActive(8)} /*onClick={() => {this.changeState(8)}}*/>
@@ -244,14 +234,9 @@ class Home extends Component {
                 A project created to implement and compare LGK-Bidiagonalization and K-Means clustering to search
                 in a collection of medical abstracts from a set of search phrases.
               </p>
-              <p>
-                <a style={styles.activeLink} href='https://github.com/AddeAndersson/TNA009DataMining'>
-                    {code}
-                </a>
-                <a style={styles.inactiveLink} href="#0">
-                    {preview}
-                </a>
-              </p>
+              <div className='icons'>
+                <p>MatLab</p>
+              </div>
           </li>
 
           <li style={this.isActive(9)} /*onClick={() => {this.changeState(9)}}*/>
@@ -260,27 +245,19 @@ class Home extends Component {
                 A machine learning project to implement a collaborative based recommendation system based
                 on Jaccard similarity.
               </p>
-              <p>
-                <a style={styles.inactiveLink} href="#0">
-                    {code}
-                </a>
-                <a style={styles.inactiveLink} href="#0">
-                    {preview}
-                </a>
-              </p>
+              <div className='icons'>
+                <SVG src={python_icon}/>
+              </div>
           </li>
           
           <li style={this.isActive(10)} /*onClick={() => {this.changeState(10)}}*/>
               <h1 style={{color: '#3399FF'}}>Online Portfolio</h1>
               <p>You are looking at it!</p>
-              <p>
-                <a style={styles.inactiveLink} href="#0">
-                    {code}
-                </a>
-                <a style={styles.inactiveLink} href="#0">
-                    {preview}
-                </a>
-              </p>
+              <div className='icons'>
+                <SVG src={react_icon}/>
+                <SVG src={javascript_icon}/>
+                <SVG src={css3_icon}/>
+              </div>
           </li>
        </ul>
     );

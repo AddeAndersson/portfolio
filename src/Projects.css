@@ -80,6 +80,48 @@
   -webkit-transform: rotate(-45deg);
 }
 
+
+.icons {
+  width: 100%;
+  height: 20%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+h1 {
+	display: flex;
+	justify-content: center;
+	font-size: calc((5vh + 1vw)/2);
+}
+
+h1 svg {
+	width: 15%;
+	margin-left: 10px;
+	fill: #3399FF;
+	height: 100%;
+}
+
+.icons p {
+	width: 30%;
+	height: calc(100% - 10px);
+	margin: 5px;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	color: #292726;
+  	background-color: white;
+  	font-weight: 900;
+}
+
+.icons svg {
+	fill: white;
+	width: 30px;
+	margin: 5px;
+}
+
 /* Colors */
 
 .corner-ribbon.white{background: #f0f0f0; color: #555;}

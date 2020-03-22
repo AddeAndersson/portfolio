@@ -37,6 +37,7 @@
   animation-fill-mode: forwards;
 }
 
+
 .fadein {
   opacity: 0;
   animation-delay: 4s;

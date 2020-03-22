@@ -93,12 +93,12 @@ class Header extends Component {
                 </li>
                 {/*<li style={liSocials}>
                   <a href='https://www.linkedin.com/in/adrian-andersson-410345149/'>
-                    <SVG height={Math.round(0.03*this.state.height)} src={LinkedIn}/>
+                    <SVG height={Math.round(0.03*this.state.height)} src={linkedin}/>
                   </a>
                 </li>
                 <li style={liSocials}>
                   <a href='https://github.com/AddeAndersson'>
-                    <SVG height={Math.round(0.03*this.state.height)} src={GitHub}/>
+                    <SVG height={Math.round(0.03*this.state.height)} src={github}/>
                   </a>
                 </li>*/}
               </ul>
