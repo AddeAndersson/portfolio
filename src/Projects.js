@@ -229,7 +229,8 @@ class Home extends Component {
               <p>
                 A terrain created with procedural methods and Poisson disk sampled instances of grass.
                 There is also a thunderstorm going on. Created with Three.js. <br/>
-                <a style={{color: '#3399FF'}} href={TNM084} target="_blank" rel="noopener noreferrer">Open report</a>
+                <a style={{color: '#3399FF'}} href={TNM084} target="_blank" rel="noopener noreferrer">Open report</a><br/>
+                <a style={{color: '#3399FF'}} href={"https://addeandersson.github.io/ProceduralTerrain/"} target="_blank" rel="noopener noreferrer">Open preview</a>
               </p>
               <div className='icons'>
                 <SVG src={javascript_icon}/>
