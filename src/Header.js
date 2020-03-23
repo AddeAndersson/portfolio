@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import MyCarousel from './MyCarousel.js';
 import './Header.css';
-import "react-responsive-carousel/lib/styles/carousel.css";
+import 'react-responsive-carousel/lib/styles/carousel.css';
 import * as THREE from 'three';
 
 class Header extends Component {

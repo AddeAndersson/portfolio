@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Carousel } from "react-responsive-carousel";
 import './Fonts.css';
-import { Document, Page, pdfjs } from "react-pdf";
+import { Document, Page, pdfjs } from 'react-pdf';
 import CV from './Documents/adrianandersson.pdf';
 import Home from './Home.js';
 import About from './About.js';

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './Fonts.css';
 import './Projects.css';
 import SVG from 'react-inlinesvg';
-import TNCG15 from './Images/TNCG15.jpg';
+import TNCG15_preview from './Images/TNCG15.jpg';
 //import c_icon from './Icons/c.svg';
 import cplusplus_icon from './Icons/cplusplus.svg';
 import csharp_icon from './Icons/csharp.svg';
@@ -18,8 +18,12 @@ import react_icon from './Icons/react.svg';
 import unity_icon from './Icons/unity.svg';
 import unrealengine_icon from './Icons/unrealengine.svg';
 import css3_icon from './Icons/css3.svg';
-//import solo_icon from './Icons/individual.svg';
-//import group_icon from './Icons/group.svg';
+import TNM094 from './Documents/TNM094.pdf';
+import TNCG15 from './Documents/TNCG15.pdf';
+import TNM085 from './Documents/TNM085.pdf';
+import TNM084 from './Documents/TNM084.pdf';
+import TNA009 from './Documents/TNA009.pdf';
+import TNM108 from './Documents/TNM108.pdf';
 
 /*function scrollToTop() {
     window.scrollTo({
@@ -144,6 +148,7 @@ class Home extends Component {
               <h1 style={{color: '#3399FF'}}>Evaari</h1>
               <p>
                 A RTS-styled VR game made in Unity. <br/>
+                <a style={{color: '#3399FF'}} href={TNM094} target="_blank" rel="noopener noreferrer">Open report</a>
               </p>
               <ShowVid className="fades" vidSrc="https://www.youtube.com/embed/h8h2IKuRL4c" thisItem={1} thatItem={this.state.chosenItem}/>
               <div className='icons'>
@@ -158,9 +163,10 @@ class Home extends Component {
               <p>
                 A project to render a simple scene
                 containing Lambertian and Oren-Nayar reflectors in
-                addition to transparent and perfectly reflecting objects.
+                addition to transparent and perfectly reflecting objects. <br/>
+                <a style={{color: '#3399FF'}} href={TNCG15} target="_blank" rel="noopener noreferrer">Open report</a>
               </p>
-              <ShowPic className="fades" picSrc={TNCG15} thisItem={2} thatItem={this.state.chosenItem}/>
+              <ShowPic className="fades" picSrc={TNCG15_preview} thisItem={2} thatItem={this.state.chosenItem}/>
               <div className='icons'>
                 <SVG src={cplusplus_icon}/>
               </div>
@@ -198,6 +204,7 @@ class Home extends Component {
               <p>
                 A short video as a result of simulating the initial
                 hit in a game of biljard. <br/>
+                <a style={{color: '#3399FF'}} href={TNM085} target="_blank" rel="noopener noreferrer">Open report</a>
               </p>
               <ShowVid className="fades" vidSrc="https://www.youtube.com/embed/iTWdN_GpJhw" thisItem={5} thatItem={this.state.chosenItem}/>
               <div className='icons'>
@@ -221,7 +228,8 @@ class Home extends Component {
               <h1 style={{color: '#3399FF'}}>Procedural Terrain</h1>
               <p>
                 A terrain created with procedural methods and Poisson disk sampled instances of grass.
-                There is also a thunderstorm going on. Created with Three.js.
+                There is also a thunderstorm going on. Created with Three.js. <br/>
+                <a style={{color: '#3399FF'}} href={TNM084} target="_blank" rel="noopener noreferrer">Open report</a>
               </p>
               <div className='icons'>
                 <SVG src={javascript_icon}/>
@@ -232,7 +240,8 @@ class Home extends Component {
               <h1 style={{color: '#3399FF'}}>Text Mining</h1>
               <p>
                 A project created to implement and compare LGK-Bidiagonalization and K-Means clustering to search
-                in a collection of medical abstracts from a set of search phrases.
+                in a collection of medical abstracts from a set of search phrases. <br/>
+                <a style={{color: '#3399FF'}} href={TNA009} target="_blank" rel="noopener noreferrer">Open report</a>
               </p>
               <div className='icons'>
                 <p>MatLab</p>
@@ -243,7 +252,8 @@ class Home extends Component {
               <h1 style={{color: '#3399FF'}}>Movie Recommender System</h1>
               <p>
                 A machine learning project to implement a collaborative based recommendation system based
-                on Jaccard similarity.
+                on Jaccard similarity. <br/>
+                <a style={{color: '#3399FF'}} href={TNM108} target="_blank" rel="noopener noreferrer">Open report</a>
               </p>
               <div className='icons'>
                 <SVG src={python_icon}/>
