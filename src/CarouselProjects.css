@@ -1,0 +1,19 @@
+.carousel .control-dots .dot {
+	background: #3399FF;
+}
+
+.carousel .control-dots {
+	padding-left: 0px;
+}
+
+.carousel .slider-wrapper.axis-vertical .slider {
+    flex-direction: row;
+}
+
+.carouselCont p {
+	float: left;
+}
+
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow {
+	opacity: 1;
+}
