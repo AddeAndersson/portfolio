@@ -33,23 +33,31 @@ import TNM108 from './Documents/TNM108.pdf';
 
 function ShowVid(props){
   const thisItem = props.thisItem;
+  const thatItem = props.thatItem;
   const vidSrc = props.vidSrc;
-
-  return <iframe 
-          width='75%'
-          height='100%'
-          src={vidSrc + "?rel=0&modestbranding=0&autohide=1&showinfo=0&controls=1"}
-          title={thisItem}
-          style={{maxWidth: 800}}
-          frameBorder="0" //allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-          allowFullScreen>
-         </iframe>;
+  if(thisItem === thatItem) {
+    return <iframe 
+            width='75%'
+            height='100%'
+            src={vidSrc + "?rel=0&modestbranding=0&autohide=1&showinfo=0&controls=1"}
+            title={thisItem}
+            style={{maxWidth: 800}}
+            frameBorder="0" //allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowFullScreen>
+           </iframe>;
+  }
+  return null;
 }
 
 function ShowPic(props){
   const picSrc = props.picSrc;
+  const thatItem = props.thatItem;
+  const thisItem = props.thisItem;
 
-  return <img alt='' style={{width: "60%", maxWidth: 400, maxHeight: 400}} src={picSrc}/>
+  if(thatItem === thisItem) {
+    return <img alt='' style={{width: "60%", maxWidth: 400, maxHeight: 400}} src={picSrc}/>
+  }
+  return null;
 }
 
 class Home extends Component {
@@ -121,8 +129,8 @@ class Home extends Component {
   render() {
 
     return(
-      <div className='carouselCont' style={styles.carouselContainer}>
-        <Carousel width={this.state.width} axis={"horizontal"} 
+      /*<div className='carouselCont' style={styles.carouselContainer}>
+        <Carousel width={this.state.width + "px"} axis={"horizontal"} 
           showThumbs={false} infiniteLoop={true} transitionTime={800} 
           autoPlay={true} interval={7000} useKeyboardArrows={true}>
           <div style={styles.carouselItem}>
@@ -220,48 +228,73 @@ class Home extends Component {
               </div>
           </div>
         </Carousel>
-      </div>
-          /*
+      </div>*/
+        
+        <ul id="scrollstyle" style={styles.container}>
           <li style={this.isActive(1)} className='clickable' onClick={() => {this.changeState(1)}}>
               <div style={styles.ribbon} className="corner-ribbon top-right sticky blue">Click me!</div>
               <h1 style={{color: '#3399FF'}}>Evaari</h1>
               <p>
                 A RTS-styled VR game made in Unity. <br/>
-                <a style={{color: '#3399FF'}} href={TNM094} target="_blank" rel="noopener noreferrer">Open report</a>
               </p>
               <ShowVid className="fades" vidSrc="https://www.youtube.com/embed/h8h2IKuRL4c" thisItem={1} thatItem={this.state.chosenItem}/>
-              <div className='icons'>
-                <SVG src={unity_icon}/>
-                <SVG src={csharp_icon}/>
+              <div>
+                <a style={{color: '#3399FF'}} href={TNM094} target="_blank" rel="noopener noreferrer">Open report</a>
+                <div className='icons'>
+                  <SVG src={unity_icon}/>
+                  <SVG src={csharp_icon}/>
+                </div>
               </div>
           </li>
 
-          <li style={this.isActive(7)} /*onClick={() => {this.changeState(7)}}>
+          <li style={this.isActive(2)} /*onClick={() => {this.changeState(2)}}*/>
               <h1 style={{color: '#3399FF'}}>Procedural Terrain</h1>
               <p>
                 A terrain created with procedural methods and Poisson disk sampled instances of grass.
                 There is also a thunderstorm going on. Created with Three.js. <br/>
+              </p>
+              <div>
                 <a style={{color: '#3399FF'}} href={TNM084} target="_blank" rel="noopener noreferrer">Open report</a><br/>
                 <a style={{color: '#3399FF'}} href={"https://addeandersson.github.io/ProceduralTerrain/"} target="_blank" rel="noopener noreferrer">Open preview</a>
+                <div className='icons'>
+                  <SVG src={javascript_icon}/>
+                </div>
+              </div>
+          </li>
+          
+          <li style={this.isActive(3)} onClick={() => {this.changeState(3)}}>
+              <div style={styles.ribbon} className="corner-ribbon top-right sticky blue">Click me!</div>
+              <h1 style={{color: '#3399FF'}}>Monte-Carlo Ray tracer</h1>
+              <p>
+                A project to render a simple scene
+                containing Lambertian and Oren-Nayar reflectors in
+                addition to transparent and perfectly reflecting objects. <br/>
               </p>
-              <div className='icons'>
-                <SVG src={javascript_icon}/>
+              <ShowPic className="fades" picSrc={TNCG15_preview} thisItem={2} thatItem={this.state.chosenItem}/>
+              <div>
+                <a style={{color: '#3399FF'}} href={TNCG15} target="_blank" rel="noopener noreferrer">Open report</a>
+                <div className='icons'>
+                  <SVG src={cplusplus_icon}/>
+                </div>
               </div>
           </li>
 
-          <li style={this.isActive(8)} /*onClick={() => {this.changeState(8)}}>
+
+          <li style={this.isActive(4)} /*onClick={() => {this.changeState(4)}}*/>
               <h1 style={{color: '#3399FF'}}>Text Mining</h1>
               <p>
                 A project created to implement and compare LGK-Bidiagonalization and K-Means clustering to search
                 in a collection of medical abstracts from a set of search phrases. <br/>
-                <a style={{color: '#3399FF'}} href={TNA009} target="_blank" rel="noopener noreferrer">Open report</a>
               </p>
-              <div className='icons'>
-                <p>MatLab</p>
+              <div>
+                <a style={{color: '#3399FF'}} href={TNA009} target="_blank" rel="noopener noreferrer">Open report</a>
+                <div className='icons'>
+                  <SVG src={matlab_icon}/>
+                </div>
               </div>
           </li>
           
-          <li style={this.isActive(10)} /*onClick={() => {this.changeState(10)}}>
+          <li style={this.isActive(5)} /*onClick={() => {this.changeState(5)}}*/>
               <h1 style={{color: '#3399FF'}}>Online Portfolio</h1>
               <p>You are looking at it!</p>
               <div className='icons'>
@@ -270,7 +303,8 @@ class Home extends Component {
                 <SVG src={css3_icon}/>
               </div>
           </li>
-          */
+        </ul>
+        
     );
   }
 }
@@ -278,7 +312,7 @@ class Home extends Component {
 export default Home;
 
 const styles = {
-	container: {
+	  container: {
       display: 'flex',
       flexDirection: 'row',
       flexWrap: 'wrap',
