@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Fonts.css';
 import './Projects.css';
-import { Carousel } from "react-responsive-carousel";
+//import { Carousel } from "react-responsive-carousel";
 import 'react-responsive-carousel/lib/styles/carousel.css';
 import './CarouselProjects.css';
 import SVG from 'react-inlinesvg';
@@ -9,19 +9,21 @@ import TNCG15_preview from './Images/TNCG15.jpg';
 //import c_icon from './Icons/c.svg';
 import cplusplus_icon from './Icons/cplusplus.svg';
 import csharp_icon from './Icons/csharp.svg';
-import d3 from './Icons/d3.svg'; // NEW
+import d3_icon from './Icons/d3.svg'; // NEW
 //import github_icon from './Icons/github.svg';
-import html5_icon from './Icons/html5.svg';
+//import html5_icon from './Icons/html5.svg';
 import javascript_icon from './Icons/javascript.svg';
 //import linkedin_icon from './Icons/linkedin.svg';
-import mysql_icon from './Icons/mysql.svg';
-import node_icon from './Icons/node-dot-js.svg';
-import php_icon from './Icons/php.svg';
+//import mysql_icon from './Icons/mysql.svg';
+//import node_icon from './Icons/node-dot-js.svg';
+//import php_icon from './Icons/php.svg';
 import python_icon from './Icons/python.svg';
 import react_icon from './Icons/react.svg';
+import webgl_icon from './Icons/webgl.svg';
+import opengl_icon from './Icons/opengl.svg';
 import matlab_icon from './Icons/matlab.svg';
 import unity_icon from './Icons/unity.svg';
-import unrealengine_icon from './Icons/unrealengine.svg';
+//import unrealengine_icon from './Icons/unrealengine.svg';
 import css3_icon from './Icons/css3.svg';
 import TNM094 from './Documents/TNM094.pdf';
 import TNCG15 from './Documents/TNCG15.pdf';
@@ -29,6 +31,7 @@ import TNM085 from './Documents/TNM085.pdf';
 import TNM084 from './Documents/TNM084.pdf';
 import TNA009 from './Documents/TNA009.pdf';
 import TNM108 from './Documents/TNM108.pdf';
+import TNM048 from './Documents/TNM048.pdf';
 
 
 function ShowVid(props){
@@ -258,11 +261,12 @@ class Home extends Component {
                 <a style={{color: '#3399FF'}} href={"https://addeandersson.github.io/ProceduralTerrain/"} target="_blank" rel="noopener noreferrer">Open preview</a>
                 <div className='icons'>
                   <SVG src={javascript_icon}/>
+                  <SVG src={webgl_icon}/>
                 </div>
               </div>
           </li>
           
-          <li style={this.isActive(3)} onClick={() => {this.changeState(3)}}>
+          <li style={this.isActive(3)} className='clickable' onClick={() => {this.changeState(3)}}>
               <div style={styles.ribbon} className="corner-ribbon top-right sticky blue">Click me!</div>
               <h1 style={{color: '#3399FF'}}>Monte-Carlo Ray tracer</h1>
               <p>
@@ -270,7 +274,7 @@ class Home extends Component {
                 containing Lambertian and Oren-Nayar reflectors in
                 addition to transparent and perfectly reflecting objects. <br/>
               </p>
-              <ShowPic className="fades" picSrc={TNCG15_preview} thisItem={2} thatItem={this.state.chosenItem}/>
+              <ShowPic className="fades" picSrc={TNCG15_preview} thisItem={3} thatItem={this.state.chosenItem}/>
               <div>
                 <a style={{color: '#3399FF'}} href={TNCG15} target="_blank" rel="noopener noreferrer">Open report</a>
                 <div className='icons'>
@@ -293,8 +297,55 @@ class Home extends Component {
                 </div>
               </div>
           </li>
+
+          <li style={this.isActive(5)} className='clickable' onClick={() => {this.changeState(5)}}>
+              <div style={styles.ribbon} className="corner-ribbon top-right sticky blue">Click me!</div>
+              <h1 style={{color: '#3399FF'}}>Biljard Simulation</h1>
+              <p>
+                A short video as a result of simulating the initial
+                hit in a game of biljard. <br/>
+              </p>
+              <ShowVid className="fades" vidSrc="https://www.youtube.com/embed/iTWdN_GpJhw" thisItem={5} thatItem={this.state.chosenItem}/>
+              <div>
+                <a style={{color: '#3399FF'}} href={TNM085} target="_blank" rel="noopener noreferrer">Open report</a>
+                <div className='icons'>
+                  <SVG src={cplusplus_icon}/>
+                  <SVG src={opengl_icon}/>
+                </div>
+              </div>
+          </li>
+
+          <li style={this.isActive(6)} /*className='clickable' onClick={() => {this.changeState(6)}}*/>
+              <h1 style={{color: '#3399FF'}}>Climate change dashboard</h1>
+              <p>
+                A dashboard made to visualize climate changes. The dashboard features global carbon dioxide levels,
+                precipitation, and natural disasters aswell as temperature data for each country. <br/>
+              </p>
+              <div>
+                <a style={{color: '#3399FF'}} href={TNM048} target="_blank" rel="noopener noreferrer">Open report</a><br/>
+                {/*<a style={{color: '#3399FF'}} href={} target="_blank" rel="noopener noreferrer">Open preview</a>*/}
+                <div className='icons'>
+                  <SVG src={javascript_icon}/>
+                  <SVG src={d3_icon}/>
+                </div>
+              </div>
+          </li>
+
+          <li style={this.isActive(7)} /*className='clickable' onClick={() => {this.changeState(6)}}*/>
+            <h1 style={{color: '#3399FF'}}>Movie Recommender System</h1>
+            <p>
+              A machine learning project to implement a collaborative based recommendation system for movies based
+              on Jaccard similarity. <br/>
+            </p>
+            <div>
+              <a style={{color: '#3399FF'}} href={TNM108} target="_blank" rel="noopener noreferrer">Open report</a>
+              <div className='icons'>
+                <SVG src={python_icon}/>
+              </div>
+            </div>
+          </li>
           
-          <li style={this.isActive(5)} /*onClick={() => {this.changeState(5)}}*/>
+          <li style={this.isActive(8)} /*onClick={() => {this.changeState(5)}}*/>
               <h1 style={{color: '#3399FF'}}>Online Portfolio</h1>
               <p>You are looking at it!</p>
               <div className='icons'>
