@@ -316,10 +316,10 @@ class Home extends Component {
           </li>
 
           <li style={this.isActive(6)} /*className='clickable' onClick={() => {this.changeState(6)}}*/>
-              <h1 style={{color: '#3399FF'}}>Climate change dashboard</h1>
+              <h1 style={{color: '#3399FF'}}>Climate Change Dashboard</h1>
               <p>
                 A dashboard made to visualize climate changes. The dashboard features global carbon dioxide levels,
-                precipitation, and natural disasters aswell as temperature data for each country. <br/>
+                precipitation, and natural disasters as well as temperature data for each country. <br/>
               </p>
               <div>
                 <a style={{color: '#3399FF'}} href={TNM048} target="_blank" rel="noopener noreferrer">Open report</a><br/>
