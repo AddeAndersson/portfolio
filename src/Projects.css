@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
 #scrollstyle li {
 	flex: 0 0 auto;
     box-shadow: 4px 4px 8px rgb(0,0,0,0.7), -4px -4px 8px rgba(255,255,255, 0.2);
@@ -33,6 +34,15 @@
   -webkit-transform: rotate(-45deg);
   overflow: hidden;
   cursor: pointer;
+}
+
+.dimmed.dimmable > .ui.modals.dimmer.visible {
+  display: flex !important;
+}
+
+.center {
+  justify-content: center;
+  display: flex;
 }
 
 /* Custom styles */
@@ -90,14 +100,30 @@
   align-content: center;
 }
 
-h1 {
+.override.ui.divided.grid:not([class*="vertically divided"]) > .row > .column {
+    box-shadow: -1px 0px 0px 0px rgba(255, 255, 255, 0.15)
+}
+
+.override.ui.item.content.contenta.header {
+  font-weight: 900;
 	display: flex;
+  font-family: 'Titillium Web', sans-serif !important;
 	justify-content: center;
 	font-size: calc((5vh + 1vw)/2);
 }
 
+.item  {
+  margin: 20px;
+}
+
+.contenta h1 {
+  display: inline;
+  text-align: left;
+}
+
 .clickable {
   cursor: pointer;
+  overflow: hidden;
 }
 
 h1 svg {
@@ -112,11 +138,11 @@ h1 svg {
 	margin: 5px;
   padding: 3px;
 	display: flex;
-  	justify-content: center;
-  	align-items: center;
-  	color: #292726;
-  	background-color: white;
-  	font-weight: 900;
+  justify-content: center;
+  align-items: center;
+  color: #292726;
+  background-color: white;
+  font-weight: 900;
 }
 
 .icons svg {

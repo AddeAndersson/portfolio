@@ -37,6 +37,9 @@
   animation-fill-mode: forwards;
 }
 
+.css-typing p {
+  margin-bottom: 20px
+}
 
 .fadein {
   opacity: 0;

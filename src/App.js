@@ -1,15 +1,20 @@
 import React, {Component} from 'react';
 import './App.css';
 import Header from './Header.js';
+import 'semantic-ui-css/semantic.css'
+
+
 
 class App extends Component {
 
   render() {
     return(
-   	  <div style={styles.container}>
-      	<div style={styles.header}>
-      		<Header/>
-      	</div>
+      <div>
+	   	  <div style={styles.container}>
+	      	<div style={styles.header}>
+	      		<Header/>
+	      	</div>
+	      </div>
       </div>
     );
   }

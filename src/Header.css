@@ -2,13 +2,14 @@
 
 .ul {
 	list-style-type: none;
-	margin: auto 0;
+	/*margin: 20px 0 auto 0;*/
 	padding-left: 20px;
 	justify-content: center;
 	align-items: center;
 	z-index: 1;
 	font-family: 'Titillium Web', sans-serif;
 	font-weight: 500;
+    background: none;
 }
 
 .particlesFade {

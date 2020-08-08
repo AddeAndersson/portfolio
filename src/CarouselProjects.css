@@ -8,6 +8,7 @@
 
 .carousel .slider-wrapper.axis-vertical .slider {
     flex-direction: row;
+    overflow: visible;
 }
 
 .carouselCont p {

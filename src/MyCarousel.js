@@ -58,7 +58,7 @@ class MyCarousel extends Component {
   render() {
     
     const autoHeight = {
-      height: Math.round(0.92*this.state.height) - 20, //Header is 4% vw, footer is 20px
+      height: Math.round(0.96*this.state.height), //Header is 4% vw, footer is 20px
       width: this.state.width,
       display: 'flex',
       flexDirection: 'column',
@@ -67,7 +67,7 @@ class MyCarousel extends Component {
     };
 
     const scrollable = {
-      height: Math.round(0.92*this.state.height) - 20, //Header is 4% vw, footer is 20px
+      height: Math.round(0.96*this.state.height), //Header is 4% vw, footer is 20px
       width: this.state.width,
       display: 'flex',
       flexDirection: 'column',
@@ -130,7 +130,7 @@ const styles = {
       flex: 1,
       flexDirection: 'column',
       backgroundColor: 'none',
-      //overflow: 'hidden',
+      overflow: 'visible',
     },
     homescreenTitle: {
       color: 'black',

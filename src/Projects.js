@@ -1,6 +1,4 @@
-import React, {Component} from 'react';
-import './Fonts.css';
-import './Projects.css';
+import React, { Component } from 'react';
 //import { Carousel } from "react-responsive-carousel";
 import 'react-responsive-carousel/lib/styles/carousel.css';
 import './CarouselProjects.css';
@@ -32,50 +30,33 @@ import TNM084 from './Documents/TNM084.pdf';
 import TNA009 from './Documents/TNA009.pdf';
 import TNM108 from './Documents/TNM108.pdf';
 import TNM048 from './Documents/TNM048.pdf';
-
-
-function ShowVid(props){
-  const thisItem = props.thisItem;
-  const thatItem = props.thatItem;
-  const vidSrc = props.vidSrc;
-  if(thisItem === thatItem) {
-    return <iframe 
-            width='75%'
-            height='100%'
-            src={vidSrc + "?rel=0&modestbranding=0&autohide=1&showinfo=0&controls=1"}
-            title={thisItem}
-            style={{maxWidth: 800}}
-            frameBorder="0" //allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen>
-           </iframe>;
-  }
-  return null;
-}
-
-function ShowPic(props){
-  const picSrc = props.picSrc;
-  const thatItem = props.thatItem;
-  const thisItem = props.thisItem;
-
-  if(thatItem === thisItem) {
-    return <img alt='' style={{width: "60%", maxWidth: 400, maxHeight: 400}} src={picSrc}/>
-  }
-  return null;
-}
+import Project from './Project.js';
+import { Grid, Item } from 'semantic-ui-react'
+import './Fonts.css';
+import './Projects.css';
 
 class Home extends Component {
 
   constructor(props) {
     super(props);
     this.changeState = this.changeState.bind(this);
-    this.isActive = this.isActive.bind(this);
-    this.state = {chosenItem: -1, width: window.innerWidth, height: window.innerHeight};
+    this.handleClose = this.handleClose.bind(this);
+    this.handleOpen = this.handleOpen.bind(this);
+    this.state = {chosenItem: 0, width: window.innerWidth, height: window.innerHeight, modalVisible: false};
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   changeState(item){
     if(item !== this.state.chosenItem) this.setState({chosenItem: item});
-    else this.setState({chosenItem: -1});
+    else this.setState({chosenItem: 0});
+  }
+
+  handleClose() {
+    this.setState({modalVisible: false})
+  }
+
+  handleOpen() {
+    this.setState({modalVisible: true})
   }
 
   componentWillUnmount() {
@@ -86,281 +67,239 @@ class Home extends Component {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
-  isActive(item) {
-    if(this.state.width < 479){ //Phone
-      const active = {
-            height: '80vw',
-            width: '80vw',
-      };
-
-      const inactive = {
-            height: '55vw',
-            width: '55vw',
-      };
-      if(this.state.chosenItem === item) return active;
-      else return inactive;
-    }
-    else if(this.state.width < 991){ //Tablet
-      const active = {
-            height: '50vw',
-            width: '50vw',
-      };
-
-      const inactive = {
-            height: '35vw',
-            width: '35vw',
-      };
-      if(this.state.chosenItem === item) return active;
-      else return inactive;
-    }
-    else { //Desktop
-      const active = {
-            height: '40vw',
-            width: '40vw',
-      };
-
-      const inactive = {
-            height: '25vw',
-            width: '25vw',
-      };
-      if(this.state.chosenItem === item) return active;
-      else return inactive;
-    }
-      
-  }
-
   render() {
 
     return(
-      /*<div className='carouselCont' style={styles.carouselContainer}>
-        <Carousel width={this.state.width + "px"} axis={"horizontal"} 
-          showThumbs={false} infiniteLoop={true} transitionTime={800} 
-          autoPlay={true} interval={7000} useKeyboardArrows={true}>
-          <div style={styles.carouselItem}>
-              <h1 style={{color: '#3399FF'}}>Biljard Simulation</h1>
-              <p>
-                A short video as a result of simulating the initial
-                hit in a game of biljard. <br/>
-              </p>
-              <ShowVid className="fades" vidSrc="https://www.youtube.com/embed/iTWdN_GpJhw" thisItem={5} thatItem={this.state.chosenItem}/>
-              <div>
-                <a style={{color: '#3399FF'}} href={TNM085} target="_blank" rel="noopener noreferrer">Open report</a>
-                <div className='icons'>
-                  <SVG src={cplusplus_icon}/>
-                </div>
-              </div>
-          </div>
-          <div style={styles.carouselItem}>
-              <h1 style={{color: '#3399FF'}}>Evaari</h1>
-              <p>
-                A RTS-styled VR game made in Unity. <br/>
-              </p>
-              <ShowVid className="fades" vidSrc="https://www.youtube.com/embed/h8h2IKuRL4c" thisItem={1} thatItem={this.state.chosenItem}/>
-              <div>
-                <a style={{color: '#3399FF'}} href={TNM094} target="_blank" rel="noopener noreferrer">Open report</a>
-                <div className='icons'>
-                  <SVG src={unity_icon}/>
-                  <SVG src={csharp_icon}/>
-                </div>
-              </div>
-          </div>
-          <div style={styles.carouselItem}>
-              <h1 style={{color: '#3399FF'}}>Monte-Carlo Ray tracer</h1>
-              <p>
-                A project to render a simple scene
-                containing Lambertian and Oren-Nayar reflectors in
-                addition to transparent and perfectly reflecting objects. <br/>
-              </p>
-              <ShowPic className="fades" picSrc={TNCG15_preview} thisItem={2} thatItem={this.state.chosenItem}/>
-              <div>
-                <a style={{color: '#3399FF'}} href={TNCG15} target="_blank" rel="noopener noreferrer">Open report</a>
-                <div className='icons'>
-                  <SVG src={cplusplus_icon}/>
-                </div>
-              </div>
-          </div>
-          <div style={styles.carouselItem}>
-              <h1 style={{color: '#3399FF'}}>Procedural Terrain</h1>
-              <p>
-                A terrain created with procedural methods and Poisson disk sampled instances of grass.
-                There is also a thunderstorm going on. Created with Three.js. <br/>
-              </p>
-              <div>
-                <a style={{color: '#3399FF'}} href={TNM084} target="_blank" rel="noopener noreferrer">Open report</a><br/>
-                <a style={{color: '#3399FF'}} href={"https://addeandersson.github.io/ProceduralTerrain/"} target="_blank" rel="noopener noreferrer">Open preview</a>
-                <div className='icons'>
-                  <SVG src={javascript_icon}/>
-                </div>
-              </div>
-          </div>
-          <div style={styles.carouselItem}>
-              <h1 style={{color: '#3399FF'}}>Movie Recommender System</h1>
-              <p>
-                A machine learning project to implement a collaborative based recommendation system based
-                on Jaccard similarity. <br/>
-              </p>
-              <div>
-                <a style={{color: '#3399FF'}} href={TNM108} target="_blank" rel="noopener noreferrer">Open report</a>
-                <div className='icons'>
-                  <SVG src={python_icon}/>
-                </div>
-              </div>
-          </div>
-          <div style={styles.carouselItem}>
-            <h1 style={{color: '#3399FF'}}>Text Mining</h1>
-              <p>
-                A project created to implement and compare LGK-Bidiagonalization and K-Means clustering to search
-                in a collection of medical abstracts from a set of search phrases. <br/>
-              </p>
-              <div>
-                <a style={{color: '#3399FF'}} href={TNA009} target="_blank" rel="noopener noreferrer">Open report</a>
-                <div className='icons'>
-                  <SVG src={matlab_icon}/>
-                </div>
-              </div>
-          </div>
-          <div style={styles.carouselItem}>
-              <h1 style={{color: '#3399FF'}}>Online Portfolio</h1>
-              <p>You are looking at it!</p>
-              <div>
-                <div className='icons'>
-                  <SVG src={react_icon}/>
-                  <SVG src={javascript_icon}/>
-                  <SVG src={css3_icon}/>
-                </div>
-              </div>
-          </div>
-        </Carousel>
-      </div>*/
-        
-        <ul id="scrollstyle" style={styles.container}>
-          <li style={this.isActive(1)} className='clickable' onClick={() => {this.changeState(1)}}>
-              <div style={styles.ribbon} className="corner-ribbon top-right sticky blue">Click me!</div>
-              <h1 style={{color: '#3399FF'}}>Evaari</h1>
-              <p>
-                A RTS-styled VR game made in Unity. <br/>
-              </p>
-              <ShowVid className="fades" vidSrc="https://www.youtube.com/embed/h8h2IKuRL4c" thisItem={1} thatItem={this.state.chosenItem}/>
-              <div>
-                <a style={{color: '#3399FF'}} href={TNM094} target="_blank" rel="noopener noreferrer">Open report</a>
-                <div className='icons'>
-                  <SVG src={unity_icon}/>
-                  <SVG src={csharp_icon}/>
-                </div>
-              </div>
-          </li>
+        <Grid stackable divided centered columns={2} style={{overflow: 'auto'}} id="scrollstyle" className='override'>
 
-          <li style={this.isActive(2)} /*onClick={() => {this.changeState(2)}}*/>
-              <h1 style={{color: '#3399FF'}}>Procedural Terrain</h1>
-              <p>
-                A terrain created with procedural methods and Poisson disk sampled instances of grass.
-                There is also a thunderstorm going on. Created with Three.js. <br/>
-              </p>
-              <div>
-                <a style={{color: '#3399FF'}} href={TNM084} target="_blank" rel="noopener noreferrer">Open report</a><br/>
-                <a style={{color: '#3399FF'}} href={"https://addeandersson.github.io/ProceduralTerrain/"} target="_blank" rel="noopener noreferrer">Open preview</a>
-                <div className='icons'>
-                  <SVG src={javascript_icon}/>
-                  <SVG src={webgl_icon}/>
-                </div>
-              </div>
-          </li>
-          
-          <li style={this.isActive(3)} className='clickable' onClick={() => {this.changeState(3)}}>
-              <div style={styles.ribbon} className="corner-ribbon top-right sticky blue">Click me!</div>
-              <h1 style={{color: '#3399FF'}}>Monte-Carlo Ray tracer</h1>
-              <p>
-                A project to render a simple scene
-                containing Lambertian and Oren-Nayar reflectors in
-                addition to transparent and perfectly reflecting objects. <br/>
-              </p>
-              <ShowPic className="fades" picSrc={TNCG15_preview} thisItem={3} thatItem={this.state.chosenItem}/>
-              <div>
-                <a style={{color: '#3399FF'}} href={TNCG15} target="_blank" rel="noopener noreferrer">Open report</a>
-                <div className='icons'>
-                  <SVG src={cplusplus_icon}/>
-                </div>
-              </div>
-          </li>
+          <Project open={this.state.modalVisible} handleClose={() => this.handleClose()}
+          media={details[this.state.chosenItem].media} mediaSrc={details[this.state.chosenItem].mediaSrc} 
+          title={details[this.state.chosenItem].title}/>
 
+          <Grid.Row>
+            { /*EVAARI*/ }
+            <Grid.Column width={7}>
+              <Item className='clickable' onClick={() => {this.changeState(0); this.setState({modalVisible: !this.state.modalVisible})}}>
+                <Item.Content style={styles.content} className='contenta'>
+                  <Item.Header>
+                    <h1 style={{color: '#3399FF'}}>Evaari</h1>
+                  </Item.Header>
+                  <Item.Description>
+                    <p>A RTS-styled VR game made in Unity. <br/></p>
+                  </Item.Description>
+                  <Item.Extra>
+                    <div>
+                      <a style={{color: '#3399FF'}} href={TNM094} target="_blank" rel="noopener noreferrer">Open report</a>
+                      <div className='icons'>
+                        <SVG src={unity_icon}/>
+                        <SVG src={csharp_icon}/>
+                      </div>
+                    </div>
+                  </Item.Extra>
+                </Item.Content>
+              </Item>
+            </Grid.Column>
 
-          <li style={this.isActive(4)} /*onClick={() => {this.changeState(4)}}*/>
-              <h1 style={{color: '#3399FF'}}>Text Mining</h1>
-              <p>
-                A project created to implement and compare LGK-Bidiagonalization and K-Means clustering to search
-                in a collection of medical abstracts from a set of search phrases. <br/>
-              </p>
-              <div>
-                <a style={{color: '#3399FF'}} href={TNA009} target="_blank" rel="noopener noreferrer">Open report</a>
-                <div className='icons'>
-                  <SVG src={matlab_icon}/>
-                </div>
-              </div>
-          </li>
+            { /*PROCEDURAL TERRAIN*/ }
+            <Grid.Column width={7}>
+              <Item /*className='clickable' onClick={() => {this.changeState(1); this.setState({modalVisible: !this.state.modalVisible})}}*/>
+                <Item.Content style={styles.content} className='contenta'>
+                  <Item.Header>
+                    <h1 style={{color: '#3399FF'}}>Procedural Terrain</h1>
+                  </Item.Header>
+                  <Item.Description>
+                    <p>
+                      A terrain created with procedural methods and Poisson disk sampled instances of grass.
+                      There is also a thunderstorm going on. Created with Three.js. <br/>
+                    </p>
+                  </Item.Description>
+                  <Item.Extra>
+                    <div>
+                      <a style={{color: '#3399FF'}} href={TNM084} target="_blank" rel="noopener noreferrer">Open report</a><br/>
+                      <a style={{color: '#3399FF'}} href={"https://addeandersson.github.io/ProceduralTerrain/"} target="_blank" rel="noopener noreferrer">Open preview</a>
+                      <div className='icons'>
+                        <SVG src={javascript_icon}/>
+                        <SVG src={webgl_icon}/>
+                      </div>
+                    </div>
+                  </Item.Extra>
+                </Item.Content>
+              </Item>
+            </Grid.Column>
+          </Grid.Row>
 
-          <li style={this.isActive(5)} className='clickable' onClick={() => {this.changeState(5)}}>
-              <div style={styles.ribbon} className="corner-ribbon top-right sticky blue">Click me!</div>
-              <h1 style={{color: '#3399FF'}}>Biljard Simulation</h1>
-              <p>
-                A short video as a result of simulating the initial
-                hit in a game of biljard. <br/>
-              </p>
-              <ShowVid className="fades" vidSrc="https://www.youtube.com/embed/iTWdN_GpJhw" thisItem={5} thatItem={this.state.chosenItem}/>
-              <div>
-                <a style={{color: '#3399FF'}} href={TNM085} target="_blank" rel="noopener noreferrer">Open report</a>
-                <div className='icons'>
-                  <SVG src={cplusplus_icon}/>
-                  <SVG src={opengl_icon}/>
-                </div>
-              </div>
-          </li>
+          <Grid.Row>
+            { /*MONTE CARLO*/ }
+            <Grid.Column width={7}>
+              <Item className='clickable' onClick={() => {this.changeState(2); this.setState({modalVisible: !this.state.modalVisible})}}>
+                <Item.Content style={styles.content} className='contenta'>
+                  <Item.Header>
+                    <h1 style={{color: '#3399FF'}}>Monte-Carlo Ray tracer</h1>
+                  </Item.Header>
+                  <Item.Description>
+                    <p>
+                      A project to render a simple scene
+                      containing Lambertian and Oren-Nayar reflectors in
+                      addition to transparent and perfectly reflecting objects. <br/>
+                    </p>
+                  </Item.Description>
+                  <Item.Extra>
+                    <div>
+                      <a style={{color: '#3399FF'}} href={TNCG15} target="_blank" rel="noopener noreferrer">Open report</a>
+                      <div className='icons'>
+                        <SVG src={cplusplus_icon}/>
+                      </div>
+                    </div>
+                  </Item.Extra>
+                </Item.Content>
+              </Item>
+            </Grid.Column>
 
-          <li style={this.isActive(6)} /*className='clickable' onClick={() => {this.changeState(6)}}*/>
-              <h1 style={{color: '#3399FF'}}>Climate Change Dashboard</h1>
-              <p>
-                A dashboard made to visualize climate changes. The dashboard features global carbon dioxide levels,
-                precipitation, and natural disasters as well as temperature data for each country. <br/>
-              </p>
-              <div>
-                <a style={{color: '#3399FF'}} href={TNM048} target="_blank" rel="noopener noreferrer">Open report</a><br/>
-                {/*<a style={{color: '#3399FF'}} href={} target="_blank" rel="noopener noreferrer">Open preview</a>*/}
-                <div className='icons'>
-                  <SVG src={javascript_icon}/>
-                  <SVG src={d3_icon}/>
-                </div>
-              </div>
-          </li>
+            { /*TEXT MINING*/ }
+            <Grid.Column width={7}>
+              <Item /*className='clickable' onClick={() => {this.changeState(3); this.setState({modalVisible: !this.state.modalVisible})}}*/>
+                <Item.Content style={styles.content} className='contenta'>
+                  <Item.Header>
+                    <h1 style={{color: '#3399FF'}}>Text Mining</h1>
+                  </Item.Header>
+                  <Item.Description>
+                    <p>
+                      A project created to implement and compare LGK-Bidiagonalization and K-Means clustering to search
+                      in a collection of medical abstracts from a set of search phrases. <br/>
+                    </p>
+                  </Item.Description>
+                  <Item.Extra>
+                    <div>
+                      <a style={{color: '#3399FF'}} href={TNA009} target="_blank" rel="noopener noreferrer">Open report</a>
+                      <div className='icons'>
+                        <SVG src={matlab_icon}/>
+                      </div>
+                    </div>
+                  </Item.Extra>
+                </Item.Content>
+              </Item>
+            </Grid.Column>
+          </Grid.Row>
 
-          <li style={this.isActive(7)} /*className='clickable' onClick={() => {this.changeState(6)}}*/>
-            <h1 style={{color: '#3399FF'}}>Movie Recommender System</h1>
-            <p>
-              A machine learning project to implement a collaborative based recommendation system for movies based
-              on Jaccard similarity. <br/>
-            </p>
-            <div>
-              <a style={{color: '#3399FF'}} href={TNM108} target="_blank" rel="noopener noreferrer">Open report</a>
-              <div className='icons'>
-                <SVG src={python_icon}/>
-              </div>
-            </div>
-          </li>
-          
-          <li style={this.isActive(8)} /*onClick={() => {this.changeState(5)}}*/>
-              <h1 style={{color: '#3399FF'}}>Online Portfolio</h1>
-              <p>You are looking at it!</p>
-              <div className='icons'>
-                <SVG src={react_icon}/>
-                <SVG src={javascript_icon}/>
-                <SVG src={css3_icon}/>
-              </div>
-          </li>
-        </ul>
-        
+          <Grid.Row>
+            { /*BILLIARDS SIMULATION*/ }
+            <Grid.Column width={7}>
+              <Item className='clickable' onClick={() => {this.changeState(4); this.setState({modalVisible: !this.state.modalVisible})}}>
+                <Item.Content style={styles.content} className='contenta'>
+                  <Item.Header>
+                    <h1 style={{color: '#3399FF'}}>Billiards Simulation</h1>
+                  </Item.Header>
+                  <Item.Description>
+                    <p>
+                      A short video as a result of simulating the initial
+                      hit in a game of billiards. <br/>
+                    </p>
+                  </Item.Description>
+                  <Item.Extra>
+                    <div>
+                      <a style={{color: '#3399FF'}} href={TNM085} target="_blank" rel="noopener noreferrer">Open report</a>
+                      <div className='icons'>
+                        <SVG src={cplusplus_icon}/>
+                        <SVG src={opengl_icon}/>
+                      </div>
+                    </div>
+                  </Item.Extra>
+                </Item.Content>
+              </Item>
+            </Grid.Column>
+
+            { /*CLIMATE CHANGE DASHBOARD*/ }
+            <Grid.Column width={7}>
+              <Item /*className='clickable' onClick={() => {this.changeState(5); this.setState({modalVisible: !this.state.modalVisible})}}*/>
+                <Item.Content style={styles.content} className='contenta'>
+                  <Item.Header>
+                    <h1 style={{color: '#3399FF'}}>Climate Change Dashboard</h1>
+                  </Item.Header>
+                  <Item.Description>
+                    <p>
+                      A dashboard made to visualize climate changes. The dashboard features global carbon dioxide levels,
+                      precipitation, and natural disasters as well as temperature data for each country. <br/>
+                    </p>
+                  </Item.Description>
+                  <Item.Extra>
+                    <div>
+                      <a style={{color: '#3399FF'}} href={TNM048} target="_blank" rel="noopener noreferrer">Open report</a><br/>
+                      {/*<a style={{color: '#3399FF'}} href={} target="_blank" rel="noopener noreferrer">Open preview</a>*/}
+                      <div className='icons'>
+                        <SVG src={javascript_icon}/>
+                        <SVG src={d3_icon}/>
+                      </div>
+                    </div>
+                  </Item.Extra>
+                </Item.Content>
+              </Item>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row>
+            { /*MOVIE RECOMMENDER SYSTEM*/ }
+            <Grid.Column width={7}>
+              <Item /*className='clickable' onClick={() => {this.changeState(6); this.setState({modalVisible: !this.state.modalVisible})}}*/>
+                <Item.Content style={styles.content} className='contenta'>
+                  <Item.Header>
+                    <h1 style={{color: '#3399FF'}}>Movie Recommender System</h1>
+                  </Item.Header>
+                  <Item.Description>
+                    <p>
+                      A machine learning project to implement a collaborative based recommendation system for movies based
+                      on Jaccard similarity. <br/>
+                    </p>
+                  </Item.Description>
+                  <Item.Extra>
+                    <div>
+                      <a style={{color: '#3399FF'}} href={TNM108} target="_blank" rel="noopener noreferrer">Open report</a>
+                      <div className='icons'>
+                        <SVG src={python_icon}/>
+                      </div>
+                    </div>
+                  </Item.Extra>
+                </Item.Content>
+              </Item>
+            </Grid.Column>
+
+            { /*ONLINE PORTFOLIO*/ }
+            <Grid.Column width={7}>
+              <Item /*className='clickable' onClick={() => {this.changeState(7); this.setState({modalVisible: !this.state.modalVisible})}}*/>
+                <Item.Content style={styles.content} className='contenta'>
+                  <Item.Header>
+                    <h1 style={{color: '#3399FF'}}>Online Portfolio</h1>
+                  </Item.Header>
+                  <Item.Description>
+                    <p>You are looking at it!</p>
+                  </Item.Description>
+                  <Item.Extra>
+                    <div className='icons'>
+                      <SVG src={react_icon}/>
+                      <SVG src={javascript_icon}/>
+                      <SVG src={css3_icon}/>
+                    </div>
+                  </Item.Extra>
+                </Item.Content>
+              </Item>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
     );
   }
 }
 
 export default Home;
+
+const details = [
+{title: "Evaari", mediaSrc: "h8h2IKuRL4c", media: "video"},
+{title: "Procedural Terrain", mediaSrc: 'null', media: 'null'},
+{title: "Monte-Carlo Ray tracer", mediaSrc: TNCG15_preview, media: "image"},
+{title: "Text Mining", mediaSrc: 'null', media:'null'},
+{title: "Biljard Simulation", mediaSrc: "iTWdN_GpJhw", media: "video"},
+{title: "Climate Change Dashboard", mediaSrc:  'null', media: 'null'},
+{title: "Movie Recommender", mediaSrc: 'null', media: 'null'},
+{title: "Online Portfolio", mediaSrc: 'null', media: 'null'},
+];
 
 const styles = {
 	  container: {
@@ -394,6 +333,11 @@ const styles = {
         flexDirection: 'column',
         justifyContent: 'space-between',
         textAlign: 'left',
+    },
+    content: {
+      color: 'white',
+      overflow: 'hidden',
+      textAlign: 'left',
     },
     preview: {
         maxWidth: 500,

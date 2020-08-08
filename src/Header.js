@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import MyCarousel from './MyCarousel.js';
 import './Header.css';
 import 'react-responsive-carousel/lib/styles/carousel.css';
-import * as THREE from 'three';
+//import * as THREE from 'three';
 
 class Header extends Component {
 
@@ -18,7 +18,7 @@ class Header extends Component {
     window.addEventListener('resize', this.updateWindowDimensions);
 
     //THREE
-    var scene = new THREE.Scene();
+    /*var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     var renderer = new THREE.WebGLRenderer({alpha: true});
@@ -41,7 +41,7 @@ class Header extends Component {
       renderer.render(scene, camera);
     };
 
-    animate();
+    animate();*/
   }
 
   componentWillUnmount() {
@@ -103,8 +103,9 @@ class Header extends Component {
                 </li>*/}
               </ul>
             <div style={styles.carContainer}>
+            {/*<div style={styles.particleWrapper} ref={ref => (this.mount = ref)}/>*/}
               <MyCarousel item={this.state.chosenItem}/>
-              <div style={styles.particleWrapper} ref={ref => (this.mount = ref)}/>
+              
             </div>
         	</div>
       );	
@@ -132,6 +133,7 @@ const styles = {
       backgroundColor: 'none',
       zIndex: 10,
       position: 'relative',
+      overflow: 'visible'
   },
 
   particleWrapper: {
@@ -140,14 +142,6 @@ const styles = {
       top: 0,
       left: 0,
       backgroundColor: 'none',
-  },
-
-  footer: {
-      height: 20,
-      padding: 0,
-      margin: 'auto',
-      zIndex: 1,
-      fontSize: 15,
   },
 };
 

@@ -4,6 +4,7 @@
 /node_modules
 /react-pdf
 /react-responsive-carousel
+/semantic
 
 # testing
 /coverage
