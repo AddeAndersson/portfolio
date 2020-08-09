@@ -21,72 +21,129 @@
 }
 /* The ribbons */
 
-.corner-ribbon{
-  width: 200px;
-  background: #3399FF;
-  top: 25px;
-  left: -50px;
-  text-align: center;
-  border: 5px solid white;
-  letter-spacing: 1px;
-  color: #292726;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+/* common */
+.ribbon {
+  width: 150px;
+  height: 150px;
   overflow: hidden;
-  cursor: pointer;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid #2980b9;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: #3399FF;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: #fff;
+  font: 700 18px/1 'Lato', sans-serif;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  text-transform: uppercase;
+  text-align: center;
 }
 
-.dimmed.dimmable > .ui.modals.dimmer.visible {
-  display: flex !important;
+/* top left*/
+.ribbon-top-left {
+  top: -10px;
+  left: -10px;
 }
-
-.center {
-  justify-content: center;
-  display: flex;
+.ribbon-top-left::before,
+.ribbon-top-left::after {
+  border-top-color: transparent;
+  border-left-color: transparent;
 }
-
-/* Custom styles */
-
-.corner-ribbon.sticky{
-  position: fixed;
+.ribbon-top-left::before {
+  top: 0;
+  right: 0;
 }
-
-.corner-ribbon.shadow{
-  box-shadow: 0 0 3px rgba(0,0,0,.3);
+.ribbon-top-left::after {
+  bottom: 0;
+  left: 0;
 }
-
-/* Different positions */
-
-.corner-ribbon.top-left{
-  top: 25px;
-  left: -50px;
+.ribbon-top-left span {
+  right: -25px;
+  top: 30px;
   transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
 }
 
-.corner-ribbon.top-right{
-  top: 25px;
-  right: -60px;
-  left: auto;
+/* top right*/
+.ribbon-top-right {
+  top: 15px;
+  right: 5px;
+}
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon-top-right::before {
+  top: 0;
+  left: 0;
+}
+.ribbon-top-right::after {
+  bottom: 0;
+  right: 0;
+}
+.ribbon-top-right span {
+  left: -25px;
+  top: 30px;
   transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
 }
 
-.corner-ribbon.bottom-left{
-  top: auto;
-  bottom: 25px;
-  left: -50px;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+/* bottom left*/
+.ribbon-bottom-left {
+  bottom: -10px;
+  left: -10px;
+}
+.ribbon-bottom-left::before,
+.ribbon-bottom-left::after {
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+.ribbon-bottom-left::before {
+  bottom: 0;
+  right: 0;
+}
+.ribbon-bottom-left::after {
+  top: 0;
+  left: 0;
+}
+.ribbon-bottom-left span {
+  right: -25px;
+  bottom: 30px;
+  transform: rotate(225deg);
 }
 
-.corner-ribbon.bottom-right{
-  top: auto;
-  right: -50px;
-  bottom: 25px;
-  left: auto;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+/* bottom right*/
+.ribbon-bottom-right {
+  bottom: -10px;
+  right: -10px;
+}
+.ribbon-bottom-right::before,
+.ribbon-bottom-right::after {
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon-bottom-right::before {
+  bottom: 0;
+  left: 0;
+}
+.ribbon-bottom-right::after {
+  top: 0;
+  right: 0;
+}
+.ribbon-bottom-right span {
+  left: -25px;
+  bottom: 30px;
+  transform: rotate(-225deg);
 }
 
 
@@ -101,7 +158,7 @@
 }
 
 .override.ui.divided.grid:not([class*="vertically divided"]) > .row > .column {
-    box-shadow: -1px 0px 0px 0px rgba(255, 255, 255, 0.15)
+    box-shadow: -1px 0px 0px 0px rgba(255, 255, 255, 0.15);
 }
 
 .override.ui.item.content.contenta.header {
@@ -110,6 +167,10 @@
   font-family: 'Titillium Web', sans-serif !important;
 	justify-content: center;
 	font-size: calc((5vh + 1vw)/2);
+}
+
+.ui.item.content {
+  font-size: 1.2em
 }
 
 .item  {

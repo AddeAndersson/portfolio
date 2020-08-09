@@ -16,10 +16,6 @@ div {
 	font-family: 'Titillium Web', sans-serif;
 }
 
-.row {
-	display: inline-block;
-}
-
 /*Scroll*/
 #scrollstyle::-webkit-scrollbar {
 	width: 8px;

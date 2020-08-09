@@ -16,32 +16,6 @@ class Header extends Component {
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
-
-    //THREE
-    /*var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-    var renderer = new THREE.WebGLRenderer({alpha: true});
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    this.mount.appendChild(renderer.domElement);
-
-    var geometry = new THREE.TorusGeometry(10, 4, 16, 100);
-    var material = new THREE.PointsMaterial({ color: 0x3399FF }); material.size = 0.1;
-    var torus = new THREE.Points(geometry, material);
-    torus.position.x += 7;
-    torus.rotation.y -= Math.PI/4;
-    scene.add(torus);
-
-    camera.position.z = 30;
-
-    var animate = function() {
-      requestAnimationFrame(animate);
-      torus.rotation.z += 0.005;
-
-      renderer.render(scene, camera);
-    };
-
-    animate();*/
   }
 
   componentWillUnmount() {

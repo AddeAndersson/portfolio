@@ -70,22 +70,24 @@ class Home extends Component {
   render() {
 
     return(
-        <Grid stackable divided centered columns={2} style={{overflow: 'auto'}} id="scrollstyle" className='override'>
+        <Grid stackable centered columns={2} style={{overflow: 'auto'}} id="scrollstyle" className='override'>
 
           <Project open={this.state.modalVisible} handleClose={() => this.handleClose()}
           media={details[this.state.chosenItem].media} mediaSrc={details[this.state.chosenItem].mediaSrc} 
-          title={details[this.state.chosenItem].title}/>
+          title={details[this.state.chosenItem].title} description={details[this.state.chosenItem].description}
+          report={details[this.state.chosenItem].report}/>
 
           <Grid.Row>
             { /*EVAARI*/ }
             <Grid.Column width={7}>
               <Item className='clickable' onClick={() => {this.changeState(0); this.setState({modalVisible: !this.state.modalVisible})}}>
                 <Item.Content style={styles.content} className='contenta'>
+                  <div class="ribbon ribbon-top-right"><span>Click me!</span></div>
                   <Item.Header>
                     <h1 style={{color: '#3399FF'}}>Evaari</h1>
                   </Item.Header>
-                  <Item.Description>
-                    <p>A RTS-styled VR game made in Unity. <br/></p>
+                  <Item.Description style={{width: "75%"}}>
+                    <p style={{fontSize: '1.2em'}}>A real time strategy game in virtual reality made in Unity.</p>
                   </Item.Description>
                   <Item.Extra>
                     <div>
@@ -107,10 +109,10 @@ class Home extends Component {
                   <Item.Header>
                     <h1 style={{color: '#3399FF'}}>Procedural Terrain</h1>
                   </Item.Header>
-                  <Item.Description>
-                    <p>
+                  <Item.Description style={{width: "75%"}}>
+                    <p style={{fontSize: '1.2em'}}>
                       A terrain created with procedural methods and Poisson disk sampled instances of grass.
-                      There is also a thunderstorm going on. Created with Three.js. <br/>
+                      There is also a thunderstorm going on. Created with Three.js.
                     </p>
                   </Item.Description>
                   <Item.Extra>
@@ -129,32 +131,6 @@ class Home extends Component {
           </Grid.Row>
 
           <Grid.Row>
-            { /*MONTE CARLO*/ }
-            <Grid.Column width={7}>
-              <Item className='clickable' onClick={() => {this.changeState(2); this.setState({modalVisible: !this.state.modalVisible})}}>
-                <Item.Content style={styles.content} className='contenta'>
-                  <Item.Header>
-                    <h1 style={{color: '#3399FF'}}>Monte-Carlo Ray tracer</h1>
-                  </Item.Header>
-                  <Item.Description>
-                    <p>
-                      A project to render a simple scene
-                      containing Lambertian and Oren-Nayar reflectors in
-                      addition to transparent and perfectly reflecting objects. <br/>
-                    </p>
-                  </Item.Description>
-                  <Item.Extra>
-                    <div>
-                      <a style={{color: '#3399FF'}} href={TNCG15} target="_blank" rel="noopener noreferrer">Open report</a>
-                      <div className='icons'>
-                        <SVG src={cplusplus_icon}/>
-                      </div>
-                    </div>
-                  </Item.Extra>
-                </Item.Content>
-              </Item>
-            </Grid.Column>
-
             { /*TEXT MINING*/ }
             <Grid.Column width={7}>
               <Item /*className='clickable' onClick={() => {this.changeState(3); this.setState({modalVisible: !this.state.modalVisible})}}*/>
@@ -162,10 +138,10 @@ class Home extends Component {
                   <Item.Header>
                     <h1 style={{color: '#3399FF'}}>Text Mining</h1>
                   </Item.Header>
-                  <Item.Description>
-                    <p>
+                  <Item.Description style={{width: "75%"}}>
+                    <p style={{fontSize: '1.2em'}}>
                       A project created to implement and compare LGK-Bidiagonalization and K-Means clustering to search
-                      in a collection of medical abstracts from a set of search phrases. <br/>
+                      in a collection of medical abstracts from a set of search phrases.
                     </p>
                   </Item.Description>
                   <Item.Extra>
@@ -179,6 +155,33 @@ class Home extends Component {
                 </Item.Content>
               </Item>
             </Grid.Column>
+
+            { /*MONTE CARLO*/ }
+            <Grid.Column width={7}>
+              <Item className='clickable' onClick={() => {this.changeState(2); this.setState({modalVisible: !this.state.modalVisible})}}>
+                <Item.Content style={styles.content} className='contenta'>
+                  <div class="ribbon ribbon-top-right"><span>Click me!</span></div>
+                  <Item.Header>
+                    <h1 style={{color: '#3399FF'}}>Monte-Carlo Ray tracer</h1>
+                  </Item.Header>
+                  <Item.Description style={{width: "75%"}}>
+                    <p style={{fontSize: '1.2em'}}>
+                      A project to render a simple scene
+                      containing Lambertian and Oren-Nayar reflectors in
+                      addition to transparent and perfectly reflecting objects.
+                    </p>
+                  </Item.Description>
+                  <Item.Extra>
+                    <div>
+                      <a style={{color: '#3399FF'}} href={TNCG15} target="_blank" rel="noopener noreferrer">Open report</a>
+                      <div className='icons'>
+                        <SVG src={cplusplus_icon}/>
+                      </div>
+                    </div>
+                  </Item.Extra>
+                </Item.Content>
+              </Item>
+            </Grid.Column> 
           </Grid.Row>
 
           <Grid.Row>
@@ -186,13 +189,14 @@ class Home extends Component {
             <Grid.Column width={7}>
               <Item className='clickable' onClick={() => {this.changeState(4); this.setState({modalVisible: !this.state.modalVisible})}}>
                 <Item.Content style={styles.content} className='contenta'>
+                  <div class="ribbon ribbon-top-right"><span>Click me!</span></div>
                   <Item.Header>
                     <h1 style={{color: '#3399FF'}}>Billiards Simulation</h1>
                   </Item.Header>
-                  <Item.Description>
-                    <p>
+                  <Item.Description style={{width: "75%"}}>
+                    <p style={{fontSize: '1.2em'}}>
                       A short video as a result of simulating the initial
-                      hit in a game of billiards. <br/>
+                      hit in a game of billiards.
                     </p>
                   </Item.Description>
                   <Item.Extra>
@@ -215,10 +219,10 @@ class Home extends Component {
                   <Item.Header>
                     <h1 style={{color: '#3399FF'}}>Climate Change Dashboard</h1>
                   </Item.Header>
-                  <Item.Description>
-                    <p>
+                  <Item.Description style={{width: "75%"}}>
+                    <p style={{fontSize: '1.2em'}}>
                       A dashboard made to visualize climate changes. The dashboard features global carbon dioxide levels,
-                      precipitation, and natural disasters as well as temperature data for each country. <br/>
+                      precipitation, and natural disasters as well as temperature data for each country.
                     </p>
                   </Item.Description>
                   <Item.Extra>
@@ -244,10 +248,10 @@ class Home extends Component {
                   <Item.Header>
                     <h1 style={{color: '#3399FF'}}>Movie Recommender System</h1>
                   </Item.Header>
-                  <Item.Description>
-                    <p>
+                  <Item.Description style={{width: "75%"}}>
+                    <p style={{fontSize: '1.2em'}}>
                       A machine learning project to implement a collaborative based recommendation system for movies based
-                      on Jaccard similarity. <br/>
+                      on Jaccard similarity.
                     </p>
                   </Item.Description>
                   <Item.Extra>
@@ -269,8 +273,8 @@ class Home extends Component {
                   <Item.Header>
                     <h1 style={{color: '#3399FF'}}>Online Portfolio</h1>
                   </Item.Header>
-                  <Item.Description>
-                    <p>You are looking at it!</p>
+                  <Item.Description style={{width: "75%"}}>
+                    <p style={{fontSize: '1.2em'}}>You are looking at it!</p>
                   </Item.Description>
                   <Item.Extra>
                     <div className='icons'>
@@ -291,14 +295,14 @@ class Home extends Component {
 export default Home;
 
 const details = [
-{title: "Evaari", mediaSrc: "h8h2IKuRL4c", media: "video"},
-{title: "Procedural Terrain", mediaSrc: 'null', media: 'null'},
-{title: "Monte-Carlo Ray tracer", mediaSrc: TNCG15_preview, media: "image"},
-{title: "Text Mining", mediaSrc: 'null', media:'null'},
-{title: "Biljard Simulation", mediaSrc: "iTWdN_GpJhw", media: "video"},
-{title: "Climate Change Dashboard", mediaSrc:  'null', media: 'null'},
-{title: "Movie Recommender", mediaSrc: 'null', media: 'null'},
-{title: "Online Portfolio", mediaSrc: 'null', media: 'null'},
+{title: "Evaari", report: TNM094, mediaSrc: "h8h2IKuRL4c", media: "video", description: "A game developed as the media technology bachelor project. Two players battle each other by issuing units to fight for them and destroy the opponents castle. The game is made in Unity. Watch the video for a preview of the game!"},
+{title: "Procedural Terrain", report: TNM084, mediaSrc: 'null', media: 'null', description: 'null'},
+{title: "Monte-Carlo Ray Tracer", report: TNCG15, mediaSrc: TNCG15_preview, media: "image", description: "A program created to produce photo realistic images of a scene containing mirrors, glass, and diffuse objects. A ray tracer is based on how light interacts with objects in real life. The program is created in C++. For more information read the report."},
+{title: "Text Mining", report: TNA009, mediaSrc: 'null', media: 'null', description: 'null'},
+{title: "Billiard Simulation", report: TNM085, mediaSrc: "iTWdN_GpJhw", media: "video", description: "A simulation of the initial hit and the resulting collisions in a game of billiards. The simulation is made in C++ and OpenGL. Watch the video to see the final result!"},
+{title: "Climate Change Dashboard", report: TNM048, mediaSrc:  'null', media: 'null', description: 'null'},
+{title: "Movie Recommender", report: TNM108, mediaSrc: 'null', media: 'null', description: 'null'},
+{title: "Online Portfolio", report: 'null', mediaSrc: 'null', media: 'null', description: 'null'},
 ];
 
 const styles = {

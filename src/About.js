@@ -94,7 +94,7 @@ class About extends Component {
             I'm <Emph word="Adrian Andersson"/>, a M.Sc. Student in Media Technology and Engineering
             at the university of Linköping. Originally from <Emph word="Nässjö"/>, Småland,
             my interest for tech took me to Norrköping to study and become an engineer.
-            I am currently on my <Emph word="fourth year"/> and have begun my masters. At the moment
+            I am currently on my <Emph word="fifth and final year"/> and have begun my masters. At the moment
             I have no special interest in any particular field, I'm still trying to decide
             which field to pursue. Media technology offers a strong foundation in programming,
             mathematics, and user experiences. On top of that media technology students excel in computer

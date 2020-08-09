@@ -14,19 +14,37 @@ class Home extends Component {
     renderer.setSize(window.innerWidth, window.innerHeight);
     this.mount.appendChild(renderer.domElement);
 
-    var geometry = new THREE.TorusGeometry(10, 4, 16, 100);
+    // Torus
+    /*var geometry = new THREE.TorusGeometry(10, 4, 16, 100);
     var material = new THREE.PointsMaterial({ color: 0x3399FF }); material.size = 0.1;
     var torus = new THREE.Points(geometry, material);
     torus.position.x += 7;
     torus.rotation.y -= Math.PI/4;
-    scene.add(torus);
+    scene.add(torus);*/
+
+    // Outer cube
+    var geo = new THREE.BoxGeometry(20, 20, 20, 15, 15, 15);
+    var mat = new THREE.PointsMaterial({ color: 0x3399FF }); mat.size = 0.1;
+    var box = new THREE.Points(geo, mat);
+    box.position.x += 7;
+    box.rotation.y -= Math.PI/4;
+    scene.add(box);
+
+    // Inner cube
+    /*var geo_inner = new THREE.BoxGeometry(10, 10, 10, 7, 7, 7);
+    var mat_inner = new THREE.PointsMaterial({ color: 0x3399FF }); mat_inner.size = 0.1;
+    var box_inner = new THREE.Points(geo_inner, mat_inner);
+    box_inner.position.x += 7;
+    box_inner.rotation.y -= Math.PI/4;
+    scene.add(box_inner);*/
 
     camera.position.z = 30;
 
     var animate = function() {
       requestAnimationFrame(animate);
-      torus.rotation.z += 0.005;
-
+      //torus.rotation.z += 0.005;
+      box.rotation.y += 0.005;
+      //box_inner.rotation.y += 0.005;
       renderer.render(scene, camera);
     };
 
