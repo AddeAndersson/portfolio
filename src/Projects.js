@@ -21,6 +21,10 @@ import webgl_icon from './Icons/webgl.svg';
 import opengl_icon from './Icons/opengl.svg';
 import matlab_icon from './Icons/matlab.svg';
 import unity_icon from './Icons/unity.svg';
+import keras_icon from './Icons/keras.svg';
+import tensorflow_icon from './Icons/tensorflow.svg';
+import powershell_icon from './Icons/powershell.svg';
+import opencv_icon from './Icons/opencv.svg';
 //import unrealengine_icon from './Icons/unrealengine.svg';
 import css3_icon from './Icons/css3.svg';
 import TNM094 from './Documents/TNM094.pdf';
@@ -30,6 +34,8 @@ import TNM084 from './Documents/TNM084.pdf';
 import TNA009 from './Documents/TNA009.pdf';
 import TNM108 from './Documents/TNM108.pdf';
 import TNM048 from './Documents/TNM048.pdf';
+import TNM095 from './Documents/TNM095.pdf';
+import TNM089 from './Documents/TNM089.pdf';
 import Project from './Project.js';
 import { Grid, Item } from 'semantic-ui-react'
 import './Fonts.css';
@@ -118,7 +124,7 @@ class Home extends Component {
                   <Item.Extra>
                     <div>
                       <a style={{color: '#3399FF'}} href={TNM084} target="_blank" rel="noopener noreferrer">Open report</a><br/>
-                      <a style={{color: '#3399FF'}} href={"https://addeandersson.github.io/ProceduralTerrain/"} target="_blank" rel="noopener noreferrer">Open preview</a>
+                      <a style={{color: '#3399FF'}} href={"https://addeandersson.github.io/ProceduralTerrain/"} target="_blank" rel="noopener noreferrer">Open project</a>
                       <div className='icons'>
                         <SVG src={javascript_icon}/>
                         <SVG src={webgl_icon}/>
@@ -133,7 +139,7 @@ class Home extends Component {
           <Grid.Row>
             { /*TEXT MINING*/ }
             <Grid.Column width={7}>
-              <Item /*className='clickable' onClick={() => {this.changeState(3); this.setState({modalVisible: !this.state.modalVisible})}}*/>
+              <Item /*className='clickable' onClick={() => {this.changeState(2); this.setState({modalVisible: !this.state.modalVisible})}}*/>
                 <Item.Content style={styles.content} className='contenta'>
                   <Item.Header>
                     <h1 style={{color: '#3399FF'}}>Text Mining</h1>
@@ -156,9 +162,41 @@ class Home extends Component {
               </Item>
             </Grid.Column>
 
+            { /*A.I*/ }
+            <Grid.Column width={7}>
+              <Item className='clickable' onClick={() => {this.changeState(3); this.setState({modalVisible: !this.state.modalVisible})}}>
+                <Item.Content style={styles.content} className='contenta'>
+                  <div class="ribbon ribbon-top-right"><span>Click me!</span></div>
+                  <Item.Header>
+                    <h1 style={{color: '#3399FF'}}>DDPG Agent in TORCS</h1>
+                  </Item.Header>
+                  <Item.Description style={{width: "75%"}}>
+                    <p style={{fontSize: '1.2em'}}>
+                      A project to create and train a DDPG agent to race in the car
+                      racing game TORCS. 
+                    </p>
+                  </Item.Description>
+                  <Item.Extra>
+                    <div>
+                      <a style={{color: '#3399FF'}} href={TNM095} target="_blank" rel="noopener noreferrer">Open report</a><br/>
+                      <a style={{color: '#3399FF'}} href={TNM095} target="_blank" rel="noopener noreferrer">Watch presentation</a>
+                      <div className='icons'>
+                        <SVG src={python_icon}/>
+                        <SVG src={tensorflow_icon}/>
+                        <SVG src={keras_icon}/>
+                        <SVG src={powershell_icon}/>
+                      </div>
+                    </div>
+                  </Item.Extra>
+                </Item.Content>
+              </Item>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row>
             { /*MONTE CARLO*/ }
             <Grid.Column width={7}>
-              <Item className='clickable' onClick={() => {this.changeState(2); this.setState({modalVisible: !this.state.modalVisible})}}>
+              <Item className='clickable' onClick={() => {this.changeState(4); this.setState({modalVisible: !this.state.modalVisible})}}>
                 <Item.Content style={styles.content} className='contenta'>
                   <div class="ribbon ribbon-top-right"><span>Click me!</span></div>
                   <Item.Header>
@@ -182,12 +220,10 @@ class Home extends Component {
                 </Item.Content>
               </Item>
             </Grid.Column> 
-          </Grid.Row>
-
-          <Grid.Row>
+          
             { /*BILLIARDS SIMULATION*/ }
             <Grid.Column width={7}>
-              <Item className='clickable' onClick={() => {this.changeState(4); this.setState({modalVisible: !this.state.modalVisible})}}>
+              <Item className='clickable' onClick={() => {this.changeState(5); this.setState({modalVisible: !this.state.modalVisible})}}>
                 <Item.Content style={styles.content} className='contenta'>
                   <div class="ribbon ribbon-top-right"><span>Click me!</span></div>
                   <Item.Header>
@@ -211,10 +247,12 @@ class Home extends Component {
                 </Item.Content>
               </Item>
             </Grid.Column>
+          </Grid.Row>
 
+          <Grid.Row>
             { /*CLIMATE CHANGE DASHBOARD*/ }
             <Grid.Column width={7}>
-              <Item /*className='clickable' onClick={() => {this.changeState(5); this.setState({modalVisible: !this.state.modalVisible})}}*/>
+              <Item /*className='clickable' onClick={() => {this.changeState(6); this.setState({modalVisible: !this.state.modalVisible})}}*/>
                 <Item.Content style={styles.content} className='contenta'>
                   <Item.Header>
                     <h1 style={{color: '#3399FF'}}>Climate Change Dashboard</h1>
@@ -238,12 +276,10 @@ class Home extends Component {
                 </Item.Content>
               </Item>
             </Grid.Column>
-          </Grid.Row>
 
-          <Grid.Row>
             { /*MOVIE RECOMMENDER SYSTEM*/ }
             <Grid.Column width={7}>
-              <Item /*className='clickable' onClick={() => {this.changeState(6); this.setState({modalVisible: !this.state.modalVisible})}}*/>
+              <Item /*className='clickable' onClick={() => {this.changeState(7); this.setState({modalVisible: !this.state.modalVisible})}}*/>
                 <Item.Content style={styles.content} className='contenta'>
                   <Item.Header>
                     <h1 style={{color: '#3399FF'}}>Movie Recommender System</h1>
@@ -265,10 +301,39 @@ class Home extends Component {
                 </Item.Content>
               </Item>
             </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row>
+            { /*IMAGE STITCHER*/ }
+            <Grid.Column width={7}>
+              <Item className='clickable' onClick={() => {this.changeState(8); this.setState({modalVisible: !this.state.modalVisible})}}>
+                <Item.Content style={styles.content} className='contenta'>
+                  <div class="ribbon ribbon-top-right"><span>Click me!</span></div>
+                  <Item.Header>
+                    <h1 style={{color: '#3399FF'}}>Tennis Image Stitcher</h1>
+                  </Item.Header>
+                  <Item.Description style={{width: "75%"}}>
+                    <p style={{fontSize: '1.2em'}}>
+                      A project to explore image stitching using as few as possible finished OpenCV functions. The aim is to stitch together a tennis match 
+                      captured with two cameras aimed at each half of the court.
+                    </p>
+                  </Item.Description>
+                  <Item.Extra>
+                    <div>
+                      <a style={{color: '#3399FF'}} href={TNM089} target="_blank" rel="noopener noreferrer">Open report</a>
+                      <div className='icons'>
+                        <SVG src={python_icon}/>
+                        <SVG src={opencv_icon}/> 
+                      </div>
+                    </div>
+                  </Item.Extra>
+                </Item.Content>
+              </Item>
+            </Grid.Column>
 
             { /*ONLINE PORTFOLIO*/ }
             <Grid.Column width={7}>
-              <Item /*className='clickable' onClick={() => {this.changeState(7); this.setState({modalVisible: !this.state.modalVisible})}}*/>
+              <Item /*className='clickable' onClick={() => {this.changeState(8); this.setState({modalVisible: !this.state.modalVisible})}}*/>
                 <Item.Content style={styles.content} className='contenta'>
                   <Item.Header>
                     <h1 style={{color: '#3399FF'}}>Online Portfolio</h1>
@@ -297,11 +362,13 @@ export default Home;
 const details = [
 {title: "Evaari", report: TNM094, mediaSrc: "h8h2IKuRL4c", media: "video", description: "A game developed as the media technology bachelor project. Two players battle each other by issuing units to fight for them and destroy the opponents castle. The game is made in Unity. Watch the video for a preview of the game!"},
 {title: "Procedural Terrain", report: TNM084, mediaSrc: 'null', media: 'null', description: 'null'},
-{title: "Monte-Carlo Ray Tracer", report: TNCG15, mediaSrc: TNCG15_preview, media: "image", description: "A program created to produce photo realistic images of a scene containing mirrors, glass, and diffuse objects. A ray tracer is based on how light interacts with objects in real life. The program is created in C++. For more information read the report."},
 {title: "Text Mining", report: TNA009, mediaSrc: 'null', media: 'null', description: 'null'},
+{title: "Deep Deterministic Policy Gradient Agent in TORCS", report: TNM095, mediaSrc: 'V_kxQbAES2E', media: 'video', description: "A project with the aim to implement and train a self-driving agent in the car racing game TORCS. Using python, Keras, and Tensorflow a Deep Deterministic Policy Gradient (DDPG) agent was created. Read the report for more information and watch the video for a demo of the agent."},
+{title: "Monte-Carlo Ray Tracer", report: TNCG15, mediaSrc: TNCG15_preview, media: "image", description: "A program created to produce photo realistic images of a scene containing mirrors, glass, and diffuse objects. A ray tracer is based on how light interacts with objects in real life. The program is created in C++. For more information read the report."},
 {title: "Billiard Simulation", report: TNM085, mediaSrc: "iTWdN_GpJhw", media: "video", description: "A simulation of the initial hit and the resulting collisions in a game of billiards. The simulation is made in C++ and OpenGL. Watch the video to see the final result!"},
 {title: "Climate Change Dashboard", report: TNM048, mediaSrc:  'null', media: 'null', description: 'null'},
 {title: "Movie Recommender", report: TNM108, mediaSrc: 'null', media: 'null', description: 'null'},
+{title: "Tennis Image Stitcher", report: TNM089, mediaSrc: "EzEZCa5NmuE", media: "video", description: "A project to create a fuller experience when watching tennis. Stitching is applied with minimal use of pre-existing OpenCV functions to two video sequences of a tennis match. The videos contain one half of the tennis court each and when they are stitched together they capture the entire court. Watch the video for the final result!"},
 {title: "Online Portfolio", report: 'null', mediaSrc: 'null', media: 'null', description: 'null'},
 ];
 
