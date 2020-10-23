@@ -2,7 +2,7 @@
 
 .ul {
 	list-style-type: none;
-	margin: 20px 0 auto 0;
+	margin: 10px 0 0 0;
 	padding-left: 20px;
 	justify-content: center;
 	align-items: center;
@@ -10,7 +10,7 @@
 	font-family: 'Titillium Web', sans-serif;
 	font-weight: 500;
     background: none;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     border-bottom: 1px solid #3399FF;
 }
 
@@ -19,6 +19,11 @@
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
     -o-animation: fadein 2s; /* Opera */
+}
+
+svg {
+    fill: #3399FF;
+    width: 30px;
 }
 
 @keyframes fadein {

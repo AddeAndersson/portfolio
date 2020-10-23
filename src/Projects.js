@@ -179,7 +179,7 @@ class Home extends Component {
                   <Item.Extra>
                     <div>
                       <a style={{color: '#3399FF'}} href={TNM095} target="_blank" rel="noopener noreferrer">Open report</a><br/>
-                      <a style={{color: '#3399FF'}} href={TNM095} target="_blank" rel="noopener noreferrer">Watch presentation</a>
+                      <a style={{color: '#3399FF'}} href="https://youtu.be/-WjhglJGVds" target="_blank" rel="noopener noreferrer">Watch presentation</a>
                       <div className='icons'>
                         <SVG src={python_icon}/>
                         <SVG src={tensorflow_icon}/>

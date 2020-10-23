@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import MyCarousel from './MyCarousel.js';
 import './Header.css';
 import 'react-responsive-carousel/lib/styles/carousel.css';
+import linkedin_icon from './Icons/linkedin.svg';
+import github_icon from './Icons/github.svg';
+import SVG from 'react-inlinesvg';
 //import * as THREE from 'three';
 
 class Header extends Component {
@@ -65,16 +68,16 @@ class Header extends Component {
                 <li style={this.isActive(3)} onClick={() => this.setState({chosenItem: 3})}>
                   CV
                 </li>
-                {/*<li style={liSocials}>
-                  <a href='https://www.linkedin.com/in/adrian-andersson-410345149/'>
-                    <SVG height={Math.round(0.03*this.state.height)} src={linkedin}/>
+                <li style={{float: 'right'}}>
+                  <a href='https://www.linkedin.com/in/adrian-andersson-410345149/' target="_blank" rel="noopener noreferrer">
+                    <SVG height={Math.round(0.03*this.state.height)} src={linkedin_icon}/>
                   </a>
                 </li>
-                <li style={liSocials}>
-                  <a href='https://github.com/AddeAndersson'>
-                    <SVG height={Math.round(0.03*this.state.height)} src={github}/>
+                <li style={{float: 'right'}}>
+                  <a href='https://github.com/AddeAndersson' target="_blank" rel="noopener noreferrer">
+                    <SVG height={Math.round(0.03*this.state.height)} src={github_icon}/>
                   </a>
-                </li>*/}
+                </li>
               </ul>
             <div style={styles.carContainer}>
             {/*<div style={styles.particleWrapper} ref={ref => (this.mount = ref)}/>*/}
