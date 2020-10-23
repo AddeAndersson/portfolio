@@ -206,6 +206,10 @@ h1 svg {
   font-weight: 900;
 }
 
+.icons {
+  margin-bottom: 10px;
+}
+
 .icons svg {
 	fill: white;
 	width: 30px;
