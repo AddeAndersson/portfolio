@@ -9,7 +9,7 @@ import cplusplus_icon from './Icons/cplusplus.svg';
 import csharp_icon from './Icons/csharp.svg';
 import d3_icon from './Icons/d3.svg'; // NEW
 //import github_icon from './Icons/github.svg';
-//import html5_icon from './Icons/html5.svg';
+import html5_icon from './Icons/html5.svg';
 import javascript_icon from './Icons/javascript.svg';
 //import linkedin_icon from './Icons/linkedin.svg';
 //import mysql_icon from './Icons/mysql.svg';
@@ -331,6 +331,34 @@ class Home extends Component {
               </Item>
             </Grid.Column>
 
+            { /*DISC DICE*/ }
+            <Grid.Column width={7}>
+              <Item /*className='clickable' onClick={() => {this.changeState(9); this.setState({modalVisible: !this.state.modalVisible})}}*/>
+                <Item.Content style={styles.content} className='contenta'>
+                  <Item.Header>
+                    <h1 style={{color: '#3399FF'}}>Disc Dice</h1>
+                  </Item.Header>
+                  <Item.Description style={{width: "75%"}}>
+                    <p style={{fontSize: '1.2em'}}>
+                      A small web-application for a disc golf game with rolling dice.
+                    </p>
+                  </Item.Description>
+                  <Item.Extra>
+                    <div>
+                      <a style={{color: '#3399FF'}} href={"https://addeandersson.github.io/DiscDice/"} target="_blank" rel="noopener noreferrer">Open project</a>
+                      <div className='icons'>
+                        <SVG src={html5_icon}/>
+                        <SVG src={javascript_icon}/>
+                        <SVG src={css3_icon}/>
+                      </div>
+                    </div>
+                  </Item.Extra>
+                </Item.Content>
+              </Item>
+            </Grid.Column> 
+          </Grid.Row>
+
+          <Grid.Row>
             { /*ONLINE PORTFOLIO*/ }
             <Grid.Column width={7}>
               <Item /*className='clickable' onClick={() => {this.changeState(8); this.setState({modalVisible: !this.state.modalVisible})}}*/>

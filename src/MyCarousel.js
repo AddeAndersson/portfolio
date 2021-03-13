@@ -80,7 +80,7 @@ class MyCarousel extends Component {
 
     return(
       <div style={styles.carousel}>
-        <Carousel autoPlay={false} useKeyboardArrows={true} showThumbs={false} infiniteLoop={true} axis={'vertical'}
+        <Carousel autoPlay={false} useKeyboardArrows={false} showThumbs={false} infiniteLoop={true} axis={'vertical'}
         interval={5000} transitionTime={800} selectedItem={this.props.item} showArrows={false} showStatus={false}
         showIndicators={false} swipeable={false} swipeScrollTolerance={100000}>
       
