@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
 
-.ul {
+/*.ul {
 	list-style-type: none;
 	margin: 10px 0 0 0;
 	padding-left: 20px;
@@ -12,6 +12,12 @@
     background: none;
     padding-bottom: 0px;
     border-bottom: 1px solid #3399FF;
+}*/
+
+.ui .item {
+    font-family: 'Titillium Web', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .particlesFade {
@@ -63,10 +69,10 @@ svg {
 	cursor: pointer;
 }	
 
-.ul li {
+/*.ul li {
 	margin: auto 20px;
 	padding: 5px;
-}
+}*/
 
 a {
 	color: black;

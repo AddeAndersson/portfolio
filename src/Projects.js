@@ -37,7 +37,7 @@ import TNM048 from './Documents/TNM048.pdf';
 import TNM095 from './Documents/TNM095.pdf';
 import TNM089 from './Documents/TNM089.pdf';
 import Project from './Project.js';
-import { Grid, Item } from 'semantic-ui-react'
+import { Grid, Item } from 'semantic-ui-react';
 import './Fonts.css';
 import './Projects.css';
 

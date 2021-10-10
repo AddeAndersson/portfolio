@@ -5,6 +5,7 @@ import 'react-responsive-carousel/lib/styles/carousel.css';
 import linkedin_icon from './Icons/linkedin.svg';
 import github_icon from './Icons/github.svg';
 import SVG from 'react-inlinesvg';
+import { Menu, Item } from 'semantic-ui-react';
 //import * as THREE from 'three';
 
 class Header extends Component {
@@ -32,59 +33,46 @@ class Header extends Component {
   isActive(item) {
     const active = {
           color: '#3399FF',
-          float: 'left',
-          cursor: 'default',
-          fontSize: Math.round(0.03*this.state.height),
+          cursor: 'default'
     };
     const inactive = {
           color: "white",
-          float: 'left',
-          cursor: 'pointer',
-          fontSize: Math.round(0.03*this.state.height),
+          cursor: 'pointer'
     };
     if(this.state.chosenItem === item) return active;
     else return inactive;
-}
+  }
 
   render() {
 
-      /*const liSocials = {
-            cursor: 'pointer',
-            float: 'right',
-      };*/
-
       return(
         	<div style={styles.container}>
-              <ul className="ul">
-          			<li style={this.isActive(0)} onClick={() => this.setState({chosenItem: 0})}>
+            <div class="ui menu" style={{background: 'none', fontSize: '2rem'}}>
+          			<a class="item" style={this.isActive(0)} onClick={() => this.setState({chosenItem: 0})}>
           			  Home
-          			</li>
-          			<li style={this.isActive(1)} onClick={() => this.setState({chosenItem: 1})}>
+          			</a>
+          			<a class="item" style={this.isActive(1)} onClick={() => this.setState({chosenItem: 1})}>
           				About
-          			</li>
-          			<li style={this.isActive(2)} onClick={() => this.setState({chosenItem: 2})}>
+          			</a>
+          			<a class="item" style={this.isActive(2)} onClick={() => this.setState({chosenItem: 2})}>
           				Projects
-          			</li>
-                <li style={this.isActive(3)} onClick={() => this.setState({chosenItem: 3})}>
+          			</a>
+                <a class="item" style={this.isActive(3)} onClick={() => this.setState({chosenItem: 3})}>
                   CV
-                </li>
-                <li style={{float: 'right'}}>
-                  <a href='https://www.linkedin.com/in/adrian-andersson-410345149/' target="_blank" rel="noopener noreferrer">
+                </a>
+                <div class="right menu">
+                  <a class="item" href='https://www.linkedin.com/in/adrian-andersson-410345149/' target="_blank" rel="noopener noreferrer">
                     <SVG height={Math.round(0.03*this.state.height)} src={linkedin_icon}/>
                   </a>
-                </li>
-                <li style={{float: 'right'}}>
-                  <a href='https://github.com/AddeAndersson' target="_blank" rel="noopener noreferrer">
+                  <a class="item" href='https://github.com/AddeAndersson' target="_blank" rel="noopener noreferrer">
                     <SVG height={Math.round(0.03*this.state.height)} src={github_icon}/>
                   </a>
-                </li>
-              </ul>
-            <div style={styles.carContainer}>
-            {/*<div style={styles.particleWrapper} ref={ref => (this.mount = ref)}/>*/}
-              <MyCarousel item={this.state.chosenItem}/>
-              
+                </div>
             </div>
-        	</div>
+            <div style={styles.carContainer}>
+              <MyCarousel item={this.state.chosenItem}/> 
+            </div>
+        	</div>  
       );	
   }
 }
@@ -99,6 +87,7 @@ const styles = {
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
+    backgroundColor: '#292726'
   },
 
   carContainer: {
@@ -120,5 +109,5 @@ const styles = {
       left: 0,
       backgroundColor: 'none',
   },
-};
+}
 
