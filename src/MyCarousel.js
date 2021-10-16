@@ -58,16 +58,16 @@ class MyCarousel extends Component {
   render() {
     
     const autoHeight = {
-      height: Math.round(0.96*this.state.height), //Header is 4% vw, footer is 20px
+      height: Math.round(0.90*this.state.height),
       width: this.state.width,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      //overflow: "hidden",
+      padding: '20px 0px',
     };
 
     const scrollable = {
-      height: Math.round(0.96*this.state.height), //Header is 4% vw, footer is 20px
+      height: Math.round(0.88*this.state.height),
       width: this.state.width,
       display: 'flex',
       flexDirection: 'column',
@@ -75,7 +75,8 @@ class MyCarousel extends Component {
       justifyContent: 'flex-start',
       alignItems: 'center',
       flex: 1,
-      overflowY: 'auto',
+      overflowY: 'scroll',
+      padding: '20px 0px',
     };
 
     return(
@@ -102,7 +103,6 @@ class MyCarousel extends Component {
           {/*3*/}
           <div id="scrollstyle" style={scrollable} onClick={this.changePage}>
             <Document file={CV} onLoadSuccess={this.onDocumentLoadSuccess} onLoadError={console.error}>
-              
               {Array.from(new Array(this.state.numPages), (el, index) => 
                 (<Page className="row" height={this.getPDFsize(this.state.width)}
                 key={`page_${index + 1}`}
@@ -124,28 +124,12 @@ export default MyCarousel;
 
 
 const styles = {
-
     carousel: {
       display: 'flex',
       flex: 1,
       flexDirection: 'column',
       backgroundColor: 'none',
       overflow: 'visible',
-    },
-    homescreenTitle: {
-      color: 'black',
-      fontSize: 'calc((12vh + 12vw)/2)',
-      textAlign: 'left',
-      justifyContent: 'start',
-      float: 'left',
-      width: '75%',
-    },
-    homescreenPara: {
-      color: 'black',
-      opacity: 0.5,
-      fontSize: 'calc((3vh + 3vw)/2)',
-      textAlign: 'left',
-      float: 'left',
-      width: '75%',
-    },
+      height: '90%',
+    }
 };

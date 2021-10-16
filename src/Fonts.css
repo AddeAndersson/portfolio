@@ -41,6 +41,14 @@ div {
     -webkit-animation: fadein 5s; /* Safari and Chrome */
     -o-animation: fadein 5s; /* Opera */
 }
+
+.linkAnnotation {
+    border: none;
+    border-width: 0;
+    border-style: none;
+    border-color: transparent;
+}
+
 @keyframes fadein {
     from {
         opacity:0;
