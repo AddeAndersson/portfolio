@@ -60,9 +60,8 @@ class Home extends Component {
         	<p>I'm Adrian.</p>
         </div>
         <p className='fadein' style={styles.homescreenPara}>
-              Welcome to my online portfolio. I am a M.Sc.
-              Student  in Media Technology and Engineering
-              at Linköping University.
+              Welcome to my online portfolio.<br/>
+              I am a software developer based in Jönköping.
         </p>
       </div>
     );
