@@ -5,6 +5,11 @@ import { Modal, Header, Grid, Embed, Button, Icon } from 'semantic-ui-react'
 
 export default function Project(props) {
 
+    var getImage = function(image) {
+
+      return props.mediaSrc != null ? require(`./Images/${image}`) : null;
+    }
+
     return (
       <Modal
       	basic
@@ -20,13 +25,14 @@ export default function Project(props) {
 	        <Grid centered columns={1}>
 	        	<Grid.Column textAlign='center'>
 	        		<p style={{textAlign: 'left'}}>{props.description}</p>
-			        {props.media === 'video' ? 
+			        {
+                props.media === 'video' ? 
 			           <Embed
-					    id={props.mediaSrc}
-					    source='youtube'
-					    width='100%'
-					   /> : 
-			           <img alt='' style={{width: '75%'}} src={props.mediaSrc}/>
+    					    id={props.mediaSrc}
+    					    source='youtube'
+    					    width='100%'
+    					   /> :
+			           <img alt='' style={{width: '75%'}} src={getImage(props.mediaSrc)}/>
 			        }
 	        	</Grid.Column>
 	        </Grid>

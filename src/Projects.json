@@ -1,0 +1,123 @@
+[
+	{
+		"id": 0,
+		"title": "Evaari", 
+		"description" : "A real time strategy game in virtual reality made in Unity.",
+		"icons": ["unity.svg", "csharp.svg"],
+		"modal": true,
+		"modal_description": "A game developed as the media technology bachelor project. Two players battle each other by issuing units to fight for them and destroy the opponents castle. The game is made in Unity. Watch the video for a preview of the game!",
+		"report": "TNM094.pdf",
+		"media": "video",
+		"media_src": "h8h2IKuRL4c"
+	},
+	{
+		"id": 1,
+		"title": "Procedural Terrain", 
+		"description" : "A terrain in a thunderstorm created with procedural methods and Poisson disk sampled instances of grass. Created with Three.js.",
+		"icons": ["javascript.svg", "webgl.svg"],
+		"modal": false,
+		"modal_description": null,
+		"report": "TNM084.pdf",
+		"media_src": null,
+		"media": null
+	},
+	{
+		"id": 2,
+		"title": "Text Mining", 
+		"description" : "A project created to implement and compare LGK-Bidiagonalization and K-Means clustering to search in a collection of medical abstracts from a set of search phrases.",
+		"icons": ["matlab.svg"],
+		"modal": false,
+		"modal_description": null,
+		"report": "TNA009.pdf",
+		"media_src": null,
+		"media": null
+	},
+	{
+		"id": 3,
+		"title": "Deep Deterministic Policy Gradient Agent in TORCS", 
+		"description" : "A project to create and train a DDPG agent to race in the car racing game TORCS.",
+		"icons": ["tensorflow.svg", "keras.svg", "python.svg", "powershell.svg"],
+		"modal": true,
+		"modal_description": "A project with the aim to implement and train a self-driving agent in the car racing game TORCS. Using python, Keras, and Tensorflow a Deep Deterministic Policy Gradient (DDPG) agent was created. Read the report for more information and watch the video for a demo of the agent.",
+		"report": "TNM095.pdf",
+		"media_src": "V_kxQbAES2E",
+		"media": "video"
+	},
+	{
+		"id": 4,
+		"title": "Monte-Carlo Ray Tracer", 
+		"description" : "A project to render a simple scene containing Lambertian and Oren-Nayar reflectors in addition to transparent and perfectly reflecting objects.",
+		"icons": ["cplusplus.svg"],
+		"modal": true,
+		"modal_description": "A program created to produce photo realistic images of a scene containing mirrors, glass, and diffuse objects. A ray tracer approximates how light interacts with objects in real life. The program is created in C++. For more information read the report.",
+		"report": "TNCG15.pdf",
+		"media_src": "TNCG15.jpg",
+		"media": null
+	},
+	{
+		"id": 5,
+		"title": "Billiard Simulation", 
+		"description" : "A short video as a result of simulating the initial hit in a game of billiards.",
+		"icons": ["cplusplus.svg", "opengl.svg"],
+		"modal": true,
+		"modal_description": "A simulation of the initial hit and the resulting collisions in a game of billiards. The simulation is made in C++ and OpenGL. Watch the video to see the final result!",
+		"report": "TNM085.pdf",
+		"media_src": "iTWdN_GpJhw",
+		"media": "video"
+	},
+	{
+		"id": 6,
+		"title": "Climate Change Dashboard", 
+		"description" : "A dashboard made to visualize climate changes. The dashboard features global carbon dioxide levels, precipitation, and natural disasters as well as temperature data for each country.",
+		"icons": ["javascript.svg", "d3.svg"],
+		"modal": false,
+		"modal_description": null,
+		"report": "TNM048.pdf",
+		"media_src": null,
+		"media": null
+	},
+	{
+		"id": 7,
+		"title": "Movie Recommender", 
+		"description" : "A machine learning project to implement a collaborative based recommendation system for movies based on Jaccard similarity.",
+		"icons": ["python.svg"],
+		"modal": false,
+		"modal_description": null,
+		"report": "TNM108.pdf",
+		"media_src": null,
+		"media": null
+	},
+	{
+		"id": 8,
+		"title": "Tennis Image Stitcher", 
+		"description" : "A project to explore image stitching using as few as possible finished OpenCV functions. The aim is to stitch together a tennis match captured with two cameras aimed at each half of the court.",
+		"icons": ["python.svg", "opencv.svg"],
+		"modal": true,
+		"modal_description": "A project to create a fuller experience when watching tennis. Stitching is applied with minimal use of pre-existing OpenCV functions to two video sequences of a tennis match. The videos contain one half of the tennis court each and when they are stitched together they capture the entire court. Watch the video for the final result!",
+		"report": "TNM089.pdf",
+		"media_src": "EzEZCa5NmuE",
+		"media": "video"
+	},
+	{
+		"id": 9,
+		"title": "Disc Dice", 
+		"description" : "A small web-application for a disc golf game with rolling dice.",
+		"icons": ["html5.svg", "css3.svg", "javascript.svg"],
+		"modal": false,
+		"modal_description": null,
+		"report": null,
+		"media_src": null,
+		"media": null
+	},
+	{
+		"id": 10,
+		"title": "Online Portfolio", 
+		"description" : "You are looking at it!",
+		"icons": ["react.svg", "javascript.svg", "css3.svg"],
+		"modal": false,
+		"modal_description": null,
+		"report": null,
+		"media_src": null,
+		"media": null
+	}
+]

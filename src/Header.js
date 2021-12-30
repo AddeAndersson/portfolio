@@ -5,7 +5,6 @@ import 'react-responsive-carousel/lib/styles/carousel.css';
 import linkedin_icon from './Icons/linkedin.svg';
 import github_icon from './Icons/github.svg';
 import SVG from 'react-inlinesvg';
-import { Menu, Item } from 'semantic-ui-react';
 //import * as THREE from 'three';
 
 class Header extends Component {
@@ -47,7 +46,7 @@ class Header extends Component {
 
       return(
         	<div style={styles.container}>
-            <div class="ui menu" style={{background: 'none', fontSize: '2rem'}}>
+            <div class="ui menu stackable" style={{background: 'none', fontSize: '2rem'}}>
           			<a class="item" style={this.isActive(0)} onClick={() => this.setState({chosenItem: 0})}>
           			  Home
           			</a>

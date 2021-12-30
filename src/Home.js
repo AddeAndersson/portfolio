@@ -26,8 +26,9 @@ class Home extends Component {
     var geo = new THREE.BoxGeometry(20, 20, 20, 15, 15, 15);
     var mat = new THREE.PointsMaterial({ color: 0x3399FF }); mat.size = 0.1;
     var box = new THREE.Points(geo, mat);
-    box.position.x += 7;
+    box.position.x += 9;
     box.rotation.y -= Math.PI/4;
+    box.position.y += 2;
     scene.add(box);
 
     // Inner cube
@@ -61,7 +62,7 @@ class Home extends Component {
         </div>
         <p className='fadein' style={styles.homescreenPara}>
               Welcome to my online portfolio.<br/>
-              I am a software developer based in Jönköping.
+              I am a software developer based in Jönköping, Sweden.
         </p>
       </div>
     );
