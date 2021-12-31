@@ -76,8 +76,8 @@
 
 /* top right*/
 .ribbon-top-right {
-  top: 15px;
-  right: 5px;
+  top: -2px;
+  right: -2px;
 }
 .ribbon-top-right::before,
 .ribbon-top-right::after {
@@ -175,6 +175,7 @@
 
 .item  {
   margin: 20px;
+  height: 100%;
 }
 
 .contenta h1 {

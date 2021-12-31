@@ -34,11 +34,11 @@
 	},
 	{
 		"id": 3,
-		"title": "Deep Deterministic Policy Gradient Agent in TORCS", 
+		"title": "DDPG Agent in TORCS", 
 		"description" : "A project to create and train a DDPG agent to race in the car racing game TORCS.",
 		"icons": ["tensorflow.svg", "keras.svg", "python.svg", "powershell.svg"],
 		"modal": true,
-		"modal_description": "A project with the aim to implement and train a self-driving agent in the car racing game TORCS. Using python, Keras, and Tensorflow a Deep Deterministic Policy Gradient (DDPG) agent was created. Read the report for more information and watch the video for a demo of the agent.",
+		"modal_description": "A project with the aim to implement and train a self-driving agent in the car racing game TORCS. Using python, Keras, and Tensorflow, a Deep Deterministic Policy Gradient (DDPG) agent was created. Read the report for more information and watch the video for a demo of the agent.",
 		"report": "TNM095.pdf",
 		"media_src": "V_kxQbAES2E",
 		"media": "video"

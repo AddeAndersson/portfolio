@@ -54,7 +54,8 @@ class Home extends Component {
 
     const new_projects = projects.map((data) => {
       return (
-          <Grid.Column width={7}>
+          <Grid.Column floated='left' width={7} style={{margin: '10px', border: '1px solid rgba(255, 255, 255, 0.08)'}}>
+            {data.modal ? <div class="ribbon ribbon-top-right"><span>Click me!</span></div> : null}
             <Project open={this.state.modalVisible} handleClose={() => this.handleClose()}
             media={this.state.modalMedia} mediaSrc={this.state.modalMediaSrc} 
             title={this.state.modalTitle} description={this.state.modalDescription}
@@ -65,7 +66,6 @@ class Home extends Component {
                 modalMedia: data.media, modalMediaSrc: data.media_src
               })} : {}}>
               <Item.Content style={styles.content} className='contenta'>
-                {data.modal ? <div class="ribbon ribbon-top-right"><span>Click me!</span></div> : null}
                   <Item.Header>
                       <h1 style={{color: '#3399FF'}}>{data.title}</h1>
                   </Item.Header>
@@ -90,8 +90,10 @@ class Home extends Component {
 
     return (
       <div style={{overflowY: 'auto', overflowX: 'hidden'}} id="scrollstyle" className='override'>
-        <Grid stackable centered columns={2}>
+        <Grid stackable centered columns={2} padded='horizontally' style={{marginTop: '1px'}}>
             {new_projects}
+            <Grid.Column width={7} style={{margin: '10px'}}>
+            </Grid.Column>
         </Grid>
       </div>
       );
@@ -137,6 +139,11 @@ const styles = {
       color: 'white',
       overflow: 'hidden',
       textAlign: 'left',
+      justifyContent: 'space-between',
+      height: '100%',
+      position: 'relative',
+      display: 'flex',
+      flexDirection: 'column',
     },
     preview: {
         maxWidth: 500,

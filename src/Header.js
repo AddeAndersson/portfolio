@@ -5,6 +5,7 @@ import 'react-responsive-carousel/lib/styles/carousel.css';
 import linkedin_icon from './Icons/linkedin.svg';
 import github_icon from './Icons/github.svg';
 import SVG from 'react-inlinesvg';
+import { Menu } from 'semantic-ui-react';
 //import * as THREE from 'three';
 
 class Header extends Component {
@@ -46,19 +47,19 @@ class Header extends Component {
 
       return(
         	<div style={styles.container}>
-            <div class="ui menu stackable" style={{background: 'none', fontSize: '2rem'}}>
-          			<a class="item" style={this.isActive(0)} onClick={() => this.setState({chosenItem: 0})}>
+            <Menu class="ui menu stackable" style={{background: 'none', fontSize: '2rem'}}>
+          			<Menu.Item class="item" style={this.isActive(0)} onClick={() => this.setState({chosenItem: 0})}>
           			  Home
-          			</a>
-          			<a class="item" style={this.isActive(1)} onClick={() => this.setState({chosenItem: 1})}>
+          			</Menu.Item>
+          			<Menu.Item class="item" style={this.isActive(1)} onClick={() => this.setState({chosenItem: 1})}>
           				About
-          			</a>
-          			<a class="item" style={this.isActive(2)} onClick={() => this.setState({chosenItem: 2})}>
+          			</Menu.Item>
+          			<Menu.Item class="item" style={this.isActive(2)} onClick={() => this.setState({chosenItem: 2})}>
           				Projects
-          			</a>
-                <a class="item" style={this.isActive(3)} onClick={() => this.setState({chosenItem: 3})}>
+          			</Menu.Item>
+                <Menu.Item class="item" style={this.isActive(3)} onClick={() => this.setState({chosenItem: 3})}>
                   CV
-                </a>
+                </Menu.Item>
                 <div class="right menu">
                   <a class="item" href='https://www.linkedin.com/in/adrian-andersson-410345149/' target="_blank" rel="noopener noreferrer">
                     <SVG height={Math.round(0.03*this.state.height)} src={linkedin_icon}/>
@@ -67,7 +68,7 @@ class Header extends Component {
                     <SVG height={Math.round(0.03*this.state.height)} src={github_icon}/>
                   </a>
                 </div>
-            </div>
+            </Menu>
             <div style={styles.carContainer}>
               <MyCarousel item={this.state.chosenItem}/> 
             </div>
