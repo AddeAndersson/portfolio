@@ -75,6 +75,7 @@ class Home extends Component {
                   <Item.Extra>
                     <div>
                       {(data.report != null) ? <a style={{color: '#3399FF'}} href={getReport(data.report)} target="_blank" rel="noopener noreferrer">Open report</a> : null}
+                      {(data.extra_link.text != null) ? <a style={{color: '#3399FF', float: 'right'}} href={data.extra_link.link} target="_blank" rel="noopener noreferrer">{data.extra_link.text}</a> : null}
                       <div className='icons'>
                         {data.icons.map(icon => 
                           <SVG src={getIcon(icon)}/>

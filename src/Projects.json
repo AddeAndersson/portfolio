@@ -8,7 +8,8 @@
 		"modal_description": "A game developed as the media technology bachelor project. Two players battle each other by issuing units to fight for them and destroy the opponents castle. The game is made in Unity. Watch the video for a preview of the game!",
 		"report": "TNM094.pdf",
 		"media": "video",
-		"media_src": "h8h2IKuRL4c"
+		"media_src": "h8h2IKuRL4c",
+		"extra_link": {"text": null, "link": null}
 	},
 	{
 		"id": 1,
@@ -19,7 +20,8 @@
 		"modal_description": null,
 		"report": "TNM084.pdf",
 		"media_src": null,
-		"media": null
+		"media": null,
+		"extra_link": {"text": "Open project", "link": "https://addeandersson.github.io/ProceduralTerrain/"}
 	},
 	{
 		"id": 2,
@@ -30,7 +32,8 @@
 		"modal_description": null,
 		"report": "TNA009.pdf",
 		"media_src": null,
-		"media": null
+		"media": null,
+		"extra_link": {"text": null, "link": null}
 	},
 	{
 		"id": 3,
@@ -41,7 +44,8 @@
 		"modal_description": "A project with the aim to implement and train a self-driving agent in the car racing game TORCS. Using python, Keras, and Tensorflow, a Deep Deterministic Policy Gradient (DDPG) agent was created. Read the report for more information and watch the video for a demo of the agent.",
 		"report": "TNM095.pdf",
 		"media_src": "V_kxQbAES2E",
-		"media": "video"
+		"media": "video",
+		"extra_link": {"text": null, "link": null}
 	},
 	{
 		"id": 4,
@@ -52,7 +56,8 @@
 		"modal_description": "A program created to produce photo realistic images of a scene containing mirrors, glass, and diffuse objects. A ray tracer approximates how light interacts with objects in real life. The program is created in C++. For more information read the report.",
 		"report": "TNCG15.pdf",
 		"media_src": "TNCG15.jpg",
-		"media": null
+		"media": null,
+		"extra_link": {"text": null, "link": null}
 	},
 	{
 		"id": 5,
@@ -63,7 +68,8 @@
 		"modal_description": "A simulation of the initial hit and the resulting collisions in a game of billiards. The simulation is made in C++ and OpenGL. Watch the video to see the final result!",
 		"report": "TNM085.pdf",
 		"media_src": "iTWdN_GpJhw",
-		"media": "video"
+		"media": "video",
+		"extra_link": {"text": null, "link": null}
 	},
 	{
 		"id": 6,
@@ -74,7 +80,8 @@
 		"modal_description": null,
 		"report": "TNM048.pdf",
 		"media_src": null,
-		"media": null
+		"media": null,
+		"extra_link": {"text": null, "link": null}
 	},
 	{
 		"id": 7,
@@ -85,7 +92,8 @@
 		"modal_description": null,
 		"report": "TNM108.pdf",
 		"media_src": null,
-		"media": null
+		"media": null,
+		"extra_link": {"text": null, "link": null}
 	},
 	{
 		"id": 8,
@@ -96,7 +104,8 @@
 		"modal_description": "A project to create a fuller experience when watching tennis. Stitching is applied with minimal use of pre-existing OpenCV functions to two video sequences of a tennis match. The videos contain one half of the tennis court each and when they are stitched together they capture the entire court. Watch the video for the final result!",
 		"report": "TNM089.pdf",
 		"media_src": "EzEZCa5NmuE",
-		"media": "video"
+		"media": "video",
+		"extra_link": {"text": null, "link": null}
 	},
 	{
 		"id": 9,
@@ -107,7 +116,8 @@
 		"modal_description": null,
 		"report": null,
 		"media_src": null,
-		"media": null
+		"media": null,
+		"extra_link": {"text": "Open project", "link": "https://addeandersson.github.io/DiscDice/"}
 	},
 	{
 		"id": 10,
@@ -118,6 +128,7 @@
 		"modal_description": null,
 		"report": null,
 		"media_src": null,
-		"media": null
+		"media": null,
+		"extra_link": {"text": null, "link": null}
 	}
 ]

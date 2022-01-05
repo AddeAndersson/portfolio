@@ -6,8 +6,11 @@ import { Modal, Header, Grid, Embed, Button, Icon } from 'semantic-ui-react'
 export default function Project(props) {
 
     var getImage = function(image) {
-
       return props.mediaSrc != null ? require(`./Images/${image}`) : null;
+    }
+
+    var getReport = function(report) {
+      return report == null ? "" : require(`./Documents/${report}`);
     }
 
     return (
@@ -38,7 +41,7 @@ export default function Project(props) {
 	        </Grid>
         </Modal.Content>
         <Modal.Actions>
-        	<a href={props.report} target="_blank" rel="noopener noreferrer">
+        	<a href={getReport(props.report)} target="_blank" rel="noopener noreferrer">
 		        <Button color='blue' onClick={() => {}}>
 		          <Icon name='file text' /> Read report
 		        </Button>
