@@ -73,9 +73,9 @@ class Home extends Component {
                       <p style={{fontSize: '1.2em'}}>{data.description}</p>
                   </Item.Description>
                   <Item.Extra>
-                    <div>
+                    <div style={{display: "flex", flexDirection: "column"}}>
                       {(data.report != null) ? <a style={{color: '#3399FF'}} href={getReport(data.report)} target="_blank" rel="noopener noreferrer">Open report</a> : null}
-                      {(data.extra_link.text != null) ? <a style={{color: '#3399FF', float: 'right'}} href={data.extra_link.link} target="_blank" rel="noopener noreferrer">{data.extra_link.text}</a> : null}
+                      {(data.extra_link.text != null) ? <a style={{color: '#3399FF'}} href={data.extra_link.link} target="_blank" rel="noopener noreferrer">{data.extra_link.text}</a> : null}
                       <div className='icons'>
                         {data.icons.map(icon => 
                           <SVG src={getIcon(icon)}/>
