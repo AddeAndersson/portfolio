@@ -55,7 +55,7 @@ class Home extends Component {
     const new_projects = projects.map((data) => {
       return (
           <Grid.Column floated='left' width={7} style={{margin: '10px', border: '1px solid rgba(255, 255, 255, 0.08)'}}>
-            {data.modal ? <div class="ribbon ribbon-top-right"><span>Click me!</span></div> : null}
+            {data.ribbon != null ? <div class="ribbon ribbon-top-right"><span>{data.ribbon}</span></div> : null}
             <Project open={this.state.modalVisible} handleClose={() => this.handleClose()}
             media={this.state.modalMedia} mediaSrc={this.state.modalMediaSrc} 
             title={this.state.modalTitle} description={this.state.modalDescription}
