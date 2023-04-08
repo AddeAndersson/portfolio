@@ -47,7 +47,7 @@ class Header extends Component {
 
       return(
         	<div style={styles.container}>
-            <Menu class="ui menu stackable" style={{background: 'none', fontSize: '2rem'}}>
+            <Menu style={{background: 'none', fontSize: Math.round(0.02*this.state.width)}}>
           			<Menu.Item class="item" style={this.isActive(0)} onClick={() => this.setState({chosenItem: 0})}>
           			  Home
           			</Menu.Item>
@@ -60,12 +60,12 @@ class Header extends Component {
                 <Menu.Item class="item" style={this.isActive(3)} onClick={() => this.setState({chosenItem: 3})}>
                   CV
                 </Menu.Item>
-                <div class="right menu">
+                <div class="ui right menu" style={{background: 'none', fontSize: '2rem'}}>
                   <a class="item" href='https://www.linkedin.com/in/adrian-andersson-410345149/' target="_blank" rel="noopener noreferrer">
-                    <SVG height={Math.round(0.03*this.state.height)} src={linkedin_icon}/>
+                    <SVG height={Math.round(0.02*this.state.width)} src={linkedin_icon}/>
                   </a>
                   <a class="item" href='https://github.com/AddeAndersson' target="_blank" rel="noopener noreferrer">
-                    <SVG height={Math.round(0.03*this.state.height)} src={github_icon}/>
+                    <SVG height={Math.round(0.02*this.state.width)} src={github_icon}/>
                   </a>
                 </div>
             </Menu>

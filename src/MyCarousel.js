@@ -107,6 +107,7 @@ class MyCarousel extends Component {
                 (<Page className="row" height={this.getPDFsize(this.state.width)}
                 key={`page_${index + 1}`}
                 pageNumber={index + 1}
+                renderTextLayer={false}
                 />),
                 )
               }
