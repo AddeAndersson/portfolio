@@ -63,11 +63,11 @@ class MyCarousel extends Component {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      padding: '20px 0px',
+      padding: '20px 0px 20px 0px',
     };
 
     const scrollable = {
-      height: Math.round(0.88*this.state.height),
+      height: Math.round(0.90*this.state.height),
       width: this.state.width,
       display: 'flex',
       flexDirection: 'column',
@@ -76,7 +76,7 @@ class MyCarousel extends Component {
       alignItems: 'center',
       flex: 1,
       overflowY: 'scroll',
-      padding: '20px 0px',
+      padding: '20px 0px 20px 0px',
     };
 
     return(

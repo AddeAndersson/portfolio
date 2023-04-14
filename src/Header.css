@@ -14,10 +14,16 @@
     border-bottom: 1px solid #3399FF;
 }*/
 
-.ui .item {
-    font-family: 'Titillium Web', sans-serif;
-    margin: 0;
-    padding: 0;
+#inactive
+{
+    color: white !important;
+    cursor: pointer;
+}
+
+#active
+{
+    color: rgb(51, 153, 255) !important;
+    cursor: default;
 }
 
 .particlesFade {

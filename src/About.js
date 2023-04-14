@@ -1,16 +1,18 @@
 import React, {Component} from 'react';
 //import RadarChart from 'react-svg-radar-chart';
 //import 'react-svg-radar-chart/build/css/index.css';
-import headshot from './Images/headshot.JPG';
+import headshot from './Images/headshot_no_bg.png';
 
 function Pic(props) {
-  if(props.layout.height === "90%"){ //column
-    return (<div style={styles.rightContainer}>
-      <img alt='profile' style={styles.rightChild} src={headshot}/>
-    </div>);
-  }
+  //if(props.layout.height === '100%'){ //column
+    return (
+      <div style={styles.rightContainer}>
+        <img alt='profile' style={styles.rightChild} src={headshot}/>
+      </div>
+    );
+  //}
 
-  return null;
+  //return null;
 };
 
 class About extends Component {
@@ -35,30 +37,22 @@ class About extends Component {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
-  getLayout(item) {
-    const col = {
+  getLayout() {
+    const isRow = this.state.width > this.state.height;
+
+    const style = {
     	fontSize: 'calc((2vh + 2vw)/2)',
-      	flex: '0 0 auto',
-      	textAlign: 'left',
-      	float: 'left',
-      	color: 'white',
-        height: 'auto',//0.5 * this.state.height,
-        width: '90%',
-        padding: '20px',
-    };
-    const row = {
-    	fontSize: 'calc((2vh + 2vw)/2)',
-        flex: '0 0 auto',
-        textAlign: 'left',
-        float: 'left',
-        color: 'white',
-        height: '90%',
-        width: 0.5 * this.state.width,
-        padding: '20px',
+      padding: '0px 20px',
+      flex: '0 0 auto',
+      textAlign: 'left',
+      float: 'left',
+      color: 'white',
+      height: isRow ? '100%' : 'auto',//0.5 * this.state.height,
+      width: isRow ? 0.5 * this.state.width : '100%',
+      lineHeight: '1.5',
     };
 
-    if(this.state.width > this.state.height) return row;
-    else return col;
+    return style;
   }
 
   render() {
@@ -89,8 +83,8 @@ class About extends Component {
     var opt = this.getLayout();
 
     return(
-   	  <div style={styles.divStyle}>
-      	<p style={opt}>
+   	  <div style={this.state.width > this.state.height ? styles.divStyle : styles.divStyleRow}>
+      	<div style={opt}>
             I'm <Emph word="Adrian Andersson"/>, and I have a M.Sc. degree in Media Technology and Engineering
             from the university of Linköping. Originally from <Emph word="Nässjö"/>, Småland,
             my interest for tech took me to Norrköping to study and become an engineer.
@@ -106,9 +100,9 @@ class About extends Component {
             <br/>
             <br/>
             / / Adrian
-        </p>
+        </div>
         <Pic layout={opt}/>
-	  </div>
+      </div>
     );
   }
 }
@@ -116,25 +110,20 @@ class About extends Component {
 export default About;
 
 const styles = {
-	para: {
-      fontSize: 'calc((2vh + 2vw)/3)',
-      flex: '0 0 auto',
-      textAlign: 'center',
-      float: 'left',
-      color: 'white',
-    },
 
     rightChild: {
-    	flex: '0 0 auto',
-        alignItems: 'center',
-        width: '100%',
-        border: '10px solid white',
+    	flex: '1 0 auto',
+      alignItems: 'center',
+      width: '100%',
+      bottom: '-20px',
+      position: 'relative',
+      //border: '10px solid white',
     },
 
     rightContainer: {
     	flexDirection: 'column',
     	display: 'flex',
-    	alignItems: 'center',
+    	//alignItems: 'center',
     	flex: '0 0 auto',
     	width: '40vw',
     	maxWidth: '500px',
@@ -142,17 +131,27 @@ const styles = {
 
     divStyle: {
     	display: 'flex',
-      	flexDirection: 'row',
-      	flexWrap: 'wrap',
-      	justifyContent: 'space-evenly',
-      	alignContent: 'space-evenly',
-      	alignItems: 'center',
-      	height: '100%',
-        overflow: 'auto',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'space-evenly',
+      alignContent: 'space-evenly',
+      alignItems: 'flex-end',
+      height: '100%',
+      overflow: 'visible',
     },
 
-	highlight: {
-	  color: '#3399FF',
-	  fontWeight: '900',
-	}
+    divStyleRow: {
+    	display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'space-evenly',
+      alignItems: 'flex-end',
+      height: '100%',
+      overflow: 'visible',
+    },
+
+    highlight: {
+      color: '#3399FF',
+      fontWeight: '900',
+    }
 };
