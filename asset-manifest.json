@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.0bf5c9da.css",
-    "main.js": "/portfolio/static/js/main.f8af579b.js",
+    "main.css": "/portfolio/static/css/main.0c8d5cc2.css",
+    "main.js": "/portfolio/static/js/main.2d0f17bb.js",
     "static/media/TNM094.pdf": "/portfolio/static/media/TNM094.7da57e6d98a3c2fcd396.pdf",
     "static/media/TNM089.pdf": "/portfolio/static/media/TNM089.c8fb444deebc3385bb09.pdf",
     "static/media/TNCG15.pdf": "/portfolio/static/media/TNCG15.01246b1a4aea5a982af2.pdf",
+    "static/media/headshot_no_bg.png": "/portfolio/static/media/headshot_no_bg.4c1d86b11891b7a16266.png",
     "static/media/TNM084.pdf": "/portfolio/static/media/TNM084.e2a54440fc2b076f1a1f.pdf",
     "static/media/adrianandersson.pdf": "/portfolio/static/media/adrianandersson.e86670450dfeb8672e43.pdf",
     "static/media/headshot.JPG": "/portfolio/static/media/headshot.167a3deca4c2e09d06a5.JPG",
@@ -57,11 +58,11 @@
     "static/media/unity.svg": "/portfolio/static/media/unity.a3bce65db69d453c8861.svg",
     "static/media/keras.svg": "/portfolio/static/media/keras.4e3ff9a108301e9458c3.svg",
     "static/media/tensorflow.svg": "/portfolio/static/media/tensorflow.f2516427c0cdf204d66b.svg",
-    "main.0bf5c9da.css.map": "/portfolio/static/css/main.0bf5c9da.css.map",
-    "main.f8af579b.js.map": "/portfolio/static/js/main.f8af579b.js.map"
+    "main.0c8d5cc2.css.map": "/portfolio/static/css/main.0c8d5cc2.css.map",
+    "main.2d0f17bb.js.map": "/portfolio/static/js/main.2d0f17bb.js.map"
   },
   "entrypoints": [
-    "static/css/main.0bf5c9da.css",
-    "static/js/main.f8af579b.js"
+    "static/css/main.0c8d5cc2.css",
+    "static/js/main.2d0f17bb.js"
   ]
 }
