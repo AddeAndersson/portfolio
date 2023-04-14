@@ -40,7 +40,7 @@ class Header extends Component {
     {
       return(
         	<div style={styles.container}>
-            <Menu style={{background: 'none', fontSize: '2em'}}>
+            <Menu style={{background: 'none', fontSize: '2em', alignItems: 'center'}}>
               <Menu.Menu stackable position='left'>
           			<Menu.Item class="itemClass" style={this.isActive(0)} onClick={() => this.setState({chosenItem: 0})}>
           			  Home
@@ -55,7 +55,7 @@ class Header extends Component {
                   CV
                 </Menu.Item>
               </Menu.Menu>
-              <Menu.Menu position='right' style={{background: 'none', fontSize: '2rem'}}>
+              <Menu.Menu position='right' style={{background: 'none', fontSize: '2rem', alignItems: 'center'}}>
                 <Menu.Item class="itemClass">
                   <a href='https://www.linkedin.com/in/adrian-andersson-410345149/' target="_blank" rel="noopener noreferrer">
                     <SVG height={Math.round(0.04*this.state.width)} src={linkedin_icon}/>
@@ -79,7 +79,7 @@ class Header extends Component {
       return(
         	<div style={styles.container}>
             <Menu style={{background: 'none'}}>
-              <Menu.Menu maxWidth={910}  position='left'>
+              <Menu.Menu maxWidth={910}  position='left' style={{alignItems: "center"}}>
                     <Dropdown
                         item
                         icon={{name: 'bars', color: 'blue', size: 'big'}}
@@ -101,7 +101,7 @@ class Header extends Component {
                         </Dropdown.Menu>
                     </Dropdown>
                 </Menu.Menu>
-                <Menu.Menu position='right' style={{background: 'none'}}>
+                <Menu.Menu position='right' style={{background: "none", alignItems: "center"}}>
                   <Menu.Item class="itemClass">
                     <a href='https://www.linkedin.com/in/adrian-andersson-410345149/' target="_blank" rel="noopener noreferrer">
                       <SVG height={Math.round(0.04*this.state.width)} src={linkedin_icon}/>
