@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.0c8d5cc2.css",
-    "main.js": "/portfolio/static/js/main.2d0f17bb.js",
+    "main.js": "/portfolio/static/js/main.9d0aceff.js",
     "static/media/TNM094.pdf": "/portfolio/static/media/TNM094.7da57e6d98a3c2fcd396.pdf",
     "static/media/TNM089.pdf": "/portfolio/static/media/TNM089.c8fb444deebc3385bb09.pdf",
     "static/media/TNCG15.pdf": "/portfolio/static/media/TNCG15.01246b1a4aea5a982af2.pdf",
@@ -59,10 +59,10 @@
     "static/media/keras.svg": "/portfolio/static/media/keras.4e3ff9a108301e9458c3.svg",
     "static/media/tensorflow.svg": "/portfolio/static/media/tensorflow.f2516427c0cdf204d66b.svg",
     "main.0c8d5cc2.css.map": "/portfolio/static/css/main.0c8d5cc2.css.map",
-    "main.2d0f17bb.js.map": "/portfolio/static/js/main.2d0f17bb.js.map"
+    "main.9d0aceff.js.map": "/portfolio/static/js/main.9d0aceff.js.map"
   },
   "entrypoints": [
     "static/css/main.0c8d5cc2.css",
-    "static/js/main.2d0f17bb.js"
+    "static/js/main.9d0aceff.js"
   ]
 }
